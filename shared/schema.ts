@@ -24,7 +24,7 @@ export type SeerahEvent = {
   date: string;
   year: number;
   period: "pre-prophethood" | "makkah" | "madinah";
-  category: "revelation" | "battle" | "treaty" | "migration" | "social-reform" | "companion-story" | "spiritual";
+  category: "revelation" | "battle" | "treaty" | "migration" | "social-reform" | "companion-story" | "spiritual" | "family";
   location: string;
   description: string;
   significance: "low" | "medium" | "high" | "critical";

@@ -22,7 +22,8 @@ const categoryLabels = {
   migration: "Migration",
   "social-reform": "Social Reform",
   "companion-story": "Companion Story",
-  spiritual: "Spiritual Event"
+  spiritual: "Spiritual Event",
+  family: "Family"
 };
 
 const categoryColors = {
@@ -32,7 +33,8 @@ const categoryColors = {
   migration: "bg-green-500/10 text-green-700 dark:text-green-300",
   "social-reform": "bg-amber-500/10 text-amber-700 dark:text-amber-300",
   "companion-story": "bg-cyan-500/10 text-cyan-700 dark:text-cyan-300",
-  spiritual: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300"
+  spiritual: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300",
+  family: "bg-pink-500/10 text-pink-700 dark:text-pink-300"
 };
 
 export default function EventDetailModal({ event, onClose }: EventDetailModalProps) {

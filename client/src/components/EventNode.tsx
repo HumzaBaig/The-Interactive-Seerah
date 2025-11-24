@@ -26,7 +26,8 @@ const categoryIcons = {
   migration: "🧭",
   "social-reform": "⚖️",
   "companion-story": "👥",
-  spiritual: "✨"
+  spiritual: "✨",
+  family: "👨‍👩‍👧‍👦"
 };
 
 export default function EventNode({ event, position, onClick }: EventNodeProps) {
