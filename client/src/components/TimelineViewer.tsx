@@ -33,7 +33,7 @@ export default function TimelineViewer({
   const totalYears = TIMELINE_END - TIMELINE_START;
   const timelineWidthPx = totalYears * pixelsPerYear;
 
-  // Convert year to pixel position
+  // Convert year to pixel position (no offset - pure pixel positioning)
   const yearToPixels = (year: number) => {
     // Clamp to timeline range
     const clampedYear = Math.max(TIMELINE_START, Math.min(TIMELINE_END, year));
@@ -90,9 +90,9 @@ export default function TimelineViewer({
         style={{ height: '60vh' }}
       >
         <div 
-          className="relative mx-auto px-8"
+          className="relative mx-auto"
           style={{ 
-            width: `${timelineWidthPx + 64}px`,
+            width: `${timelineWidthPx}px`,
             minWidth: '100%',
             height: '100%'
           }}
@@ -108,7 +108,7 @@ export default function TimelineViewer({
                 key={`timeline-${period.id}`}
                 className="absolute top-1/2 -translate-y-1/2 h-1"
                 style={{
-                  left: `${startPx + 32}px`,
+                  left: `${startPx}px`,
                   width: `${widthPx}px`,
                   backgroundColor: period.color
                 }}
@@ -123,7 +123,7 @@ export default function TimelineViewer({
               <EventNode
                 key={event.id}
                 event={event}
-                positionPx={positionPx + 32}
+                positionPx={positionPx}
                 onClick={() => setSelectedEvent(event)}
               />
             );
@@ -133,7 +133,7 @@ export default function TimelineViewer({
 
       <div className="bg-muted/30 py-2 px-8 flex items-center justify-between text-sm text-muted-foreground">
         <span>{TIMELINE_START} CE</span>
-        <span>Timeline: {totalYears} years ({pixelsPerYear}px/year)</span>
+        <span>Timeline: {totalYears} years</span>
         <span>{TIMELINE_END} CE</span>
       </div>
 

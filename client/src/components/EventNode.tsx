@@ -29,8 +29,8 @@ export default function EventNode({ event, positionPx, onClick }: EventNodeProps
       <TooltipTrigger asChild>
         <button
           onClick={onClick}
-          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 hover-elevate active-elevate-2 group z-10"
-          style={{ left: `${positionPx}px` }}
+          className="absolute top-1/2 -translate-y-1/2 group z-10 p-0"
+          style={{ left: `${positionPx}px`, transform: 'translateY(-50%)' }}
           data-testid={`event-node-${event.id}`}
         >
           <div className="w-5 h-5 rounded-full bg-primary border-2 border-primary-foreground transition-transform group-hover:scale-125" />
