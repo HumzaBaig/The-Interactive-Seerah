@@ -1,8 +1,8 @@
 import { SeerahEvent, TimelinePeriod } from "@shared/schema";
 
-// Timeline boundaries - only showing Pre-Prophethood and Makkah periods
+// Timeline boundaries - showing all three major periods
 export const TIMELINE_START = 570;
-export const TIMELINE_END = 622;
+export const TIMELINE_END = 632;
 
 export const timelinePeriods: TimelinePeriod[] = [
   {
@@ -22,6 +22,15 @@ export const timelinePeriods: TimelinePeriod[] = [
     endYear: 622,
     color: "hsl(25, 100%, 50%)",
     description: "Period of revelation and persecution in Makkah"
+  },
+  {
+    id: "madinah",
+    name: "Madinah Period",
+    nameArabic: "الفترة المدنية",
+    startYear: 622,
+    endYear: 632,
+    color: "hsl(140, 100%, 40%)",
+    description: "Establishment of the Islamic state in Madinah"
   }
 ];
 
