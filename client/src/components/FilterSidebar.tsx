@@ -9,6 +9,7 @@ import {
   Scale, 
   Users, 
   Sparkles,
+  Heart,
   X
 } from "lucide-react";
 
@@ -27,6 +28,7 @@ const categories = [
   { id: "social-reform", label: "Social Reforms", icon: Scale, color: "bg-amber-500/10 text-amber-700 dark:text-amber-300" },
   { id: "companion-story", label: "Companions", icon: Users, color: "bg-cyan-500/10 text-cyan-700 dark:text-cyan-300" },
   { id: "spiritual", label: "Spiritual Events", icon: Sparkles, color: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300" },
+  { id: "family", label: "Family", icon: Heart, color: "bg-pink-500/10 text-pink-700 dark:text-pink-300" },
 ];
 
 const periods = [
