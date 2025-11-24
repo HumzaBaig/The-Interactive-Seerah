@@ -12,13 +12,6 @@ interface EventNodeProps {
   onClick: () => void;
 }
 
-const significanceSize = {
-  low: "w-3 h-3",
-  medium: "w-4 h-4",
-  high: "w-5 h-5",
-  critical: "w-6 h-6"
-};
-
 const categoryIcons = {
   revelation: "📖",
   battle: "⚔️",
@@ -31,8 +24,6 @@ const categoryIcons = {
 };
 
 export default function EventNode({ event, position, onClick }: EventNodeProps) {
-  const size = significanceSize[event.significance];
-
   return (
     <Tooltip>
       <TooltipTrigger asChild>
@@ -42,7 +33,7 @@ export default function EventNode({ event, position, onClick }: EventNodeProps) 
           style={{ left: `${position}%` }}
           data-testid={`event-node-${event.id}`}
         >
-          <div className={`${size} rounded-full bg-primary border-2 border-primary-foreground transition-transform group-hover:scale-125`} />
+          <div className="w-5 h-5 rounded-full bg-primary border-2 border-primary-foreground transition-transform group-hover:scale-125" />
           <div className="absolute top-full mt-2 text-xs font-medium text-foreground whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
             {event.year} CE
           </div>
