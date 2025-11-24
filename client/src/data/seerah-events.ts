@@ -18,6 +18,15 @@ export const timelinePeriods: TimelinePeriod[] = [
     endYear: 622,
     color: "hsl(25, 100%, 50%)",
     description: "Period of revelation and persecution in Makkah"
+  },
+  {
+    id: "madinah",
+    name: "Madinah Period",
+    nameArabic: "الفترة المدنية",
+    startYear: 622,
+    endYear: 632,
+    color: "hsl(120, 100%, 35%)",
+    description: "Establishment of Islamic state in Madinah"
   }
 ];
 
