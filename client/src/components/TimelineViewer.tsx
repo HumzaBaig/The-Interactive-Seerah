@@ -93,7 +93,23 @@ export default function TimelineViewer({
             height: '100%'
           }}
         >
-          <div className="absolute top-1/2 left-0 right-0 h-1 bg-border" />
+          {periods.map(period => {
+            const startPos = getEventPosition(period.startYear);
+            const endPos = getEventPosition(period.endYear);
+            const width = endPos - startPos;
+
+            return (
+              <div
+                key={`timeline-${period.id}`}
+                className="absolute top-1/2 -translate-y-1/2 h-1"
+                style={{
+                  left: `${startPos}%`,
+                  width: `${width}%`,
+                  backgroundColor: period.color
+                }}
+              />
+            );
+          })}
 
           {filteredEvents.map(event => {
             const position = getEventPosition(event.year);
