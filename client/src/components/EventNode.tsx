@@ -8,7 +8,7 @@ import {
 
 interface EventNodeProps {
   event: SeerahEvent;
-  position: number;
+  positionPx: number;
   onClick: () => void;
 }
 
@@ -23,14 +23,14 @@ const categoryIcons = {
   family: "👨‍👩‍👧‍👦"
 };
 
-export default function EventNode({ event, position, onClick }: EventNodeProps) {
+export default function EventNode({ event, positionPx, onClick }: EventNodeProps) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
         <button
           onClick={onClick}
           className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 hover-elevate active-elevate-2 group z-10"
-          style={{ left: `${position}%` }}
+          style={{ left: `${positionPx}px` }}
           data-testid={`event-node-${event.id}`}
         >
           <div className="w-5 h-5 rounded-full bg-primary border-2 border-primary-foreground transition-transform group-hover:scale-125" />

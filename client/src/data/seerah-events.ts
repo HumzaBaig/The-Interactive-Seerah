@@ -1,5 +1,9 @@
 import { SeerahEvent, TimelinePeriod } from "@shared/schema";
 
+// Timeline boundaries - only showing Pre-Prophethood and Makkah periods
+export const TIMELINE_START = 570;
+export const TIMELINE_END = 622;
+
 export const timelinePeriods: TimelinePeriod[] = [
   {
     id: "pre-prophethood",
@@ -18,15 +22,6 @@ export const timelinePeriods: TimelinePeriod[] = [
     endYear: 622,
     color: "hsl(25, 100%, 50%)",
     description: "Period of revelation and persecution in Makkah"
-  },
-  {
-    id: "madinah",
-    name: "Madinah Period",
-    nameArabic: "الفترة المدنية",
-    startYear: 622,
-    endYear: 632,
-    color: "hsl(120, 100%, 35%)",
-    description: "Establishment of Islamic state in Madinah"
   }
 ];
 
@@ -316,3 +311,7 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarReference: "Chapter 21: The Prophet's Death"
   }
 ];
+
+// Separate events into main timeline (up to 622 CE) and overflow (after 622 CE)
+export const mainTimelineEvents = seerahEvents.filter(event => event.year <= TIMELINE_END);
+export const overflowEvents = seerahEvents.filter(event => event.year > TIMELINE_END);

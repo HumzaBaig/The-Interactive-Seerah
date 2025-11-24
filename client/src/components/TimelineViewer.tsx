@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ZoomIn, ZoomOut, Maximize2 } from "lucide-react";
 import EventNode from "@/components/EventNode";
 import EventDetailModal from "@/components/EventDetailModal";
+import { TIMELINE_START, TIMELINE_END } from "@/data/seerah-events";
 
 interface TimelineViewerProps {
   events: SeerahEvent[];
@@ -18,7 +19,7 @@ export default function TimelineViewer({
   selectedPeriod,
   selectedCategory 
 }: TimelineViewerProps) {
-  const [zoom, setZoom] = useState(1);
+  const [pixelsPerYear, setPixelsPerYear] = useState(48);
   const [selectedEvent, setSelectedEvent] = useState<SeerahEvent | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -28,28 +29,31 @@ export default function TimelineViewer({
     return periodMatch && categoryMatch;
   });
 
-  const minYear = Math.min(...events.map(e => e.year));
-  const maxYear = Math.max(...events.map(e => e.year));
-  const totalYears = maxYear - minYear;
+  // Calculate timeline dimensions in pixels
+  const totalYears = TIMELINE_END - TIMELINE_START;
+  const timelineWidthPx = totalYears * pixelsPerYear;
 
-  const getEventPosition = (year: number) => {
-    return ((year - minYear) / totalYears) * 100;
+  // Convert year to pixel position
+  const yearToPixels = (year: number) => {
+    // Clamp to timeline range
+    const clampedYear = Math.max(TIMELINE_START, Math.min(TIMELINE_END, year));
+    return (clampedYear - TIMELINE_START) * pixelsPerYear;
   };
 
-  const handleZoomIn = () => setZoom(prev => Math.min(prev + 0.2, 3));
-  const handleZoomOut = () => setZoom(prev => Math.max(prev - 0.2, 0.5));
-  const handleResetZoom = () => setZoom(1);
+  const handleZoomIn = () => setPixelsPerYear(prev => Math.min(prev + 12, 144));
+  const handleZoomOut = () => setPixelsPerYear(prev => Math.max(prev - 12, 24));
+  const handleResetZoom = () => setPixelsPerYear(48);
 
   useEffect(() => {
     if (selectedPeriod && scrollRef.current) {
       const period = periods.find(p => p.id === selectedPeriod);
       if (period) {
-        const position = getEventPosition(period.startYear);
-        const scrollPosition = (position / 100) * scrollRef.current.scrollWidth - (scrollRef.current.clientWidth / 2);
+        const position = yearToPixels(period.startYear);
+        const scrollPosition = position - (scrollRef.current.clientWidth / 2);
         scrollRef.current.scrollTo({ left: scrollPosition, behavior: 'smooth' });
       }
     }
-  }, [selectedPeriod]);
+  }, [selectedPeriod, pixelsPerYear]);
 
   return (
     <div className="relative bg-card border-y">
@@ -88,36 +92,38 @@ export default function TimelineViewer({
         <div 
           className="relative mx-auto px-8"
           style={{ 
-            width: `${100 * zoom}%`,
+            width: `${timelineWidthPx + 64}px`,
             minWidth: '100%',
             height: '100%'
           }}
         >
+          {/* Render period segments */}
           {periods.map(period => {
-            const startPos = getEventPosition(period.startYear);
-            const endPos = getEventPosition(period.endYear);
-            const width = endPos - startPos;
+            const startPx = yearToPixels(period.startYear);
+            const endPx = yearToPixels(period.endYear);
+            const widthPx = endPx - startPx;
 
             return (
               <div
                 key={`timeline-${period.id}`}
                 className="absolute top-1/2 -translate-y-1/2 h-1"
                 style={{
-                  left: `${startPos}%`,
-                  width: `${width}%`,
+                  left: `${startPx + 32}px`,
+                  width: `${widthPx}px`,
                   backgroundColor: period.color
                 }}
               />
             );
           })}
 
-          {filteredEvents.map(event => {
-            const position = getEventPosition(event.year);
+          {/* Render events on main timeline (≤622 CE) */}
+          {filteredEvents.filter(event => event.year <= TIMELINE_END).map(event => {
+            const positionPx = yearToPixels(event.year);
             return (
               <EventNode
                 key={event.id}
                 event={event}
-                position={position}
+                positionPx={positionPx + 32}
                 onClick={() => setSelectedEvent(event)}
               />
             );
@@ -126,9 +132,9 @@ export default function TimelineViewer({
       </div>
 
       <div className="bg-muted/30 py-2 px-8 flex items-center justify-between text-sm text-muted-foreground">
-        <span>{minYear} CE</span>
-        <span>Timeline: {totalYears} years</span>
-        <span>{maxYear} CE</span>
+        <span>{TIMELINE_START} CE</span>
+        <span>Timeline: {totalYears} years ({pixelsPerYear}px/year)</span>
+        <span>{TIMELINE_END} CE</span>
       </div>
 
       <EventDetailModal 
