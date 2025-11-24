@@ -24,7 +24,7 @@ export const timelinePeriods: TimelinePeriod[] = [
     name: "Madinah Period",
     nameArabic: "الفترة المدنية",
     startYear: 622,
-    endYear: 632,
+    endYear: 633,
     color: "hsl(120, 100%, 35%)",
     description: "Establishment of Islamic state in Madinah"
   }
