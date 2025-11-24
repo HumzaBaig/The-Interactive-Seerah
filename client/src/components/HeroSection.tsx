@@ -8,15 +8,6 @@ interface HeroSectionProps {
 export default function HeroSection({ onNavigateToPeriod }: HeroSectionProps) {
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-b from-background to-accent/10 border-b">
-      <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <pattern id="islamic-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-            <path d="M50 0 L60 30 L90 30 L65 50 L75 80 L50 60 L25 80 L35 50 L10 30 L40 30 Z" fill="currentColor" />
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#islamic-pattern)" />
-        </svg>
-      </div>
-      
       <div className="container mx-auto px-6 py-12 relative z-10 text-center max-w-4xl">
         <div className="space-y-6">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight font-display">
