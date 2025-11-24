@@ -19,7 +19,7 @@ export default function TimelineViewer({
   selectedPeriod,
   selectedCategory 
 }: TimelineViewerProps) {
-  const [pixelsPerYear, setPixelsPerYear] = useState(48);
+  const [pixelsPerYear, setPixelsPerYear] = useState(60);
   const [selectedEvent, setSelectedEvent] = useState<SeerahEvent | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -29,20 +29,17 @@ export default function TimelineViewer({
     return periodMatch && categoryMatch;
   });
 
-  // Calculate timeline dimensions in pixels
   const totalYears = TIMELINE_END - TIMELINE_START;
   const timelineWidthPx = totalYears * pixelsPerYear;
 
-  // Convert year to pixel position (no offset - pure pixel positioning)
   const yearToPixels = (year: number) => {
-    // Clamp to timeline range
     const clampedYear = Math.max(TIMELINE_START, Math.min(TIMELINE_END, year));
     return (clampedYear - TIMELINE_START) * pixelsPerYear;
   };
 
-  const handleZoomIn = () => setPixelsPerYear(prev => Math.min(prev + 12, 144));
-  const handleZoomOut = () => setPixelsPerYear(prev => Math.max(prev - 12, 24));
-  const handleResetZoom = () => setPixelsPerYear(48);
+  const handleZoomIn = () => setPixelsPerYear(prev => Math.min(prev + 15, 120));
+  const handleZoomOut = () => setPixelsPerYear(prev => Math.max(prev - 15, 30));
+  const handleResetZoom = () => setPixelsPerYear(60);
 
   useEffect(() => {
     if (selectedPeriod && scrollRef.current) {
@@ -50,14 +47,15 @@ export default function TimelineViewer({
       if (period) {
         const position = yearToPixels(period.startYear);
         const scrollPosition = position - (scrollRef.current.clientWidth / 2);
-        scrollRef.current.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+        scrollRef.current.scrollTo({ left: Math.max(0, scrollPosition), behavior: 'smooth' });
       }
     }
   }, [selectedPeriod, pixelsPerYear]);
 
   return (
     <div className="relative bg-card border-y">
-      <div className="absolute top-4 right-4 z-10 flex gap-2">
+      {/* Zoom Controls */}
+      <div className="absolute top-4 right-4 z-20 flex gap-2">
         <Button 
           size="icon" 
           variant="secondary" 
@@ -84,56 +82,100 @@ export default function TimelineViewer({
         </Button>
       </div>
 
+      {/* Timeline Container */}
       <div 
         ref={scrollRef}
-        className="overflow-x-auto overflow-y-hidden py-16"
-        style={{ height: '60vh' }}
+        className="overflow-x-auto overflow-y-hidden py-20"
+        style={{ height: '70vh' }}
       >
         <div 
-          className="relative mx-auto"
+          className="relative"
           style={{ 
             width: `${timelineWidthPx}px`,
             minWidth: '100%',
             height: '100%'
           }}
         >
-          {/* Render period segments */}
-          {periods.map(period => {
-            const startPx = yearToPixels(period.startYear);
-            const endPx = yearToPixels(period.endYear);
-            const widthPx = endPx - startPx;
+          {/* Period Background Blocks */}
+          <div className="absolute inset-0 flex">
+            {periods.map(period => {
+              const startPx = yearToPixels(period.startYear);
+              const endPx = yearToPixels(period.endYear);
+              const widthPx = endPx - startPx;
 
-            return (
-              <div
-                key={`timeline-${period.id}`}
-                className="absolute top-1/2 -translate-y-1/2 h-1"
-                style={{
-                  left: `${startPx}px`,
-                  width: `${widthPx}px`,
-                  backgroundColor: period.color
-                }}
-              />
-            );
-          })}
+              return (
+                <div
+                  key={period.id}
+                  className="absolute top-0 bottom-0 border-r-2 border-border/50"
+                  style={{
+                    left: `${startPx}px`,
+                    width: `${widthPx}px`,
+                    backgroundColor: period.color,
+                    opacity: 0.15
+                  }}
+                  data-testid={`period-${period.id}`}
+                >
+                  {/* Period Label */}
+                  <div className="absolute top-4 left-4 bg-background/90 backdrop-blur px-3 py-1.5 rounded-md border">
+                    <div className="text-sm font-semibold">{period.name}</div>
+                    <div className="text-xs text-muted-foreground">{period.nameArabic}</div>
+                    <div className="text-xs text-muted-foreground mt-1">
+                      {period.startYear}—{period.endYear} CE
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
 
-          {/* Render events on main timeline (≤622 CE) */}
-          {filteredEvents.filter(event => event.year <= TIMELINE_END).map(event => {
-            const positionPx = yearToPixels(event.year);
-            return (
-              <EventNode
-                key={event.id}
-                event={event}
-                positionPx={positionPx}
-                onClick={() => setSelectedEvent(event)}
-              />
-            );
-          })}
+          {/* Timeline Axis Line */}
+          <div 
+            className="absolute left-0 right-0 h-1 bg-foreground/20"
+            style={{ top: '50%', transform: 'translateY(-50%)' }}
+          />
+
+          {/* Event Nodes - All Aligned on Same Line */}
+          <div className="absolute inset-0" style={{ top: '50%', transform: 'translateY(-50%)' }}>
+            {filteredEvents.map(event => {
+              const positionPx = yearToPixels(event.year);
+              
+              return (
+                <EventNode
+                  key={event.id}
+                  event={event}
+                  positionPx={positionPx}
+                  onClick={() => setSelectedEvent(event)}
+                />
+              );
+            })}
+          </div>
+
+          {/* Year Markers */}
+          <div className="absolute inset-x-0 bottom-8">
+            {Array.from({ length: Math.floor(totalYears / 10) + 1 }, (_, i) => {
+              const year = TIMELINE_START + (i * 10);
+              if (year > TIMELINE_END) return null;
+              
+              const position = yearToPixels(year);
+              
+              return (
+                <div
+                  key={year}
+                  className="absolute text-xs text-muted-foreground font-medium"
+                  style={{ left: `${position}px`, transform: 'translateX(-50%)' }}
+                >
+                  {year} CE
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
+      {/* Timeline Info Footer */}
       <div className="bg-muted/30 py-2 px-8 flex items-center justify-between text-sm text-muted-foreground">
         <span>{TIMELINE_START} CE</span>
-        <span>Timeline: {totalYears} years</span>
+        <span>{filteredEvents.length} events displayed</span>
         <span>{TIMELINE_END} CE</span>
       </div>
 

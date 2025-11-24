@@ -10,6 +10,7 @@ import {
   Users, 
   Sparkles,
   Heart,
+  Landmark,
   X
 } from "lucide-react";
 
@@ -25,6 +26,7 @@ const categories = [
   { id: "battle", label: "Battles", icon: Swords, color: "bg-red-500/10 text-red-700 dark:text-red-300" },
   { id: "treaty", label: "Treaties", icon: ScrollText, color: "bg-purple-500/10 text-purple-700 dark:text-purple-300" },
   { id: "migration", label: "Migrations", icon: Navigation, color: "bg-green-500/10 text-green-700 dark:text-green-300" },
+  { id: "political", label: "Political Events", icon: Landmark, color: "bg-orange-500/10 text-orange-700 dark:text-orange-300" },
   { id: "social-reform", label: "Social Reforms", icon: Scale, color: "bg-amber-500/10 text-amber-700 dark:text-amber-300" },
   { id: "companion-story", label: "Companions", icon: Users, color: "bg-cyan-500/10 text-cyan-700 dark:text-cyan-300" },
   { id: "spiritual", label: "Spiritual Events", icon: Sparkles, color: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300" },
@@ -32,9 +34,8 @@ const categories = [
 ];
 
 const periods = [
-  { id: "pre-prophethood", label: "Pre-Prophethood", labelArabic: "قبل النبوة" },
-  { id: "makkah", label: "Makkah Period", labelArabic: "الفترة المكية" },
-  { id: "madinah", label: "Madinah Period", labelArabic: "الفترة المدنية" },
+  { id: "makkan", label: "The Makkan Seerah", labelArabic: "السيرة المكية" },
+  { id: "madinan", label: "The Madinan Seerah", labelArabic: "السيرة المدنية" },
 ];
 
 export default function FilterSidebar({ 

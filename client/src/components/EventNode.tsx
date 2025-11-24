@@ -1,5 +1,4 @@
 import { SeerahEvent } from "@shared/schema";
-import { Badge } from "@/components/ui/badge";
 import {
   Tooltip,
   TooltipContent,
@@ -12,43 +11,48 @@ interface EventNodeProps {
   onClick: () => void;
 }
 
-const categoryIcons = {
-  revelation: "📖",
-  battle: "⚔️",
-  treaty: "📜",
-  migration: "🧭",
-  "social-reform": "⚖️",
-  "companion-story": "👥",
-  spiritual: "✨",
-  family: "👨‍👩‍👧‍👦"
-};
-
 export default function EventNode({ event, positionPx, onClick }: EventNodeProps) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
         <button
           onClick={onClick}
-          className="absolute top-1/2 -translate-y-1/2 group z-10 p-0"
-          style={{ left: `${positionPx}px`, transform: 'translateY(-50%)' }}
+          className="absolute group"
+          style={{ 
+            left: `${positionPx}px`,
+            top: '0',
+            transform: 'translate(-50%, -50%)'
+          }}
           data-testid={`event-node-${event.id}`}
+          aria-label={event.title}
         >
-          <div className="w-5 h-5 rounded-full bg-primary border-2 border-primary-foreground transition-transform group-hover:scale-125" />
-          <div className="absolute top-full mt-2 text-xs font-medium text-foreground whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-            {event.year} CE
+          {/* Event Dot - Uniform Size */}
+          <div 
+            className="w-6 h-6 rounded-full border-4 border-background transition-all duration-200 group-hover:scale-150 group-hover:z-10"
+            style={{
+              backgroundColor: event.significance === "critical" ? "hsl(var(--primary))" :
+                             event.significance === "high" ? "hsl(var(--chart-2))" :
+                             event.significance === "medium" ? "hsl(var(--chart-3))" :
+                             "hsl(var(--chart-4))"
+            }}
+          />
+          
+          {/* Year Label on Hover */}
+          <div className="absolute top-full mt-3 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <div className="bg-popover text-popover-foreground px-2 py-1 rounded-md text-xs font-medium whitespace-nowrap border shadow-md">
+              {event.year} CE
+            </div>
           </div>
         </button>
       </TooltipTrigger>
       <TooltipContent side="top" className="max-w-xs">
         <div className="space-y-1">
-          <div className="flex items-center gap-2">
-            <span className="text-base">{categoryIcons[event.category]}</span>
-            <p className="font-semibold">{event.title}</p>
-          </div>
+          <div className="font-semibold">{event.title}</div>
           {event.titleArabic && (
-            <p className="text-sm font-serif text-muted-foreground">{event.titleArabic}</p>
+            <div className="text-xs text-muted-foreground">{event.titleArabic}</div>
           )}
-          <p className="text-xs text-muted-foreground">{event.location} - {event.date}</p>
+          <div className="text-xs text-muted-foreground">{event.date}</div>
+          <div className="text-xs text-muted-foreground">{event.location}</div>
         </div>
       </TooltipContent>
     </Tooltip>

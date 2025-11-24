@@ -5,7 +5,7 @@ import FilterSidebar from "@/components/FilterSidebar";
 import SearchBar from "@/components/SearchBar";
 import ThemeToggle from "@/components/ThemeToggle";
 import Footer from "@/components/Footer";
-import { seerahEvents, mainTimelineEvents, timelinePeriods } from "@/data/seerah-events";
+import { seerahEvents, timelinePeriods } from "@/data/seerah-events";
 import { SeerahEvent } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -76,7 +76,7 @@ export default function Home() {
 
         <div className="flex-1 overflow-hidden">
           <TimelineViewer
-            events={mainTimelineEvents}
+            events={seerahEvents}
             periods={timelinePeriods}
             selectedPeriod={selectedPeriod || undefined}
             selectedCategory={selectedCategory || undefined}
