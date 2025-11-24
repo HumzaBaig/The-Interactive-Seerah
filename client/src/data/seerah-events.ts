@@ -7,7 +7,7 @@ export const timelinePeriods: TimelinePeriod[] = [
     nameArabic: "قبل النبوة",
     startYear: 570,
     endYear: 610,
-    color: "hsl(200, 60%, 50%)",
+    color: "hsl(210, 100%, 50%)",
     description: "Birth and early life before receiving revelation"
   },
   {
@@ -16,7 +16,7 @@ export const timelinePeriods: TimelinePeriod[] = [
     nameArabic: "الفترة المكية",
     startYear: 610,
     endYear: 622,
-    color: "hsl(32, 85%, 45%)",
+    color: "hsl(25, 100%, 50%)",
     description: "Period of revelation and persecution in Makkah"
   },
   {
@@ -25,7 +25,7 @@ export const timelinePeriods: TimelinePeriod[] = [
     nameArabic: "الفترة المدنية",
     startYear: 622,
     endYear: 632,
-    color: "hsl(140, 60%, 40%)",
+    color: "hsl(120, 100%, 35%)",
     description: "Establishment of Islamic state in Madinah"
   }
 ];
