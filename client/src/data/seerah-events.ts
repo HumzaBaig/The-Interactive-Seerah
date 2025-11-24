@@ -57,6 +57,19 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarReference: "Chapter 1"
   },
   {
+    id: "grandfather-death",
+    title: "Death of His Grandfather",
+    titleArabic: "وفاة جده عبد المطلب",
+    date: "579 CE",
+    year: 579,
+    period: "pre-prophethood",
+    category: "companion-story",
+    location: "Makkah",
+    description: "Abdul-Muttalib, the Prophet's grandfather and his guardian since his mother's death, passed away when the Prophet ﷺ was eight years old. He was then raised by his uncle Abu Talib, who became his protector and supporter throughout the years of preaching.",
+    significance: "high",
+    sealedNectarReference: "Chapter 2: Early Childhood"
+  },
+  {
     id: "first-revelation",
     title: "First Revelation",
     titleArabic: "نزول الوحي",
