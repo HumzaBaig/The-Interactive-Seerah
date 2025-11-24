@@ -29,7 +29,7 @@ export default function EventNode({ event, position, onClick }: EventNodeProps) 
       <TooltipTrigger asChild>
         <button
           onClick={onClick}
-          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 hover-elevate active-elevate-2 group"
+          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 hover-elevate active-elevate-2 group z-10"
           style={{ left: `${position}%` }}
           data-testid={`event-node-${event.id}`}
         >

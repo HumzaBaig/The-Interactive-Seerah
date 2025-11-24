@@ -89,7 +89,7 @@ export default function TimelineViewer({
           className="relative mx-auto px-8"
           style={{ 
             width: `${100 * zoom}%`,
-            minWidth: '1200px',
+            minWidth: '100%',
             height: '100%'
           }}
         >
@@ -101,12 +101,13 @@ export default function TimelineViewer({
             return (
               <div
                 key={period.id}
-                className="absolute top-0 bottom-0 border-l-2 opacity-20"
+                className="absolute top-0 bottom-0 border-l-2 opacity-30"
                 style={{
                   left: `${startPos}%`,
                   width: `${width}%`,
                   backgroundColor: period.color,
-                  borderColor: period.color
+                  borderColor: period.color,
+                  zIndex: 0
                 }}
               >
                 <div className="absolute -top-8 left-4 text-sm font-semibold whitespace-nowrap">
