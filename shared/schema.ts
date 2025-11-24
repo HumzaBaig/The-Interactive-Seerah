@@ -23,13 +23,14 @@ export type SeerahEvent = {
   titleArabic?: string;
   date: string;
   year: number;
-  period: "pre-prophethood" | "makkah" | "madinah";
-  category: "revelation" | "battle" | "treaty" | "migration" | "social-reform" | "companion-story" | "spiritual" | "family";
+  period: "makkan" | "madinan";
+  category: "revelation" | "battle" | "treaty" | "migration" | "social-reform" | "companion-story" | "spiritual" | "family" | "political";
   location: string;
   description: string;
   significance: "low" | "medium" | "high" | "critical";
   relatedEvents?: string[];
-  sealedNectarReference?: string;
+  sealedNectarChapter?: string;
+  sealedNectarPage?: string;
 };
 
 export type TimelinePeriod = {
@@ -40,4 +41,5 @@ export type TimelinePeriod = {
   endYear: number;
   color: string;
   description: string;
+  order: number;
 };
