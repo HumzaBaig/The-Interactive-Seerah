@@ -10,9 +10,9 @@ export const timelinePeriods: TimelinePeriod[] = [
     name: "The Makkan Seerah",
     nameArabic: "السيرة المكية",
     startYear: 570,
-    endYear: 622,
-    color: "hsl(210, 100%, 45%)",
-    description: "From the birth of the Prophet ﷺ to the migration to Madinah",
+    endYear: 621,
+    color: "hsl(25, 100%, 50%)",
+    description: "From the birth of the Prophet ﷺ until just before the migration to Madinah",
     order: 1
   },
   {
@@ -376,7 +376,7 @@ export const seerahEvents: SeerahEvent[] = [
     titleArabic: "الهجرة إلى المدينة",
     date: "September 622 CE",
     year: 622,
-    period: "makkan",
+    period: "madinan",
     category: "migration",
     location: "Makkah to Madinah",
     description: "The Quraish plotted to assassinate the Prophet ﷺ. On Allah's command, he migrated to Madinah with Abu Bakr. Ali slept in his bed as decoy. They hid in Cave Thawr for three days while Quraish searched. A spider web and birds' nest at the cave entrance concealed them. This marks the beginning of the Islamic calendar (Hijri).",

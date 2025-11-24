@@ -100,7 +100,8 @@ export default function TimelineViewer({
           <div className="absolute inset-0 flex">
             {periods.map(period => {
               const startPx = yearToPixels(period.startYear);
-              const endPx = yearToPixels(period.endYear);
+              // Make endYear inclusive by adding 1 year to the calculation
+              const endPx = yearToPixels(period.endYear + 1);
               const widthPx = endPx - startPx;
 
               return (
