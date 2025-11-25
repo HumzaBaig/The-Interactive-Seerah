@@ -93,7 +93,7 @@ export default function TimelineViewer({
                     borderColor: period.color
                   }}
                 >
-                  <div className="text-lg font-bold text-white drop-shadow-sm">
+                  <div className="text-lg drop-shadow-sm text-left text-[#ffffff] bg-[#7a232300] font-extrabold">
                     {period.name}
                   </div>
                   <div className="text-sm text-white/90 mt-0.5 font-medium">
@@ -165,7 +165,6 @@ export default function TimelineViewer({
           </div>
         </div>
       </div>
-
       {/* Timeline Info Footer */}
       <div className="bg-muted/30 py-3 px-8 flex items-center justify-between text-sm border-t">
         <div className="flex items-center gap-6">
@@ -180,7 +179,6 @@ export default function TimelineViewer({
         </div>
         <span className="font-medium">{filteredEvents.length} events</span>
       </div>
-
       <EventDetailModal 
         event={selectedEvent}
         onClose={() => setSelectedEvent(null)}
