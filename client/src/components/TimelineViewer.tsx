@@ -92,7 +92,6 @@ export default function TimelineViewer({
                   <div className="text-base font-semibold" style={{ color: period.color }}>
                     {period.name}
                   </div>
-                  <div className="text-sm text-muted-foreground">{period.nameArabic}</div>
                   <div className="text-xs text-muted-foreground mt-1 font-medium">
                     {period.startYear}—{period.endYear} CE
                   </div>

@@ -44,9 +44,6 @@ export default function EventNode({ event, positionPx, periodColor, onClick }: E
       <TooltipContent side="top" className="max-w-xs z-50">
         <div className="space-y-1.5">
           <div className="font-semibold text-sm">{event.title}</div>
-          {event.titleArabic && (
-            <div className="text-xs text-muted-foreground">{event.titleArabic}</div>
-          )}
           <div className="text-xs text-muted-foreground">{event.date}</div>
           <div className="text-xs text-muted-foreground">{event.location}</div>
         </div>

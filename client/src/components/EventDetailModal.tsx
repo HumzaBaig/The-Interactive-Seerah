@@ -49,11 +49,6 @@ export default function EventDetailModal({ event, onClose }: EventDetailModalPro
               <DialogTitle className="text-2xl md:text-3xl font-semibold mb-2">
                 {event.title}
               </DialogTitle>
-              {event.titleArabic && (
-                <p className="text-xl font-serif text-muted-foreground mb-3">
-                  {event.titleArabic}
-                </p>
-              )}
             </div>
             <Badge className={categoryColors[event.category]}>
               {categoryLabels[event.category]}
