@@ -29,7 +29,7 @@ export default function EventNode({ event, positionPx, periodColor, onClick }: E
         >
           {/* Event Node Circle */}
           <div 
-            className="w-4 h-4 rounded-full border-[3px] border-background shadow-md transition-all duration-200 group-hover:scale-150 group-hover:shadow-lg cursor-pointer"
+            className="w-6 h-6 rounded-full border-[3px] border-background shadow-md transition-all duration-200 group-hover:scale-125 group-hover:shadow-lg cursor-pointer"
             style={{ backgroundColor: periodColor }}
           />
           
