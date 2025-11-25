@@ -44,7 +44,7 @@ export default function Home() {
             >
               {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
-            <h1 className="text-xl md:text-2xl font-bold font-display">Seerah Timeline</h1>
+            <h1 className="text-xl md:text-2xl font-bold font-display">The Interactive Seerah</h1>
           </div>
           
           <SearchBar 
