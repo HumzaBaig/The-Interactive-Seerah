@@ -76,7 +76,7 @@ export default function TimelineViewer({
             return (
               <div
                 key={period.id}
-                className="absolute top-0 bottom-0"
+                className="absolute top-0 bottom-0 bg-[#f5f3f2]"
                 style={{
                   left: `${startPx + 60}px`,
                   width: `${widthPx}px`,
