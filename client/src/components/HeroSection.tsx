@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { BookOpen, Calendar, MapPin } from "lucide-react";
+import { BookOpen, MapPin } from "lucide-react";
 
 interface HeroSectionProps {
   onNavigateToPeriod: (period: string) => void;
@@ -27,32 +27,22 @@ export default function HeroSection({ onNavigateToPeriod }: HeroSectionProps) {
         <div className="mt-12 flex flex-wrap justify-center gap-4">
           <Button 
             size="lg" 
-            onClick={() => onNavigateToPeriod("pre-prophethood")}
-            data-testid="button-period-pre-prophethood"
-            className="gap-2"
-          >
-            <Calendar className="w-5 h-5" />
-            Pre-Prophethood
-          </Button>
-          <Button 
-            size="lg" 
-            variant="outline" 
-            onClick={() => onNavigateToPeriod("makkah")}
-            data-testid="button-period-makkah"
+            onClick={() => onNavigateToPeriod("makkan")}
+            data-testid="button-period-makkan"
             className="gap-2"
           >
             <MapPin className="w-5 h-5" />
-            Makkah Period
+            Makkan Period
           </Button>
           <Button 
             size="lg" 
             variant="outline" 
-            onClick={() => onNavigateToPeriod("madinah")}
-            data-testid="button-period-madinah"
+            onClick={() => onNavigateToPeriod("madinan")}
+            data-testid="button-period-madinan"
             className="gap-2"
           >
             <BookOpen className="w-5 h-5" />
-            Madinah Period
+            Madinan Period
           </Button>
         </div>
       </div>
