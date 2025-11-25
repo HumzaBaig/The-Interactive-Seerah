@@ -117,8 +117,13 @@ export default function TimelineViewer({
             className="absolute inset-x-0" 
             style={{ top: '55%', transform: 'translateY(-50%)' }}
           >
-            {filteredEvents.map(event => {
-              const positionPx = yearToPixels(event.year);
+            {filteredEvents.map((event, index) => {
+              // Count how many events share the same year and find this event's position among them
+              const sameYearEvents = filteredEvents.filter(e => e.year === event.year);
+              const indexInYear = sameYearEvents.findIndex(e => e.id === event.id);
+              const offsetPx = sameYearEvents.length > 1 ? (indexInYear * 20) : 0;
+              
+              const positionPx = yearToPixels(event.year) + offsetPx;
               const periodColor = getPeriodColor(event.period);
               
               return (
