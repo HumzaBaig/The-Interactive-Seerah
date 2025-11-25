@@ -56,7 +56,7 @@ export default function Home() {
         </div>
       </header>
 
-      <HeroSection onNavigateToPeriod={handleNavigateToPeriod} />
+      <HeroSection />
 
       <div className="flex flex-1" ref={timelineRef}>
         <div className={`${isSidebarOpen ? 'block' : 'hidden'} md:block fixed md:relative inset-0 z-40 bg-background/80 md:bg-transparent backdrop-blur md:backdrop-blur-none`}

@@ -1,14 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { MapPin } from "lucide-react";
-
-interface HeroSectionProps {
-  onNavigateToPeriod: (period: string) => void;
-}
-
-export default function HeroSection({ onNavigateToPeriod }: HeroSectionProps) {
+export default function HeroSection() {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-b from-background to-accent/10 border-b">
-      <div className="container mx-auto px-6 py-12 relative z-10 text-center max-w-4xl">
+    <section className="relative py-16 flex items-center justify-center bg-gradient-to-b from-background to-accent/10 border-b">
+      <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
         <div className="space-y-6">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight font-display">
             Seerah Timeline
@@ -22,18 +15,6 @@ export default function HeroSection({ onNavigateToPeriod }: HeroSectionProps) {
           <p className="text-base md:text-lg text-muted-foreground">
             Based on <span className="font-semibold">The Sealed Nectar</span> (Ar-Raheeq Al-Makhtum)
           </p>
-        </div>
-
-        <div className="mt-12 flex flex-wrap justify-center gap-4">
-          <Button 
-            size="lg" 
-            onClick={() => onNavigateToPeriod("makkan")}
-            data-testid="button-period-makkan"
-            className="gap-2"
-          >
-            <MapPin className="w-5 h-5" />
-            Makkan Period
-          </Button>
         </div>
       </div>
     </section>
