@@ -6,9 +6,6 @@ export default function HeroSection() {
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight font-display">
             Seerah Timeline
           </h1>
-          <h2 className="text-3xl md:text-4xl font-serif text-muted-foreground">
-            السيرة النبوية
-          </h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             An Interactive Journey Through the Life of Prophet Muhammad ﷺ
           </p>
