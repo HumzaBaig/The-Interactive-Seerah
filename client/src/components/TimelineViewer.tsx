@@ -67,39 +67,6 @@ export default function TimelineViewer({
             minWidth: '100%'
           }}
         >
-          {/* Period Background Blocks */}
-          {periods.map(period => {
-            const startPx = yearToPixels(period.startYear) - 60;
-            const endPx = yearToPixels(period.endYear + 1) - 60;
-            const widthPx = endPx - startPx;
-
-            return (
-              <div
-                key={period.id}
-                className="absolute top-0 bottom-0 bg-[#f5f3f2]"
-                style={{
-                  left: `${startPx + 60}px`,
-                  width: `${widthPx}px`,
-                  backgroundColor: period.color,
-                  opacity: 0.12
-                }}
-                data-testid={`period-${period.id}`}
-              >
-                {/* Period Label */}
-                <div 
-                  className="absolute top-6 left-6 bg-background/95 backdrop-blur-sm px-4 py-2.5 rounded-lg border shadow-sm"
-                >
-                  <div className="text-base font-semibold" style={{ color: period.color }}>
-                    {period.name}
-                  </div>
-                  <div className="text-xs text-muted-foreground mt-1 font-medium">
-                    {period.startYear}—{period.endYear} CE
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-
           {/* Timeline Axis Line */}
           <div 
             className="absolute h-1 rounded-full"
