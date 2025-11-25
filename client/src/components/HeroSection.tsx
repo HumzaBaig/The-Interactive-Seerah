@@ -12,9 +12,6 @@ export default function HeroSection() {
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             An Interactive Journey Through the Life of Prophet Muhammad ﷺ
           </p>
-          <p className="text-base md:text-lg text-muted-foreground">
-            Based on <span className="font-semibold">The Sealed Nectar</span> (Ar-Raheeq Al-Makhtum)
-          </p>
         </div>
       </div>
     </section>
