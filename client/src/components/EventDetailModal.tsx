@@ -15,22 +15,24 @@ interface EventDetailModalProps {
   onClose: () => void;
 }
 
-const categoryLabels = {
+const categoryLabels: Record<string, string> = {
   revelation: "Revelation",
   battle: "Battle",
   treaty: "Treaty",
   migration: "Migration",
+  political: "Political",
   "social-reform": "Social Reform",
   "companion-story": "Companion Story",
   spiritual: "Spiritual Event",
   family: "Family"
 };
 
-const categoryColors = {
+const categoryColors: Record<string, string> = {
   revelation: "bg-blue-500/10 text-blue-700 dark:text-blue-300",
   battle: "bg-red-500/10 text-red-700 dark:text-red-300",
   treaty: "bg-purple-500/10 text-purple-700 dark:text-purple-300",
   migration: "bg-green-500/10 text-green-700 dark:text-green-300",
+  political: "bg-orange-500/10 text-orange-700 dark:text-orange-300",
   "social-reform": "bg-amber-500/10 text-amber-700 dark:text-amber-300",
   "companion-story": "bg-cyan-500/10 text-cyan-700 dark:text-cyan-300",
   spiritual: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300",
@@ -75,7 +77,7 @@ export default function EventDetailModal({ event, onClose }: EventDetailModalPro
               {event.description}
             </div>
 
-            {event.sealedNectarReference && (
+            {event.sealedNectarChapter && (
               <div className="bg-accent/20 border border-accent rounded-lg p-4">
                 <div className="flex items-start gap-3">
                   <BookOpen className="w-5 h-5 text-accent-foreground mt-1 flex-shrink-0" />
@@ -84,7 +86,7 @@ export default function EventDetailModal({ event, onClose }: EventDetailModalPro
                       Reference from The Sealed Nectar
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      {event.sealedNectarReference}
+                      {event.sealedNectarChapter}
                     </p>
                   </div>
                 </div>

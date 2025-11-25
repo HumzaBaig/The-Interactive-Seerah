@@ -34,8 +34,8 @@ const categories = [
 ];
 
 const periods = [
-  { id: "makkan", label: "The Makkan Seerah", labelArabic: "السيرة المكية" },
-  { id: "madinan", label: "The Madinan Seerah", labelArabic: "السيرة المدنية" },
+  { id: "makkan", label: "The Makkan Seerah" },
+  { id: "madinan", label: "The Madinan Seerah" },
 ];
 
 export default function FilterSidebar({ 
@@ -85,7 +85,6 @@ export default function FilterSidebar({
               data-testid={`filter-period-${period.id}`}
             >
               <div className="font-medium">{period.label}</div>
-              <div className="text-sm font-serif opacity-70">{period.labelArabic}</div>
             </button>
           ))}
         </div>
