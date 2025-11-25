@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { BookOpen, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 interface HeroSectionProps {
   onNavigateToPeriod: (period: string) => void;
@@ -33,16 +33,6 @@ export default function HeroSection({ onNavigateToPeriod }: HeroSectionProps) {
           >
             <MapPin className="w-5 h-5" />
             Makkan Period
-          </Button>
-          <Button 
-            size="lg" 
-            variant="outline" 
-            onClick={() => onNavigateToPeriod("madinan")}
-            data-testid="button-period-madinan"
-            className="gap-2"
-          >
-            <BookOpen className="w-5 h-5" />
-            Madinan Period
           </Button>
         </div>
       </div>
