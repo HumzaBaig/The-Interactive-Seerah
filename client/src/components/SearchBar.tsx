@@ -39,36 +39,38 @@ export default function SearchBar({ events, onEventSelect }: SearchBarProps) {
 
   return (
     <div className="relative w-full max-w-xl">
-      <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none z-10" />
-      <Input
-        ref={inputRef}
-        type="text"
-        placeholder="Search events, battles, revelations..."
-        value={query}
-        onChange={(e) => {
-          setQuery(e.target.value);
-          setIsOpen(true);
-        }}
-        onFocus={() => setIsOpen(true)}
-        onBlur={(e) => {
-          if (!e.relatedTarget?.closest('[data-search-results]')) {
-            setTimeout(() => setIsOpen(false), 150);
-          }
-        }}
-        className="pl-10 pr-10"
-        data-testid="input-search"
-      />
-      {query && (
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7"
-          onClick={handleClear}
-          data-testid="button-clear-search"
-        >
-          <X className="w-4 h-4" />
-        </Button>
-      )}
+      <div className="relative">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
+        <Input
+          ref={inputRef}
+          type="text"
+          placeholder="Search events, battles, revelations..."
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setIsOpen(true);
+          }}
+          onFocus={() => setIsOpen(true)}
+          onBlur={(e) => {
+            if (!e.relatedTarget?.closest('[data-search-results]')) {
+              setTimeout(() => setIsOpen(false), 150);
+            }
+          }}
+          className="pl-10 pr-10"
+          data-testid="input-search"
+        />
+        {query && (
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7"
+            onClick={handleClear}
+            data-testid="button-clear-search"
+          >
+            <X className="w-4 h-4" />
+          </Button>
+        )}
+      </div>
       {showResults && (
         <div 
           data-search-results
