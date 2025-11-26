@@ -1,13 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SeerahEvent } from "@shared/schema";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 
 interface SearchBarProps {
   events: SeerahEvent[];
@@ -17,6 +12,7 @@ interface SearchBarProps {
 export default function SearchBar({ events, onEventSelect }: SearchBarProps) {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const filteredEvents = query.trim() 
     ? events.filter(event => 
@@ -36,44 +32,53 @@ export default function SearchBar({ events, onEventSelect }: SearchBarProps) {
   const handleClear = () => {
     setQuery("");
     setIsOpen(false);
+    inputRef.current?.focus();
   };
 
+  const showResults = isOpen && filteredEvents.length > 0;
+
   return (
-    <Popover open={isOpen && filteredEvents.length > 0} onOpenChange={setIsOpen}>
-      <PopoverTrigger asChild>
-        <div className="relative w-full max-w-xl">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-          <Input
-            type="search"
-            placeholder="Search events, battles, revelations..."
-            value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              setIsOpen(true);
-            }}
-            className="pl-10 pr-10"
-            data-testid="input-search"
-          />
-          {query && (
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7"
-              onClick={handleClear}
-              data-testid="button-clear-search"
-            >
-              <X className="w-4 h-4" />
-            </Button>
-          )}
-        </div>
-      </PopoverTrigger>
-      <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0" align="start">
-        <div className="max-h-80 overflow-y-auto">
+    <div className="relative w-full max-w-xl">
+      <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none z-10" />
+      <Input
+        ref={inputRef}
+        type="text"
+        placeholder="Search events, battles, revelations..."
+        value={query}
+        onChange={(e) => {
+          setQuery(e.target.value);
+          setIsOpen(true);
+        }}
+        onFocus={() => setIsOpen(true)}
+        onBlur={(e) => {
+          if (!e.relatedTarget?.closest('[data-search-results]')) {
+            setTimeout(() => setIsOpen(false), 150);
+          }
+        }}
+        className="pl-10 pr-10"
+        data-testid="input-search"
+      />
+      {query && (
+        <Button
+          variant="ghost"
+          size="icon"
+          className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7"
+          onClick={handleClear}
+          data-testid="button-clear-search"
+        >
+          <X className="w-4 h-4" />
+        </Button>
+      )}
+      {showResults && (
+        <div 
+          data-search-results
+          className="absolute top-full left-0 right-0 mt-1 bg-popover border rounded-md shadow-lg z-50 max-h-80 overflow-y-auto"
+        >
           {filteredEvents.map(event => (
             <button
               key={event.id}
               onClick={() => handleSelect(event)}
-              className="w-full text-left px-4 py-3 hover-elevate border-b last:border-b-0"
+              className="w-full text-left px-4 py-3 hover:bg-accent border-b last:border-b-0"
               data-testid={`search-result-${event.id}`}
             >
               <div className="font-medium text-sm">{event.title}</div>
@@ -83,7 +88,7 @@ export default function SearchBar({ events, onEventSelect }: SearchBarProps) {
             </button>
           ))}
         </div>
-      </PopoverContent>
-    </Popover>
+      )}
+    </div>
   );
 }
