@@ -11,7 +11,7 @@ interface TimelineViewerProps {
   selectedCategory?: string;
 }
 
-const FIXED_PIXELS_PER_YEAR = 80;
+const FIXED_PIXELS_PER_YEAR = 120;
 
 export default function TimelineViewer({ 
   events, 
@@ -87,7 +87,7 @@ export default function TimelineViewer({
               // Count how many events share the same year and find this event's position among them
               const sameYearEvents = filteredEvents.filter(e => e.year === event.year);
               const indexInYear = sameYearEvents.findIndex(e => e.id === event.id);
-              const offsetPx = sameYearEvents.length > 1 ? (indexInYear * 50) : 0;
+              const offsetPx = sameYearEvents.length > 1 ? (indexInYear * 70) : 0;
               
               const positionPx = yearToPixels(event.year) + offsetPx;
               const periodColor = getPeriodColor(event.period);
