@@ -100,7 +100,7 @@ export default function TimelineViewer({
               top: '55%', 
               left: '60px',
               right: '60px',
-              background: 'linear-gradient(to right, hsl(25, 100%, 50%), hsl(25, 100%, 50%) 82%, hsl(140, 70%, 40%) 82%, hsl(140, 70%, 40%))'
+              background: 'linear-gradient(to right, hsl(25, 100%, 50%), hsl(25, 100%, 50%) 84%, hsl(140, 70%, 40%) 84%, hsl(140, 70%, 40%))'
             }}
           />
 
