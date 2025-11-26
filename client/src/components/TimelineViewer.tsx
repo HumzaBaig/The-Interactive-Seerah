@@ -3,6 +3,8 @@ import { SeerahEvent, TimelinePeriod } from "@shared/schema";
 import EventNode from "@/components/EventNode";
 import EventDetailModal from "@/components/EventDetailModal";
 import { TIMELINE_START, TIMELINE_END } from "@/data/seerah-events";
+import { Button } from "@/components/ui/button";
+import { Maximize2, Minimize2, X } from "lucide-react";
 
 interface TimelineViewerProps {
   events: SeerahEvent[];
@@ -20,6 +22,7 @@ export default function TimelineViewer({
   selectedCategory 
 }: TimelineViewerProps) {
   const [selectedEvent, setSelectedEvent] = useState<SeerahEvent | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const filteredEvents = events.filter(event => {
@@ -52,13 +55,36 @@ export default function TimelineViewer({
     }
   }, [selectedPeriod]);
 
-  return (
-    <div className="relative bg-card border-y">
+  // Handle escape key to exit fullscreen
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isFullscreen) {
+        setIsFullscreen(false);
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isFullscreen]);
+
+  // Prevent body scroll when fullscreen
+  useEffect(() => {
+    if (isFullscreen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isFullscreen]);
+
+  const timelineContent = (
+    <>
       {/* Timeline Container */}
       <div 
         ref={scrollRef}
-        className="overflow-x-auto overflow-y-hidden"
-        style={{ height: '400px' }}
+        className="overflow-x-auto overflow-y-hidden flex-1"
+        style={{ height: isFullscreen ? 'calc(100% - 56px)' : '400px' }}
       >
         <div 
           className="relative h-full"
@@ -140,12 +166,60 @@ export default function TimelineViewer({
             <span className="text-muted-foreground">Madinan Period</span>
           </div>
         </div>
-        <span className="font-medium">{filteredEvents.length} events</span>
+        <div className="flex items-center gap-4">
+          <span className="font-medium">{filteredEvents.length} events</span>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setIsFullscreen(!isFullscreen)}
+            data-testid="button-fullscreen-toggle"
+          >
+            {isFullscreen ? (
+              <>
+                <Minimize2 className="w-4 h-4 mr-2" />
+                Exit Fullscreen
+              </>
+            ) : (
+              <>
+                <Maximize2 className="w-4 h-4 mr-2" />
+                Fullscreen
+              </>
+            )}
+          </Button>
+        </div>
       </div>
       <EventDetailModal 
         event={selectedEvent}
         onClose={() => setSelectedEvent(null)}
       />
+    </>
+  );
+
+  if (isFullscreen) {
+    return (
+      <div className="fixed inset-0 z-50 bg-background flex flex-col">
+        {/* Fullscreen Header */}
+        <div className="flex items-center justify-between px-6 py-3 border-b bg-card">
+          <h2 className="text-lg font-semibold">Timeline View</h2>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsFullscreen(false)}
+            data-testid="button-close-fullscreen"
+          >
+            <X className="w-5 h-5" />
+          </Button>
+        </div>
+        <div className="flex-1 flex flex-col">
+          {timelineContent}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative bg-card border-y">
+      {timelineContent}
     </div>
   );
 }
