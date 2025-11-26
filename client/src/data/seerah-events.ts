@@ -122,6 +122,19 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarChapter: "The First Migration to Abyssinia"
   },
   {
+    id: "second-abyssinia",
+    title: "Second Migration to Abyssinia",
+    titleArabic: "الهجرة الثانية إلى الحبشة",
+    date: "616 CE",
+    year: 616,
+    period: "makkan",
+    category: "migration",
+    location: "Abyssinia (Ethiopia)",
+    description: "As persecution intensified in Makkah, a larger group of 83 men and 18 women migrated to Abyssinia. The Quraish sent Amr ibn al-As and Abdullah ibn Abi Rabi'ah with gifts to convince An-Najashi to expel them. Ja'far ibn Abi Talib eloquently defended the Muslims, reciting Surah Maryam, which moved the king to tears. An-Najashi refused to hand them over and granted them protection.",
+    significance: "critical",
+    sealedNectarChapter: "The Second Migration to Abyssinia"
+  },
+  {
     id: "umar-conversion",
     title: "Conversion of Umar ibn Al-Khattab",
     titleArabic: "إسلام عمر بن الخطاب رضي الله عنه",
