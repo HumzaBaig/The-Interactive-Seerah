@@ -44,6 +44,32 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarChapter: "In The Shade of Abdul-Muttalib's House"
   },
   {
+    id: "death-aminah",
+    title: "Death of Aminah (Prophet's Mother)",
+    titleArabic: "وفاة آمنة بنت وهب",
+    date: "576 CE",
+    year: 576,
+    period: "makkan",
+    category: "family",
+    location: "Al-Abwa (between Makkah and Madinah)",
+    description: "When the Prophet ﷺ was six years old, his mother Aminah bint Wahb took him to Madinah to visit relatives and the grave of his father Abdullah. On the return journey, she fell ill and passed away at Al-Abwa. The young Muhammad ﷺ was left an orphan, having never known his father and now losing his mother. He was then taken into the care of his grandfather Abdul Muttalib.",
+    significance: "critical",
+    sealedNectarChapter: "In The Shade of Abdul-Muttalib's House"
+  },
+  {
+    id: "death-abdul-muttalib",
+    title: "Death of Abdul Muttalib (Prophet's Grandfather)",
+    titleArabic: "وفاة عبد المطلب",
+    date: "578 CE",
+    year: 578,
+    period: "makkan",
+    category: "family",
+    location: "Makkah",
+    description: "Abdul Muttalib, the Prophet's ﷺ grandfather and chief of Banu Hashim, passed away when Muhammad ﷺ was eight years old. Abdul Muttalib had been deeply devoted to his orphaned grandson, keeping him close and showing him great affection. Before his death, he entrusted Muhammad ﷺ to the care of his son Abu Talib, who would protect and support the Prophet ﷺ for the next 40 years.",
+    significance: "critical",
+    sealedNectarChapter: "In The Shade of Abdul-Muttalib's House"
+  },
+  {
     id: "marriage-khadijah",
     title: "Marriage to Khadijah",
     titleArabic: "زواجه من خديجة رضي الله عنها",
