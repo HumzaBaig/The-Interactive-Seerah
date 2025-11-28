@@ -27,9 +27,6 @@ export default function Footer() {
 
           <div className="space-y-3">
             <h3 className="font-semibold text-lg">Acknowledgments</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Built with respect and reverence for authentic Islamic scholarship.
-            </p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Heart className="w-4 h-4 text-red-500" />
               <span>For the sake of Allah</span>
