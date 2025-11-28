@@ -5,6 +5,7 @@ import FilterSidebar from "@/components/FilterSidebar";
 import SearchBar from "@/components/SearchBar";
 import ThemeToggle from "@/components/ThemeToggle";
 import WivesFlashCards from "@/components/WivesFlashCards";
+import TenPromisedFlashCards from "@/components/TenPromisedFlashCards";
 import Footer from "@/components/Footer";
 import { seerahEvents, timelinePeriods } from "@/data/seerah-events";
 import { SeerahEvent } from "@shared/schema";
@@ -101,6 +102,8 @@ export default function Home() {
       </div>
 
       <WivesFlashCards />
+
+      <TenPromisedFlashCards />
 
       <Footer />
     </div>
