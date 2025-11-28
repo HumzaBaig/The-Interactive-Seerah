@@ -26,15 +26,6 @@ export default function Footer() {
           </div>
 
           <div className="space-y-3">
-            <h3 className="font-semibold text-lg">Resources</h3>
-            <ul className="text-sm text-muted-foreground space-y-2">
-              <li>Islamic History</li>
-              <li>Seerah Studies</li>
-              <li>Educational Materials</li>
-            </ul>
-          </div>
-
-          <div className="space-y-3">
             <h3 className="font-semibold text-lg">Acknowledgments</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Built with respect and reverence for authentic Islamic scholarship.
