@@ -4,6 +4,7 @@ import TimelineViewer from "@/components/TimelineViewer";
 import FilterSidebar from "@/components/FilterSidebar";
 import SearchBar from "@/components/SearchBar";
 import ThemeToggle from "@/components/ThemeToggle";
+import WivesFlashCards from "@/components/WivesFlashCards";
 import Footer from "@/components/Footer";
 import { seerahEvents, timelinePeriods } from "@/data/seerah-events";
 import { SeerahEvent } from "@shared/schema";
@@ -98,6 +99,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <WivesFlashCards />
 
       <Footer />
     </div>
