@@ -95,16 +95,8 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-card border rounded-lg p-6 space-y-3">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">📖</span>
-                  </div>
-                  <h3 className="font-semibold text-lg">Based on Authentic Sources</h3>
-                  <p className="text-sm text-muted-foreground">
-                    All events are referenced from The Sealed Nectar and authentic Islamic historical sources.
-                  </p>
-                </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                
 
                 <div className="bg-card border rounded-lg p-6 space-y-3">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
