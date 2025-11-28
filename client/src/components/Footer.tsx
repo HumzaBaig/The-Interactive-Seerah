@@ -31,7 +31,6 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <p>© 2024 Seerah Timeline. Educational purposes only.</p>
-          <p className="font-serif">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
         </div>
       </div>
     </footer>
