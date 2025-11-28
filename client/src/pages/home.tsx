@@ -107,9 +107,9 @@ export default function Home() {
 
       <ChildrenFlashCards />
 
-      <FamilyFlashCards />
-
       <TenPromisedFlashCards />
+
+      <FamilyFlashCards />
 
       <Footer />
     </div>
