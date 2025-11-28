@@ -38,8 +38,8 @@ export default function SearchBar({ events, onEventSelect }: SearchBarProps) {
   const showResults = isOpen && filteredEvents.length > 0;
 
   return (
-    <div className="relative w-full max-w-xl">
-      <div className="relative">
+    <div className="relative w-full max-w-xl flex items-center gap-2">
+      <div className="relative flex-1">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
         <Input
           ref={inputRef}
@@ -56,21 +56,21 @@ export default function SearchBar({ events, onEventSelect }: SearchBarProps) {
               setTimeout(() => setIsOpen(false), 150);
             }
           }}
-          className="pl-10 pr-10"
+          className="pl-10 pr-3"
           data-testid="input-search"
         />
-        {query && (
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7"
-            onClick={handleClear}
-            data-testid="button-clear-search"
-          >
-            <X className="w-4 h-4" />
-          </Button>
-        )}
       </div>
+      {query && (
+        <Button
+          variant="ghost"
+          size="icon"
+          className="h-9 w-9 shrink-0"
+          onClick={handleClear}
+          data-testid="button-clear-search"
+        >
+          <X className="w-4 h-4" />
+        </Button>
+      )}
       {showResults && (
         <div 
           data-search-results

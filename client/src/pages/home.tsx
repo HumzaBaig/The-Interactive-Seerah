@@ -94,8 +94,6 @@ export default function Home() {
                   using the sidebar, or search for specific events.
                 </p>
               </div>
-
-              
             </div>
           </div>
         </div>
