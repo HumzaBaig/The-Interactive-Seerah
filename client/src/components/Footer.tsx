@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-card border-t mt-auto">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-3">
             <h3 className="font-semibold text-lg">About</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -25,14 +25,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-3">
-            <h3 className="font-semibold text-lg">Acknowledgments</h3>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Heart className="w-4 h-4 text-red-500" />
-              <span>For the sake of Allah</span>
-            </div>
           </div>
-        </div>
 
         <Separator className="my-8" />
 
