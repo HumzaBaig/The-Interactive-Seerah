@@ -26,12 +26,6 @@ export default function Footer() {
           </div>
 
           </div>
-
-        <Separator className="my-8" />
-
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© 2024 Seerah Timeline. Educational purposes only.</p>
-        </div>
       </div>
     </footer>
   );
