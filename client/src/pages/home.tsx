@@ -8,6 +8,7 @@ import WivesFlashCards from "@/components/WivesFlashCards";
 import ChildrenFlashCards from "@/components/ChildrenFlashCards";
 import FamilyFlashCards from "@/components/FamilyFlashCards";
 import TenPromisedFlashCards from "@/components/TenPromisedFlashCards";
+import CharacterFlashCards from "@/components/CharacterFlashCards";
 import Footer from "@/components/Footer";
 import { seerahEvents, timelinePeriods } from "@/data/seerah-events";
 import { SeerahEvent } from "@shared/schema";
@@ -102,6 +103,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <CharacterFlashCards />
 
       <WivesFlashCards />
 
