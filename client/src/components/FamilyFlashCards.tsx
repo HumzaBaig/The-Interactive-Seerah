@@ -63,13 +63,8 @@ export default function FamilyFlashCards() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {familyData.slice(0, -2).map((member) => (
-              <FlashCard key={member.id} member={member} />
-            ))}
-          </div>
-          <div className="flex flex-wrap justify-center gap-6 mt-6">
-            {familyData.slice(-2).map((member) => (
+          <div className="flex flex-wrap justify-center gap-6">
+            {familyData.map((member) => (
               <div key={member.id} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
                 <FlashCard member={member} />
               </div>

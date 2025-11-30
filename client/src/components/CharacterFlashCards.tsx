@@ -115,13 +115,8 @@ export default function CharacterFlashCards() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {characterData.slice(0, -2).map((trait) => (
-              <FlashCard key={trait.id} trait={trait} />
-            ))}
-          </div>
-          <div className="flex flex-wrap justify-center gap-6 mt-6">
-            {characterData.slice(-2).map((trait) => (
+          <div className="flex flex-wrap justify-center gap-6">
+            {characterData.map((trait) => (
               <div key={trait.id} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)]">
                 <FlashCard trait={trait} />
               </div>

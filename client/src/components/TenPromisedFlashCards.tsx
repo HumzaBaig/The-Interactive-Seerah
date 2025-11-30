@@ -63,13 +63,8 @@ export default function TenPromisedFlashCards() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {tenPromisedData.slice(0, -2).map((companion) => (
-              <FlashCard key={companion.id} companion={companion} />
-            ))}
-          </div>
-          <div className="flex flex-wrap justify-center gap-6 mt-6">
-            {tenPromisedData.slice(-2).map((companion) => (
+          <div className="flex flex-wrap justify-center gap-6">
+            {tenPromisedData.map((companion) => (
               <div key={companion.id} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(20%-19.2px)]">
                 <FlashCard companion={companion} />
               </div>
