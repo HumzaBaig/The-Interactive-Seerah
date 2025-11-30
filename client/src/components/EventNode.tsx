@@ -4,7 +4,81 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Star } from "lucide-react";
+import { 
+  Star, 
+  Heart,
+  BookOpen, 
+  Plane, 
+  Users, 
+  Scroll, 
+  Sparkles,
+  Landmark,
+  Swords,
+  Handshake,
+  Building,
+  Moon,
+  Crown,
+  Shield,
+  Flag,
+  MapPin,
+  Home,
+  FileText,
+  type LucideIcon
+} from "lucide-react";
+
+const eventIconMap: Record<string, LucideIcon> = {
+  "birth": Star,
+  "death": Moon,
+  "death-aminah": Heart,
+  "death-abdul-muttalib": Heart,
+  "marriage-khadijah": Heart,
+  "first-revelation": BookOpen,
+  "public-dawah": Scroll,
+  "first-abyssinia": Plane,
+  "second-abyssinia": Plane,
+  "umar-conversion": Users,
+  "boycott": Shield,
+  "year-of-sorrow": Heart,
+  "taif": MapPin,
+  "isra-miraj": Sparkles,
+  "first-aqabah": Handshake,
+  "second-aqabah": Handshake,
+  "hijrah": Plane,
+  "masjid-nabawi": Building,
+  "brotherhood": Users,
+  "constitution": FileText,
+  "badr": Swords,
+  "uhud": Swords,
+  "khandaq": Shield,
+  "hudaybiyyah": Handshake,
+  "khaybar": Flag,
+  "makkah-conquest": Crown,
+  "hunayn": Swords,
+  "tabuk": Flag,
+  "farewell-pilgrimage": Landmark,
+};
+
+const categoryIconMap: Record<string, LucideIcon> = {
+  "family": Heart,
+  "revelation": BookOpen,
+  "migration": Plane,
+  "companion-story": Users,
+  "social-reform": Home,
+  "spiritual": Sparkles,
+  "political": Landmark,
+  "battle": Swords,
+  "treaty": Handshake,
+};
+
+function getEventIcon(event: SeerahEvent): LucideIcon {
+  if (eventIconMap[event.id]) {
+    return eventIconMap[event.id];
+  }
+  if (categoryIconMap[event.category]) {
+    return categoryIconMap[event.category];
+  }
+  return Star;
+}
 
 interface EventNodeProps {
   event: SeerahEvent;
@@ -14,7 +88,8 @@ interface EventNodeProps {
 }
 
 export default function EventNode({ event, positionPx, periodColor, onClick }: EventNodeProps) {
-  const isBirthEvent = event.id === "birth";
+  const isSpecialEvent = event.id === "birth" || event.id === "death";
+  const IconComponent = getEventIcon(event);
 
   return (
     <Tooltip>
@@ -32,12 +107,10 @@ export default function EventNode({ event, positionPx, periodColor, onClick }: E
         >
           {/* Event Node Circle */}
           <div 
-            className={`${isBirthEvent ? 'w-8 h-8' : 'w-6 h-6'} rounded-full border-[3px] border-background shadow-md transition-all duration-200 group-hover:scale-125 group-hover:shadow-lg cursor-pointer flex items-center justify-center`}
+            className={`${isSpecialEvent ? 'w-8 h-8' : 'w-7 h-7'} rounded-full border-[3px] border-background shadow-md transition-all duration-200 group-hover:scale-125 group-hover:shadow-lg cursor-pointer flex items-center justify-center`}
             style={{ backgroundColor: periodColor }}
           >
-            {isBirthEvent && (
-              <Star className="w-4 h-4 text-white fill-white" />
-            )}
+            <IconComponent className={`${isSpecialEvent ? 'w-4 h-4' : 'w-3.5 h-3.5'} text-white`} />
           </div>
           
           {/* Year Label on Hover */}
