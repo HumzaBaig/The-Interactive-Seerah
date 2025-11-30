@@ -40,7 +40,7 @@ function FlashCard({ trait }: { trait: CharacterTrait }) {
         }}
       >
         <Card
-          className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 bg-gradient-to-br from-violet-500/10 to-violet-600/15 border-violet-500/20"
+          className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 bg-gradient-to-br from-emerald-500/10 to-emerald-600/15 border-emerald-500/20"
           style={{ backfaceVisibility: "hidden" }}
         >
           <div className="text-center space-y-4">
@@ -48,7 +48,7 @@ function FlashCard({ trait }: { trait: CharacterTrait }) {
             <p className="text-sm text-muted-foreground">
               {trait.narrations.length} narrations
             </p>
-            <p className="text-xs text-violet-600 dark:text-violet-400 mt-4">Click to read narrations</p>
+            <p className="text-xs text-emerald-600 dark:text-emerald-400 mt-4">Click to read narrations</p>
           </div>
         </Card>
 
@@ -65,7 +65,7 @@ function FlashCard({ trait }: { trait: CharacterTrait }) {
             <p className="text-sm text-muted-foreground leading-relaxed">
               "{narration.text}"
             </p>
-            <p className="text-xs text-violet-600 dark:text-violet-400 mt-3 italic">
+            <p className="text-xs text-emerald-600 dark:text-emerald-400 mt-3 italic">
               — {narration.source}
             </p>
           </div>

@@ -21,14 +21,14 @@ function FlashCard({ child }: { child: ChildCard }) {
         }}
       >
         <Card
-          className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 bg-gradient-to-br from-amber-500/10 to-amber-600/15 border-amber-500/20"
+          className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 bg-gradient-to-br from-violet-500/10 to-violet-600/15 border-violet-500/20"
           style={{ backfaceVisibility: "hidden" }}
         >
           <div className="text-center space-y-3">
             <h3 className="text-xl font-semibold">{child.name}</h3>
             <p className="text-sm text-muted-foreground">Child of the Prophet ﷺ</p>
             <p className="text-xs text-muted-foreground">Mother: {child.mother}</p>
-            <p className="text-xs text-amber-600 dark:text-amber-400 mt-4">Click to read bio</p>
+            <p className="text-xs text-violet-600 dark:text-violet-400 mt-4">Click to read bio</p>
           </div>
         </Card>
 
@@ -43,7 +43,7 @@ function FlashCard({ child }: { child: ChildCard }) {
           <p className="text-sm text-muted-foreground leading-relaxed flex-1">
             {child.bio}
           </p>
-          <p className="text-xs text-amber-600 dark:text-amber-400 mt-3">Click to flip back</p>
+          <p className="text-xs text-violet-600 dark:text-violet-400 mt-3">Click to flip back</p>
         </Card>
       </div>
     </div>
