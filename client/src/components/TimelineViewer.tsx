@@ -97,7 +97,7 @@ export default function TimelineViewer({
           <div 
             className="absolute h-1 rounded-full"
             style={{ 
-              top: '55%', 
+              top: '50%', 
               left: '60px',
               right: '60px',
               background: 'linear-gradient(to right, hsl(25, 100%, 50%), hsl(25, 100%, 50%) 84%, hsl(140, 70%, 40%) 84%, hsl(140, 70%, 40%))'
@@ -107,31 +107,82 @@ export default function TimelineViewer({
           {/* Event Nodes */}
           <div 
             className="absolute inset-x-0" 
-            style={{ top: '55%', transform: 'translateY(-50%)' }}
+            style={{ top: '50%', transform: 'translateY(-50%)' }}
           >
-            {filteredEvents.map((event, index) => {
-              // Count how many events share the same year and find this event's position among them
-              const sameYearEvents = filteredEvents.filter(e => e.year === event.year);
-              const indexInYear = sameYearEvents.findIndex(e => e.id === event.id);
-              const offsetPx = sameYearEvents.length > 1 ? (indexInYear * 70) : 0;
+            {(() => {
+              // Calculate positions for all events first
+              const eventPositions = filteredEvents.map(event => {
+                const sameYearEvents = filteredEvents.filter(e => e.year === event.year);
+                const indexInYear = sameYearEvents.findIndex(e => e.id === event.id);
+                const offsetPx = sameYearEvents.length > 1 ? (indexInYear * 70) : 0;
+                return {
+                  event,
+                  positionPx: yearToPixels(event.year) + offsetPx
+                };
+              }).sort((a, b) => a.positionPx - b.positionPx);
+
+              // Calculate label positions and vertical offsets to prevent overlap
+              const labelData: { position: "above" | "below"; offset: number }[] = [];
+              const MIN_SPACING = 130; // Minimum horizontal spacing before staggering
               
-              const positionPx = yearToPixels(event.year) + offsetPx;
-              const periodColor = getPeriodColor(event.period);
-              
-              return (
-                <EventNode
-                  key={event.id}
-                  event={event}
-                  positionPx={positionPx}
-                  periodColor={periodColor}
-                  onClick={() => setSelectedEvent(event)}
-                />
-              );
-            })}
+              eventPositions.forEach((item, index) => {
+                // Check nearby events on same side
+                let position: "above" | "below" = index % 2 === 0 ? "above" : "below";
+                let offset = 0;
+                
+                // Look at previous events with same position (above/below)
+                for (let i = index - 1; i >= 0 && i >= index - 4; i--) {
+                  const prevItem = eventPositions[i];
+                  const prevLabel = labelData[i];
+                  const distance = item.positionPx - prevItem.positionPx;
+                  
+                  if (distance < MIN_SPACING && prevLabel.position === position) {
+                    // Too close, either switch sides or add offset
+                    const otherPosition = position === "above" ? "below" : "above";
+                    
+                    // Check if other side is also crowded
+                    let otherSideCrowded = false;
+                    for (let j = index - 1; j >= 0 && j >= index - 4; j--) {
+                      const checkItem = eventPositions[j];
+                      const checkLabel = labelData[j];
+                      const checkDist = item.positionPx - checkItem.positionPx;
+                      if (checkDist < MIN_SPACING && checkLabel.position === otherPosition) {
+                        otherSideCrowded = true;
+                        break;
+                      }
+                    }
+                    
+                    if (!otherSideCrowded) {
+                      position = otherPosition;
+                    } else {
+                      // Both sides crowded, add vertical offset
+                      offset = 35;
+                    }
+                  }
+                }
+                
+                labelData.push({ position, offset });
+              });
+
+              return eventPositions.map((item, index) => {
+                const periodColor = getPeriodColor(item.event.period);
+                return (
+                  <EventNode
+                    key={item.event.id}
+                    event={item.event}
+                    positionPx={item.positionPx}
+                    periodColor={periodColor}
+                    onClick={() => setSelectedEvent(item.event)}
+                    labelPosition={labelData[index].position}
+                    verticalOffset={labelData[index].offset}
+                  />
+                );
+              });
+            })()}
           </div>
 
           {/* Year Markers */}
-          <div className="absolute inset-x-0" style={{ top: '75%' }}>
+          <div className="absolute inset-x-0" style={{ top: '70%' }}>
             {Array.from({ length: Math.floor(totalYears / 10) + 1 }, (_, i) => {
               const year = TIMELINE_START + (i * 10);
               if (year > TIMELINE_END) return null;

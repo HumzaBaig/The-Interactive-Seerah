@@ -10,9 +10,13 @@ interface EventNodeProps {
   positionPx: number;
   periodColor: string;
   onClick: () => void;
+  labelPosition: "above" | "below";
+  verticalOffset: number;
 }
 
-export default function EventNode({ event, positionPx, periodColor, onClick }: EventNodeProps) {
+export default function EventNode({ event, positionPx, periodColor, onClick, labelPosition, verticalOffset }: EventNodeProps) {
+  const isAbove = labelPosition === "above";
+  
   return (
     <Tooltip>
       <TooltipTrigger asChild>
@@ -27,21 +31,36 @@ export default function EventNode({ event, positionPx, periodColor, onClick }: E
           data-testid={`event-node-${event.id}`}
           aria-label={event.title}
         >
+          {/* Connecting Line */}
+          <div 
+            className="absolute left-1/2 -translate-x-1/2 w-px bg-foreground/20"
+            style={{
+              [isAbove ? 'bottom' : 'top']: '100%',
+              height: `${20 + verticalOffset}px`
+            }}
+          />
+          
           {/* Event Node Circle */}
           <div 
-            className="w-6 h-6 rounded-full border-[3px] border-background shadow-md transition-all duration-200 group-hover:scale-125 group-hover:shadow-lg cursor-pointer"
+            className="w-6 h-6 rounded-full border-[3px] border-background shadow-md transition-all duration-200 group-hover:scale-125 group-hover:shadow-lg cursor-pointer relative z-10"
             style={{ backgroundColor: periodColor }}
           />
           
-          {/* Year Label on Hover */}
-          <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20">
-            <div className="bg-popover text-popover-foreground px-2 py-1 rounded-md text-xs font-medium whitespace-nowrap border shadow-lg">
-              {event.year} CE
+          {/* Title Label */}
+          <div 
+            className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-20"
+            style={{
+              [isAbove ? 'bottom' : 'top']: `calc(100% + ${24 + verticalOffset}px)`,
+              maxWidth: '120px'
+            }}
+          >
+            <div className="text-xs font-medium text-center leading-tight text-foreground/80 group-hover:text-foreground transition-colors">
+              {event.title}
             </div>
           </div>
         </button>
       </TooltipTrigger>
-      <TooltipContent side="top" className="max-w-xs z-50">
+      <TooltipContent side={isAbove ? "bottom" : "top"} className="max-w-xs z-50">
         <div className="space-y-1.5">
           <div className="font-semibold text-sm">{event.title}</div>
           <div className="text-xs text-muted-foreground">{event.date}</div>
