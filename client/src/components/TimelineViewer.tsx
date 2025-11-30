@@ -181,28 +181,6 @@ export default function TimelineViewer({
             })()}
           </div>
 
-          {/* Year Markers */}
-          <div className="absolute inset-x-0" style={{ top: '70%' }}>
-            {Array.from({ length: Math.floor(totalYears / 10) + 1 }, (_, i) => {
-              const year = TIMELINE_START + (i * 10);
-              if (year > TIMELINE_END) return null;
-              
-              const position = yearToPixels(year);
-              
-              return (
-                <div
-                  key={year}
-                  className="absolute flex flex-col items-center"
-                  style={{ left: `${position}px`, transform: 'translateX(-50%)' }}
-                >
-                  <div className="w-px h-3 bg-foreground/30 mb-1" />
-                  <span className="text-xs text-muted-foreground font-medium">
-                    {year} CE
-                  </span>
-                </div>
-              );
-            })}
-          </div>
         </div>
       </div>
       {/* Timeline Info Footer */}
