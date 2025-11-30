@@ -4,6 +4,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Star } from "lucide-react";
 
 interface EventNodeProps {
   event: SeerahEvent;
@@ -13,6 +14,8 @@ interface EventNodeProps {
 }
 
 export default function EventNode({ event, positionPx, periodColor, onClick }: EventNodeProps) {
+  const isBirthEvent = event.id === "birth";
+
   return (
     <Tooltip>
       <TooltipTrigger asChild>
@@ -29,9 +32,13 @@ export default function EventNode({ event, positionPx, periodColor, onClick }: E
         >
           {/* Event Node Circle */}
           <div 
-            className="w-6 h-6 rounded-full border-[3px] border-background shadow-md transition-all duration-200 group-hover:scale-125 group-hover:shadow-lg cursor-pointer"
+            className={`${isBirthEvent ? 'w-8 h-8' : 'w-6 h-6'} rounded-full border-[3px] border-background shadow-md transition-all duration-200 group-hover:scale-125 group-hover:shadow-lg cursor-pointer flex items-center justify-center`}
             style={{ backgroundColor: periodColor }}
-          />
+          >
+            {isBirthEvent && (
+              <Star className="w-4 h-4 text-white fill-white" />
+            )}
+          </div>
           
           {/* Year Label on Hover */}
           <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20">
