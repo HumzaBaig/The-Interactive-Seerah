@@ -13,5 +13,12 @@ export const eventGraphicsData: EventGraphic[] = [
     description: "The Night Journey and Ascension to the Heavens",
     route: "/events/isra-miraj",
     available: true
+  },
+  {
+    id: "battle-of-badr",
+    title: "Battle of Badr",
+    description: "The First Major Battle - Victory Against All Odds",
+    route: "/events/battle-of-badr",
+    available: true
   }
 ];
