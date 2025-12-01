@@ -5,20 +5,17 @@ import { ArrowRight, Sparkles, Swords, Shield } from "lucide-react";
 
 function IsraMirajVisual() {
   return (
-    <div className="h-40 bg-gradient-to-br from-indigo-900 via-purple-900 to-amber-900 relative overflow-hidden">
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center">
-          <div className="flex justify-center gap-1 mb-2">
-            {[...Array(7)].map((_, i) => (
-              <div 
-                key={i} 
-                className="w-2 h-2 rounded-full bg-indigo-300/80 animate-pulse"
-                style={{ animationDelay: `${i * 0.15}s` }}
-              />
-            ))}
-          </div>
-          <Sparkles className="w-12 h-12 text-indigo-300 mx-auto animate-pulse" />
+    <div className="h-40 bg-gradient-to-br from-indigo-900 via-purple-900 to-amber-900 relative overflow-hidden flex items-center justify-center">
+      <div className="text-center">
+        <div className="flex justify-center gap-1 mb-2">
+          {[...Array(7)].map((_, i) => (
+            <div 
+              key={i} 
+              className="w-2 h-2 rounded-full bg-indigo-300/80"
+            />
+          ))}
         </div>
+        <Sparkles className="w-12 h-12 text-indigo-300 mx-auto" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
     </div>
@@ -27,25 +24,23 @@ function IsraMirajVisual() {
 
 function BattleOfBadrVisual() {
   return (
-    <div className="h-40 bg-gradient-to-br from-amber-900 via-orange-900 to-red-900 relative overflow-hidden">
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="flex items-center gap-8">
-          <div className="flex flex-col items-center">
-            <div className="flex gap-1 mb-1">
-              <Shield className="w-4 h-4 text-emerald-400" />
-              <Shield className="w-4 h-4 text-emerald-400" />
-            </div>
-            <div className="w-10 h-8 rounded bg-emerald-600 border border-emerald-400 animate-pulse" />
+    <div className="h-40 bg-gradient-to-br from-amber-900 via-orange-900 to-red-900 relative overflow-hidden flex items-center justify-center">
+      <div className="flex items-center gap-8">
+        <div className="flex flex-col items-center">
+          <div className="flex gap-1 mb-1">
+            <Shield className="w-4 h-4 text-emerald-400" />
+            <Shield className="w-4 h-4 text-emerald-400" />
           </div>
-          <Swords className="w-10 h-10 text-amber-300 animate-pulse" />
-          <div className="flex flex-col items-center">
-            <div className="flex gap-1 mb-1">
-              <Shield className="w-4 h-4 text-red-400" />
-              <Shield className="w-4 h-4 text-red-400" />
-              <Shield className="w-4 h-4 text-red-400" />
-            </div>
-            <div className="w-12 h-10 rounded bg-red-700 border border-red-500 animate-pulse" />
+          <div className="w-10 h-8 rounded bg-emerald-600 border border-emerald-400" />
+        </div>
+        <Swords className="w-10 h-10 text-amber-300" />
+        <div className="flex flex-col items-center">
+          <div className="flex gap-1 mb-1">
+            <Shield className="w-4 h-4 text-red-400" />
+            <Shield className="w-4 h-4 text-red-400" />
+            <Shield className="w-4 h-4 text-red-400" />
           </div>
+          <div className="w-12 h-10 rounded bg-red-700 border border-red-500" />
         </div>
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
