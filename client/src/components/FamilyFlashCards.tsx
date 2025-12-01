@@ -2,8 +2,34 @@ import { useState } from "react";
 import { familyData, FamilyCard } from "@/data/family-data";
 import { Card } from "@/components/ui/card";
 
+const getRelationTheme = (relation: string) => {
+  switch (relation) {
+    case "Uncle":
+      return {
+        gradient: "bg-gradient-to-br from-sky-500/10 to-sky-600/15 border-sky-500/20",
+        accent: "text-sky-600 dark:text-sky-400"
+      };
+    case "Aunt":
+      return {
+        gradient: "bg-gradient-to-br from-rose-500/10 to-rose-600/15 border-rose-500/20",
+        accent: "text-rose-600 dark:text-rose-400"
+      };
+    case "Cousin":
+      return {
+        gradient: "bg-gradient-to-br from-teal-500/10 to-teal-600/15 border-teal-500/20",
+        accent: "text-teal-600 dark:text-teal-400"
+      };
+    default:
+      return {
+        gradient: "bg-gradient-to-br from-sky-500/10 to-sky-600/15 border-sky-500/20",
+        accent: "text-sky-600 dark:text-sky-400"
+      };
+  }
+};
+
 function FlashCard({ member }: { member: FamilyCard }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const theme = getRelationTheme(member.relation);
 
   return (
     <div
@@ -21,13 +47,13 @@ function FlashCard({ member }: { member: FamilyCard }) {
         }}
       >
         <Card
-          className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 bg-gradient-to-br from-sky-500/10 to-sky-600/15 border-sky-500/20"
+          className={`absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 ${theme.gradient}`}
           style={{ backfaceVisibility: "hidden" }}
         >
           <div className="text-center space-y-3">
             <h3 className="text-xl font-semibold">{member.name}</h3>
             <p className="text-sm text-muted-foreground">{member.relation}</p>
-            <p className="text-xs text-sky-600 dark:text-sky-400 mt-4">Click to read bio</p>
+            <p className={`text-xs ${theme.accent} mt-4`}>Click to read bio</p>
           </div>
         </Card>
 
@@ -42,7 +68,7 @@ function FlashCard({ member }: { member: FamilyCard }) {
           <p className="text-sm text-muted-foreground leading-relaxed flex-1">
             {member.bio}
           </p>
-          <p className="text-xs text-sky-600 dark:text-sky-400 mt-3">Click to flip back</p>
+          <p className={`text-xs ${theme.accent} mt-3`}>Click to flip back</p>
         </Card>
       </div>
     </div>
