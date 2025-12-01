@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { eventGraphicsData } from "@/data/event-graphics-data";
-import { ArrowRight, Star, Swords, Shield } from "lucide-react";
+import { ArrowRight, Sparkles, Swords, Shield } from "lucide-react";
 
 function IsraMirajVisual() {
   return (
@@ -12,12 +12,12 @@ function IsraMirajVisual() {
             {[...Array(7)].map((_, i) => (
               <div 
                 key={i} 
-                className="w-2 h-2 rounded-full bg-amber-300/80 animate-pulse"
+                className="w-2 h-2 rounded-full bg-indigo-300/80 animate-pulse"
                 style={{ animationDelay: `${i * 0.15}s` }}
               />
             ))}
           </div>
-          <Star className="w-12 h-12 text-amber-300 mx-auto animate-pulse" />
+          <Sparkles className="w-12 h-12 text-indigo-300 mx-auto animate-pulse" />
         </div>
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
