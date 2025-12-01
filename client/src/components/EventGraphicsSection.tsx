@@ -5,32 +5,32 @@ import { ArrowRight, Sparkles, Navigation, Swords } from "lucide-react";
 
 function IsraMirajVisual() {
   return (
-    <div className="h-16 bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-700 relative overflow-hidden flex items-center justify-center">
-      <Sparkles className="w-8 h-8 text-indigo-300" />
+    <div className="h-40 bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-700 relative overflow-hidden flex items-center justify-center">
+      <Sparkles className="w-16 h-16 text-indigo-300" />
     </div>
   );
 }
 
 function HijrahVisual() {
   return (
-    <div className="h-16 bg-gradient-to-br from-green-900 via-green-800 to-green-700 relative overflow-hidden flex items-center justify-center">
-      <Navigation className="w-8 h-8 text-green-300" />
+    <div className="h-40 bg-gradient-to-br from-green-900 via-green-800 to-green-700 relative overflow-hidden flex items-center justify-center">
+      <Navigation className="w-16 h-16 text-green-300" />
     </div>
   );
 }
 
 function BattleVisual() {
   return (
-    <div className="h-16 bg-gradient-to-br from-red-900 via-red-800 to-red-700 relative overflow-hidden flex items-center justify-center">
-      <Swords className="w-8 h-8 text-red-300" />
+    <div className="h-40 bg-gradient-to-br from-red-900 via-red-800 to-red-700 relative overflow-hidden flex items-center justify-center">
+      <Swords className="w-16 h-16 text-red-300" />
     </div>
   );
 }
 
 function SpiritualVisual() {
   return (
-    <div className="h-16 bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-700 relative overflow-hidden flex items-center justify-center">
-      <Sparkles className="w-8 h-8 text-indigo-300" />
+    <div className="h-40 bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-700 relative overflow-hidden flex items-center justify-center">
+      <Sparkles className="w-16 h-16 text-indigo-300" />
     </div>
   );
 }
@@ -69,7 +69,7 @@ export default function EventGraphicsSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+          <div className="flex flex-wrap justify-center gap-6">
             {eventGraphicsData.map((event) => (
               <Link 
                 key={event.id} 
@@ -77,7 +77,7 @@ export default function EventGraphicsSection() {
                 className={event.available ? "cursor-pointer" : "cursor-not-allowed"}
               >
                 <Card 
-                  className={`overflow-hidden transition-all duration-300 ${
+                  className={`w-full sm:w-80 overflow-hidden transition-all duration-300 ${
                     event.available 
                       ? "hover:shadow-xl hover:scale-[1.02] hover:border-amber-500/50" 
                       : "opacity-50"
@@ -85,11 +85,18 @@ export default function EventGraphicsSection() {
                   data-testid={`card-event-${event.id}`}
                 >
                   {getEventVisual(event.id)}
-                  <CardContent className="p-3">
-                    <h3 className="font-semibold text-sm mb-0.5 line-clamp-1">{event.title}</h3>
-                    <p className="text-xs text-muted-foreground line-clamp-2">{event.description}</p>
+                  <CardContent className="p-5">
+                    <div className="flex items-center justify-between gap-2">
+                      <div>
+                        <h3 className="font-bold text-lg mb-1">{event.title}</h3>
+                        <p className="text-sm text-muted-foreground">{event.description}</p>
+                      </div>
+                      {event.available && (
+                        <ArrowRight className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                      )}
+                    </div>
                     {!event.available && (
-                      <span className="text-xs text-muted-foreground mt-1 block">Coming soon</span>
+                      <span className="text-xs text-muted-foreground mt-2 block">Coming soon</span>
                     )}
                   </CardContent>
                 </Card>
