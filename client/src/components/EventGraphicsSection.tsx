@@ -11,9 +11,7 @@ export default function EventGraphicsSection() {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Star className="w-6 h-6 text-amber-500" />
-              <h2 className="text-3xl md:text-4xl font-bold font-display">
-                Event Graphics
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-display">Notable Events</h2>
               <Star className="w-6 h-6 text-amber-500" />
             </div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
