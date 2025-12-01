@@ -19,10 +19,18 @@ function HijrahVisual() {
   );
 }
 
-function BattleOfBadrVisual() {
+function BattleVisual() {
   return (
     <div className="h-40 bg-gradient-to-br from-red-900 via-red-800 to-red-700 relative overflow-hidden flex items-center justify-center">
       <Swords className="w-16 h-16 text-red-300" />
+    </div>
+  );
+}
+
+function SpiritualVisual() {
+  return (
+    <div className="h-40 bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-700 relative overflow-hidden flex items-center justify-center">
+      <Sparkles className="w-16 h-16 text-indigo-300" />
     </div>
   );
 }
@@ -34,7 +42,16 @@ function getEventVisual(eventId: string) {
     case "hijrah":
       return <HijrahVisual />;
     case "battle-of-badr":
-      return <BattleOfBadrVisual />;
+    case "battle-of-uhud":
+    case "battle-of-trench":
+    case "battle-of-khaybar":
+    case "battle-of-mutah":
+    case "conquest-of-makkah":
+    case "battle-of-hunayn":
+    case "expedition-of-tabuk":
+      return <BattleVisual />;
+    case "farewell-pilgrimage":
+      return <SpiritualVisual />;
     default:
       return <IsraMirajVisual />;
   }
