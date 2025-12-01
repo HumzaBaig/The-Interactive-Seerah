@@ -187,6 +187,19 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarChapter: "The Messenger of AllahEring Allegiance to Tribes and His Journey to At-Ta'if"
   },
   {
+    id: "jinn-incident",
+    title: "The Jinn Accept Islam",
+    titleArabic: "إسلام الجن",
+    date: "10th year after the first revelation",
+    year: 620,
+    period: "makkan",
+    category: "spiritual",
+    location: "Valley of Nakhlah (between Makkah and Ta'if)",
+    description: "While returning from Ta'if, the Prophet ﷺ stopped at the Valley of Nakhlah and was reciting Quran during the night prayer. A group of Jinn heard his recitation and were deeply moved by the words of Allah. They listened attentively, believed in the message, and returned to their people as warners. Allah revealed Surah Al-Jinn (72) and verses in Surah Al-Ahqaf (46:29-32) describing this event: 'And [mention] when We directed to you a few of the jinn, listening to the Quran.'",
+    significance: "high",
+    sealedNectarChapter: "The Messenger of AllahEring Allegiance to Tribes and His Journey to At-Ta'if"
+  },
+  {
     id: "isra-miraj",
     title: "Night Journey and Ascension (Al-Isra wal-Mi'raj)",
     titleArabic: "الإسراء والمعراج",
