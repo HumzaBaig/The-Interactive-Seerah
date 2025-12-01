@@ -41,5 +41,17 @@ export const familyData: FamilyCard[] = [
     name: "Abdullah ibn Abbas",
     relation: "Cousin",
     bio: "Son of Abbas, the Prophet's uncle. Born three years before Hijrah, he was blessed by the Prophet ﷺ with a prayer for deep understanding of the Quran. He became known as 'Hibr al-Ummah' (Scholar of the Nation) and 'Tarjuman al-Quran' (Interpreter of the Quran). He narrated over 1,600 hadiths."
+  },
+  {
+    id: 7,
+    name: "Hasan ibn Ali",
+    relation: "Grandson",
+    bio: "The elder grandson of the Prophet ﷺ, born in 3 AH to Fatimah and Ali ibn Abi Talib. The Prophet ﷺ loved him dearly and said: 'Hasan and Husayn are the leaders of the youth of Paradise.' He became the fifth Caliph briefly after Ali's martyrdom, then made peace with Mu'awiyah to prevent bloodshed among Muslims. Known for his generosity and wisdom, he passed away in 50 AH."
+  },
+  {
+    id: 8,
+    name: "Husayn ibn Ali",
+    relation: "Grandson",
+    bio: "The younger grandson of the Prophet ﷺ, born in 4 AH to Fatimah and Ali ibn Abi Talib. The Prophet ﷺ said about him and his brother: 'These two are my sons and the sons of my daughter.' He stood firmly against injustice and was martyred at the Battle of Karbala in 61 AH. His sacrifice is remembered as a profound stand for truth and justice in Islamic history."
   }
 ];
