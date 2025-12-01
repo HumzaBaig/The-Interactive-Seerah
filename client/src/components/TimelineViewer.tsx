@@ -15,6 +15,22 @@ interface TimelineViewerProps {
 
 const FIXED_PIXELS_PER_YEAR = 120;
 
+const eventColors: Record<string, string> = {
+  "isra-miraj": "hsl(239, 84%, 67%)",
+  "hijrah": "hsl(142, 71%, 45%)",
+  "badr": "hsl(43, 96%, 56%)",
+  "uhud": "hsl(215, 25%, 50%)",
+  "khandaq": "hsl(30, 25%, 50%)",
+  "khaybar": "hsl(0, 72%, 51%)",
+  "makkah-conquest": "hsl(48, 96%, 53%)",
+  "hunayn": "hsl(25, 95%, 53%)",
+  "tabuk": "hsl(187, 85%, 43%)",
+  "farewell-pilgrimage": "hsl(271, 81%, 56%)",
+  "jinn-incident": "hsl(239, 84%, 67%)",
+  "first-abyssinia": "hsl(142, 71%, 45%)",
+  "second-abyssinia": "hsl(142, 71%, 45%)",
+};
+
 export default function TimelineViewer({ 
   events, 
   periods, 
@@ -42,6 +58,13 @@ export default function TimelineViewer({
   const getPeriodColor = (periodId: string) => {
     const period = periods.find(p => p.id === periodId);
     return period?.color || "hsl(var(--primary))";
+  };
+
+  const getEventColor = (event: SeerahEvent) => {
+    if (eventColors[event.id]) {
+      return eventColors[event.id];
+    }
+    return getPeriodColor(event.period);
   };
 
   useEffect(() => {
@@ -165,13 +188,13 @@ export default function TimelineViewer({
               });
 
               return eventPositions.map((item, index) => {
-                const periodColor = getPeriodColor(item.event.period);
+                const eventColor = getEventColor(item.event);
                 return (
                   <EventNode
                     key={item.event.id}
                     event={item.event}
                     positionPx={item.positionPx}
-                    periodColor={periodColor}
+                    periodColor={eventColor}
                     onClick={() => setSelectedEvent(item.event)}
                     labelPosition={labelData[index].position}
                     verticalOffset={labelData[index].offset}
