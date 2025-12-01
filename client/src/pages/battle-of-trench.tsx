@@ -32,7 +32,7 @@ const battleStages = [
     id: "trench",
     title: "Digging the Trench",
     location: "Northern Madinah",
-    description: "Salman al-Farsi suggested a defensive trench - a tactic unknown to Arabs. For six days, the Prophet ﷺ worked alongside 3,000 Muslims digging a trench 5.5 km long, 4.6m wide, and 3m deep. During this difficult work, miracles occurred as the Prophet ﷺ multiplied their food and split a large rock with light.",
+    description: "Salman al-Farsi suggested a defensive trench - a tactic unknown to Arabs. For six days, the Prophet ﷺ worked alongside 3,000 Muslims digging a trench 5.5 km long, 4.6m wide, and 3m deep. During this difficult work, miracles occurred as the Prophet ﷺ multiplied their food and split a large rock, emitting light.",
     icon: Shovel
   },
   {
