@@ -51,7 +51,7 @@ function FlashCard({ companion }: { companion: NotableCompanion }) {
 
 export default function CompanionsFlashCards() {
   return (
-    <section id="companions-section" className="py-12 bg-background">
+    <section id="companions-section" className="py-12 bg-background border-t">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center space-y-4 mb-10">
