@@ -4,6 +4,15 @@ import { Card } from "@/components/ui/card";
 
 function FlashCard({ child }: { child: ChildCard }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const isGrandchild = child.relation === "grandchild";
+  
+  const cardGradient = isGrandchild 
+    ? "bg-gradient-to-br from-emerald-500/10 to-emerald-600/15 border-emerald-500/20"
+    : "bg-gradient-to-br from-violet-500/10 to-violet-600/15 border-violet-500/20";
+  
+  const accentColor = isGrandchild
+    ? "text-emerald-600 dark:text-emerald-400"
+    : "text-violet-600 dark:text-violet-400";
 
   return (
     <div
@@ -21,14 +30,23 @@ function FlashCard({ child }: { child: ChildCard }) {
         }}
       >
         <Card
-          className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 bg-gradient-to-br from-violet-500/10 to-violet-600/15 border-violet-500/20"
+          className={`absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 ${cardGradient}`}
           style={{ backfaceVisibility: "hidden" }}
         >
           <div className="text-center space-y-3">
             <h3 className="text-xl font-semibold">{child.name}</h3>
-            <p className="text-sm text-muted-foreground">Child of the Prophet ﷺ</p>
-            <p className="text-xs text-muted-foreground">Mother: {child.mother}</p>
-            <p className="text-xs text-violet-600 dark:text-violet-400 mt-4">Click to read bio</p>
+            <p className="text-sm text-muted-foreground">
+              {isGrandchild ? "Grandson of the Prophet ﷺ" : "Child of the Prophet ﷺ"}
+            </p>
+            {isGrandchild && child.father ? (
+              <div className="text-xs text-muted-foreground space-y-0.5">
+                <p>Father: {child.father}</p>
+                <p>Mother: {child.mother}</p>
+              </div>
+            ) : (
+              <p className="text-xs text-muted-foreground">Mother: {child.mother}</p>
+            )}
+            <p className={`text-xs ${accentColor} mt-4`}>Click to read bio</p>
           </div>
         </Card>
 
@@ -43,7 +61,7 @@ function FlashCard({ child }: { child: ChildCard }) {
           <p className="text-sm text-muted-foreground leading-relaxed flex-1">
             {child.bio}
           </p>
-          <p className="text-xs text-violet-600 dark:text-violet-400 mt-3">Click to flip back</p>
+          <p className={`text-xs ${accentColor} mt-3`}>Click to flip back</p>
         </Card>
       </div>
     </div>
