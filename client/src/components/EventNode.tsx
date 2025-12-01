@@ -20,9 +20,8 @@ const categoryLabels: Record<string, string> = {
   battle: "Battle",
   migration: "Migration",
   civic: "Society & Governance",
-  "companion-story": "Companion Story",
-  spiritual: "Spiritual Event",
-  family: "Family"
+  people: "Family & Companions",
+  spiritual: "Spiritual Event"
 };
 
 const categoryColors: Record<string, string> = {
@@ -30,9 +29,8 @@ const categoryColors: Record<string, string> = {
   battle: "bg-red-500/10 text-red-700 dark:text-red-300",
   migration: "bg-green-500/10 text-green-700 dark:text-green-300",
   civic: "bg-purple-500/10 text-purple-700 dark:text-purple-300",
-  "companion-story": "bg-cyan-500/10 text-cyan-700 dark:text-cyan-300",
-  spiritual: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300",
-  family: "bg-pink-500/10 text-pink-700 dark:text-pink-300"
+  people: "bg-pink-500/10 text-pink-700 dark:text-pink-300",
+  spiritual: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300"
 };
 
 export default function EventNode({ event, positionPx, periodColor, onClick, labelPosition, verticalOffset }: EventNodeProps) {

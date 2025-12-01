@@ -7,7 +7,6 @@ import {
   Navigation, 
   Users, 
   Sparkles,
-  Heart,
   Landmark,
   X
 } from "lucide-react";
@@ -24,9 +23,8 @@ const categories = [
   { id: "battle", label: "Battles", icon: Swords, color: "bg-red-500/10 text-red-700 dark:text-red-300" },
   { id: "migration", label: "Migrations", icon: Navigation, color: "bg-green-500/10 text-green-700 dark:text-green-300" },
   { id: "civic", label: "Society & Governance", icon: Landmark, color: "bg-purple-500/10 text-purple-700 dark:text-purple-300" },
-  { id: "companion-story", label: "Companions", icon: Users, color: "bg-cyan-500/10 text-cyan-700 dark:text-cyan-300" },
+  { id: "people", label: "Family & Companions", icon: Users, color: "bg-pink-500/10 text-pink-700 dark:text-pink-300" },
   { id: "spiritual", label: "Spiritual Events", icon: Sparkles, color: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300" },
-  { id: "family", label: "Family", icon: Heart, color: "bg-pink-500/10 text-pink-700 dark:text-pink-300" },
 ];
 
 const periods = [

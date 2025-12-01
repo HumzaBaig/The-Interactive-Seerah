@@ -24,7 +24,7 @@ export type SeerahEvent = {
   date: string;
   year: number;
   period: "makkan" | "madinan";
-  category: "revelation" | "battle" | "migration" | "civic" | "companion-story" | "spiritual" | "family";
+  category: "revelation" | "battle" | "migration" | "civic" | "people" | "spiritual";
   location: string;
   description: string;
   significance: "low" | "medium" | "high" | "critical";
