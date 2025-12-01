@@ -15,17 +15,6 @@ interface TimelineViewerProps {
 
 const FIXED_PIXELS_PER_YEAR = 120;
 
-const EVENT_PAGE_URLS: Record<string, string> = {
-  "badr": "/battle-of-badr",
-  "uhud": "/battle-of-uhud",
-  "khandaq": "/battle-of-trench",
-  "khaybar": "/battle-of-khaybar",
-  "makkah-conquest": "/conquest-of-makkah",
-  "hunayn": "/battle-of-hunayn",
-  "tabuk": "/expedition-of-tabuk",
-  "farewell-pilgrimage": "/farewell-pilgrimage",
-};
-
 export default function TimelineViewer({ 
   events, 
   periods, 
@@ -177,7 +166,6 @@ export default function TimelineViewer({
 
               return eventPositions.map((item, index) => {
                 const periodColor = getPeriodColor(item.event.period);
-                const pageUrl = EVENT_PAGE_URLS[item.event.id];
                 return (
                   <EventNode
                     key={item.event.id}
@@ -187,7 +175,6 @@ export default function TimelineViewer({
                     onClick={() => setSelectedEvent(item.event)}
                     labelPosition={labelData[index].position}
                     verticalOffset={labelData[index].offset}
-                    pageUrl={pageUrl}
                   />
                 );
               });

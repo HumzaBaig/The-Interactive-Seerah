@@ -1,5 +1,4 @@
 import { SeerahEvent } from "@shared/schema";
-import { Link } from "wouter";
 import {
   Tooltip,
   TooltipContent,
@@ -13,82 +12,58 @@ interface EventNodeProps {
   onClick: () => void;
   labelPosition: "above" | "below";
   verticalOffset: number;
-  pageUrl?: string;
 }
 
-export default function EventNode({ event, positionPx, periodColor, onClick, labelPosition, verticalOffset, pageUrl }: EventNodeProps) {
+export default function EventNode({ event, positionPx, periodColor, onClick, labelPosition, verticalOffset }: EventNodeProps) {
   const isAbove = labelPosition === "above";
-  
-  const commonStyles = {
-    left: `${positionPx}px`,
-    top: '0',
-    transform: 'translate(-50%, -50%)'
-  };
-
-  const nodeContent = (
-    <>
-      {/* Connecting Line */}
-      <div 
-        className="absolute left-1/2 -translate-x-1/2 w-px bg-foreground/20"
-        style={{
-          [isAbove ? 'bottom' : 'top']: '100%',
-          height: `${20 + verticalOffset}px`
-        }}
-      />
-      
-      {/* Event Node Circle */}
-      <div 
-        className="w-6 h-6 rounded-full border-[3px] border-background shadow-md transition-all duration-200 group-hover:scale-125 group-hover:shadow-lg cursor-pointer relative z-10"
-        style={{ backgroundColor: periodColor }}
-      />
-      
-      {/* Title Label */}
-      <div 
-        className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-20"
-        style={{
-          [isAbove ? 'bottom' : 'top']: `calc(100% + ${24 + verticalOffset}px)`,
-          maxWidth: '120px'
-        }}
-      >
-        <div className="text-xs font-medium text-center leading-tight text-foreground/80 group-hover:text-foreground transition-colors">
-          {event.title}
-        </div>
-      </div>
-    </>
-  );
   
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        {pageUrl ? (
-          <Link
-            href={pageUrl}
-            className="absolute group"
-            style={commonStyles}
-            data-testid={`event-node-${event.id}`}
-            aria-label={event.title}
+        <button
+          onClick={onClick}
+          className="absolute group"
+          style={{ 
+            left: `${positionPx}px`,
+            top: '0',
+            transform: 'translate(-50%, -50%)'
+          }}
+          data-testid={`event-node-${event.id}`}
+          aria-label={event.title}
+        >
+          {/* Connecting Line */}
+          <div 
+            className="absolute left-1/2 -translate-x-1/2 w-px bg-foreground/20"
+            style={{
+              [isAbove ? 'bottom' : 'top']: '100%',
+              height: `${20 + verticalOffset}px`
+            }}
+          />
+          
+          {/* Event Node Circle */}
+          <div 
+            className="w-6 h-6 rounded-full border-[3px] border-background shadow-md transition-all duration-200 group-hover:scale-125 group-hover:shadow-lg cursor-pointer relative z-10"
+            style={{ backgroundColor: periodColor }}
+          />
+          
+          {/* Title Label */}
+          <div 
+            className="absolute left-1/2 -translate-x-1/2 pointer-events-none z-20"
+            style={{
+              [isAbove ? 'bottom' : 'top']: `calc(100% + ${24 + verticalOffset}px)`,
+              maxWidth: '120px'
+            }}
           >
-            {nodeContent}
-          </Link>
-        ) : (
-          <button
-            onClick={onClick}
-            className="absolute group"
-            style={commonStyles}
-            data-testid={`event-node-${event.id}`}
-            aria-label={event.title}
-          >
-            {nodeContent}
-          </button>
-        )}
+            <div className="text-xs font-medium text-center leading-tight text-foreground/80 group-hover:text-foreground transition-colors">
+              {event.title}
+            </div>
+          </div>
+        </button>
       </TooltipTrigger>
       <TooltipContent side={isAbove ? "bottom" : "top"} className="max-w-xs z-50">
         <div className="space-y-1.5">
           <div className="font-semibold text-sm">{event.title}</div>
           <div className="text-xs text-muted-foreground">{event.location}</div>
-          {pageUrl && (
-            <div className="text-xs text-primary">Click to view details</div>
-          )}
         </div>
       </TooltipContent>
     </Tooltip>
