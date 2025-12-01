@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, ArrowRight, Play, Pause, RotateCcw, Swords, Shield, Flag } from "lucide-react";
+import { ArrowLeft, ArrowRight, Swords, Shield, Flag, Mountain, Cloud, Wind } from "lucide-react";
 
 interface BattlePhase {
   id: string;
@@ -79,26 +79,9 @@ const keyFigures = [
 
 export default function BattleOfBadr() {
   const [currentPhase, setCurrentPhase] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [showFigures, setShowFigures] = useState(false);
 
   const phase = battlePhases[currentPhase];
-
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (isPlaying) {
-      interval = setInterval(() => {
-        setCurrentPhase((prev) => {
-          if (prev >= battlePhases.length - 1) {
-            setIsPlaying(false);
-            return prev;
-          }
-          return prev + 1;
-        });
-      }, 4000);
-    }
-    return () => clearInterval(interval);
-  }, [isPlaying]);
 
   const nextPhase = () => {
     if (currentPhase < battlePhases.length - 1) {
@@ -110,11 +93,6 @@ export default function BattleOfBadr() {
     if (currentPhase > 0) {
       setCurrentPhase(currentPhase - 1);
     }
-  };
-
-  const reset = () => {
-    setCurrentPhase(0);
-    setIsPlaying(false);
   };
 
   return (
@@ -149,29 +127,6 @@ export default function BattleOfBadr() {
           <p className="text-sm text-amber-300/80 mt-2">17th Ramadan, 2 AH</p>
         </div>
 
-        <div className="flex justify-center gap-2 mb-4">
-          <Button
-            onClick={() => setIsPlaying(!isPlaying)}
-            variant="outline"
-            size="sm"
-            className="bg-amber-500/20 border-amber-400/50 text-amber-200 hover:bg-amber-500/30"
-            data-testid="button-play-pause"
-          >
-            {isPlaying ? <Pause className="w-4 h-4 mr-2" /> : <Play className="w-4 h-4 mr-2" />}
-            {isPlaying ? "Pause" : "Play"}
-          </Button>
-          <Button
-            onClick={reset}
-            variant="outline"
-            size="sm"
-            className="bg-amber-500/20 border-amber-400/50 text-amber-200 hover:bg-amber-500/30"
-            data-testid="button-reset"
-          >
-            <RotateCcw className="w-4 h-4 mr-2" />
-            Reset
-          </Button>
-        </div>
-
         <div className="flex justify-center gap-2 mb-6 flex-wrap">
           {battlePhases.map((p, index) => (
             <button
@@ -191,24 +146,57 @@ export default function BattleOfBadr() {
 
         <Card className="max-w-5xl mx-auto bg-white/5 backdrop-blur-lg border-white/10 overflow-hidden">
           <div className="relative h-80 md:h-96 bg-gradient-to-b from-amber-900/30 to-orange-900/30 overflow-hidden">
-            <div className="absolute top-2 left-4 text-xs text-white/50">Makkah Direction</div>
-            <div className="absolute bottom-2 left-4 text-xs text-white/50">Madinah Direction</div>
+            <div className="absolute inset-0">
+              {/* Landscape details */}
+              <div className="absolute top-8 left-1/4 opacity-30">
+                <Mountain className="w-16 h-16 text-amber-700" />
+              </div>
+              <div className="absolute top-12 right-1/4 opacity-30">
+                <Cloud className="w-12 h-12 text-white/20" />
+              </div>
+              <div className="absolute bottom-16 right-1/3 opacity-20">
+                <Wind className="w-10 h-10 text-white/30" />
+              </div>
+              
+              {/* Battlefield lines and grid */}
+              <div className="absolute inset-0 opacity-10">
+                <svg className="w-full h-full" viewBox="0 0 100 100">
+                  <line x1="0" y1="30" x2="100" y2="30" stroke="white" strokeWidth="0.3" />
+                  <line x1="0" y1="50" x2="100" y2="50" stroke="white" strokeWidth="0.3" />
+                  <line x1="0" y1="70" x2="100" y2="70" stroke="white" strokeWidth="0.3" />
+                  <line x1="20" y1="0" x2="20" y2="100" stroke="white" strokeWidth="0.3" />
+                  <line x1="50" y1="0" x2="50" y2="100" stroke="white" strokeWidth="0.3" />
+                  <line x1="80" y1="0" x2="80" y2="100" stroke="white" strokeWidth="0.3" />
+                </svg>
+              </div>
+            </div>
+
+            <div className="absolute top-2 left-4 text-xs text-white/50 font-semibold">Makkah Direction →</div>
+            <div className="absolute bottom-2 left-4 text-xs text-white/50 font-semibold">← Madinah Direction</div>
             
+            {/* Wells highlight */}
             {phase.highlight === "wells" && (
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-blue-500/30 border-2 border-blue-400/50 flex items-center justify-center animate-pulse">
-                <span className="text-xs text-blue-300">Wells</span>
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                <div className="w-20 h-20 rounded-full bg-blue-500/40 border-3 border-blue-300/70 flex items-center justify-center">
+                  <div className="text-center">
+                    <Cloud className="w-6 h-6 text-blue-200 mx-auto mb-1" />
+                    <span className="text-xs text-blue-200 font-bold">WELLS</span>
+                  </div>
+                </div>
               </div>
             )}
 
+            {/* Combat/Duels highlight */}
             {phase.highlight === "duels" && (
-              <div className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2">
-                <Swords className="w-10 h-10 text-amber-400 animate-pulse" />
+              <div className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 z-20">
+                <Swords className="w-16 h-16 text-amber-300" />
               </div>
             )}
 
+            {/* Muslim Army */}
             <div 
-              className={`absolute transition-all duration-1000 ease-in-out flex flex-col items-center ${
-                phase.highlight === "muslim" ? "scale-110" : ""
+              className={`absolute transition-all duration-1000 ease-in-out flex flex-col items-center z-10 ${
+                phase.highlight === "muslim" ? "scale-125 z-30" : ""
               }`}
               style={{ 
                 left: `${phase.muslimPosition.x}%`, 
@@ -216,23 +204,31 @@ export default function BattleOfBadr() {
                 transform: "translate(-50%, -50%)"
               }}
             >
-              <div className="flex gap-1 mb-1">
-                {[...Array(3)].map((_, i) => (
-                  <Shield key={i} className="w-4 h-4 text-emerald-400" />
+              {/* Shield formation */}
+              <div className="flex gap-0.5 mb-1.5 relative">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="relative">
+                    <Shield className="w-5 h-5 text-emerald-300" />
+                    <div className="absolute inset-0 bg-emerald-400/20 rounded-full blur animate-pulse" />
+                  </div>
                 ))}
               </div>
-              <div className={`w-20 h-12 rounded-lg bg-gradient-to-br from-emerald-600 to-emerald-800 border-2 border-emerald-400 flex items-center justify-center shadow-lg shadow-emerald-500/30 ${
-                phase.highlight === "muslim" ? "animate-pulse" : ""
+              {/* Army box */}
+              <div className={`px-4 py-3 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-700 border-2 border-emerald-300 shadow-lg shadow-emerald-400/50 ${
+                phase.highlight === "muslim" ? "ring-2 ring-emerald-200" : ""
               }`}>
-                <Flag className="w-5 h-5 text-white" />
+                <Flag className="w-6 h-6 text-white mx-auto" />
               </div>
-              <span className="text-xs text-emerald-300 mt-1 font-semibold">Muslims</span>
-              <span className="text-xs text-emerald-300/70">313 men</span>
+              <div className="mt-2 text-center">
+                <span className="text-xs text-emerald-200 font-bold block">MUSLIMS</span>
+                <span className="text-xs text-emerald-300/80">313 warriors</span>
+              </div>
             </div>
 
+            {/* Quraysh Army */}
             <div 
-              className={`absolute transition-all duration-1000 ease-in-out flex flex-col items-center ${
-                phase.highlight === "quraish" ? "scale-110" : ""
+              className={`absolute transition-all duration-1000 ease-in-out flex flex-col items-center z-10 ${
+                phase.highlight === "quraish" ? "scale-125 z-30" : ""
               }`}
               style={{ 
                 left: `${phase.quraishPosition.x}%`, 
@@ -240,18 +236,25 @@ export default function BattleOfBadr() {
                 transform: "translate(-50%, -50%)"
               }}
             >
-              <div className="flex gap-1 mb-1">
-                {[...Array(5)].map((_, i) => (
-                  <Shield key={i} className="w-4 h-4 text-red-400" />
+              {/* Shield formation larger */}
+              <div className="flex gap-0.5 mb-1.5 relative">
+                {[...Array(8)].map((_, i) => (
+                  <div key={i} className="relative">
+                    <Shield className="w-5 h-5 text-red-300" />
+                    <div className="absolute inset-0 bg-red-400/20 rounded-full blur animate-pulse" />
+                  </div>
                 ))}
               </div>
-              <div className={`w-24 h-14 rounded-lg bg-gradient-to-br from-red-700 to-red-900 border-2 border-red-500 flex items-center justify-center shadow-lg shadow-red-500/30 ${
-                phase.highlight === "quraish" ? "animate-pulse" : ""
+              {/* Army box larger */}
+              <div className={`px-5 py-4 rounded-lg bg-gradient-to-br from-red-600 to-red-800 border-2 border-red-300 shadow-lg shadow-red-500/50 ${
+                phase.highlight === "quraish" ? "ring-2 ring-red-200" : ""
               }`}>
-                <Flag className="w-5 h-5 text-white" />
+                <Flag className="w-6 h-6 text-white mx-auto" />
               </div>
-              <span className="text-xs text-red-300 mt-1 font-semibold">Quraysh</span>
-              <span className="text-xs text-red-300/70">~1000 men</span>
+              <div className="mt-2 text-center">
+                <span className="text-xs text-red-200 font-bold block">QURAYSH</span>
+                <span className="text-xs text-red-300/80">~1000 warriors</span>
+              </div>
             </div>
 
             {phase.arrows && phase.arrows.map((arrow, i) => (
