@@ -107,5 +107,17 @@ export const companionsData: NotableCompanion[] = [
     name: "Umm Ayman",
     title: "The Prophet's Second Mother",
     bio: "Her name was Barakah. She was the Prophet's nursemaid from his infancy, inherited from his father Abdullah. She remained devoted to him throughout his life. After Khadijah's death, she comforted him. The Prophet ﷺ called her 'my mother after my mother' and said: 'Umm Ayman is the remnant of my household.' She was present at every major event in his life and wept inconsolably when he passed away."
+  },
+  {
+    id: 18,
+    name: "Sa'd ibn 'Ubadah",
+    title: "Chief of the Khazraj",
+    bio: "The leader of the Khazraj tribe in Madinah and one of the most prominent Ansar. He was among those who gave the Second Pledge of Aqabah, inviting the Prophet ﷺ to Madinah. Known for his generosity, he would host and feed many Muslims. He carried the banner of the Ansar at the Conquest of Makkah. He was a strong candidate for leadership after the Prophet's death, though he ultimately supported Abu Bakr."
+  },
+  {
+    id: 19,
+    name: "Mu'awiyah ibn Abi Sufyan",
+    title: "The Scribe of Revelation",
+    bio: "Son of Abu Sufyan and Hind bint Utbah. He accepted Islam during the Conquest of Makkah and became one of the scribes who wrote down the Quranic revelations. He served as governor of Syria during the caliphates of Umar and Uthman. After the martyrdom of Ali, he became the first Umayyad Caliph, establishing his capital in Damascus. He was known for his political acumen and forbearance (hilm)."
   }
 ];
