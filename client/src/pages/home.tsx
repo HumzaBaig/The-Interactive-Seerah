@@ -4,6 +4,7 @@ import TimelineViewer from "@/components/TimelineViewer";
 import FilterSidebar from "@/components/FilterSidebar";
 import SearchBar from "@/components/SearchBar";
 import ThemeToggle from "@/components/ThemeToggle";
+import EventGraphicsSection from "@/components/EventGraphicsSection";
 import WivesFlashCards from "@/components/WivesFlashCards";
 import ChildrenFlashCards from "@/components/ChildrenFlashCards";
 import FamilyFlashCards from "@/components/FamilyFlashCards";
@@ -103,6 +104,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <EventGraphicsSection />
 
       <CharacterFlashCards />
 
