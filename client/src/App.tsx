@@ -7,6 +7,14 @@ import Home from "@/pages/home";
 import IsraMiraj from "@/pages/isra-miraj";
 import Hijrah from "@/pages/hijrah";
 import BattleOfBadr from "@/pages/battle-of-badr";
+import BattleOfUhud from "@/pages/battle-of-uhud";
+import BattleOfTrench from "@/pages/battle-of-trench";
+import BattleOfKhaybar from "@/pages/battle-of-khaybar";
+import BattleOfMutah from "@/pages/battle-of-mutah";
+import ConquestOfMakkah from "@/pages/conquest-of-makkah";
+import BattleOfHunayn from "@/pages/battle-of-hunayn";
+import ExpeditionOfTabuk from "@/pages/expedition-of-tabuk";
+import FarewellPilgrimage from "@/pages/farewell-pilgrimage";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -16,6 +24,14 @@ function Router() {
       <Route path="/events/isra-miraj" component={IsraMiraj} />
       <Route path="/events/hijrah" component={Hijrah} />
       <Route path="/events/battle-of-badr" component={BattleOfBadr} />
+      <Route path="/events/battle-of-uhud" component={BattleOfUhud} />
+      <Route path="/events/battle-of-trench" component={BattleOfTrench} />
+      <Route path="/events/battle-of-khaybar" component={BattleOfKhaybar} />
+      <Route path="/events/battle-of-mutah" component={BattleOfMutah} />
+      <Route path="/events/conquest-of-makkah" component={ConquestOfMakkah} />
+      <Route path="/events/battle-of-hunayn" component={BattleOfHunayn} />
+      <Route path="/events/expedition-of-tabuk" component={ExpeditionOfTabuk} />
+      <Route path="/events/farewell-pilgrimage" component={FarewellPilgrimage} />
       <Route component={NotFound} />
     </Switch>
   );
