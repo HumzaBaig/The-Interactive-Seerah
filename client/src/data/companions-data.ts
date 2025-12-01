@@ -77,5 +77,35 @@ export const companionsData: NotableCompanion[] = [
     name: "Khabbab ibn al-Aratt",
     title: "The Patient Sufferer",
     bio: "An early convert who suffered some of the worst torture in Makkah. His owner would heat iron and press it against his back until his flesh extinguished the fire. When the companions complained of persecution, the Prophet ﷺ told them of those who were tortured before them but remained steadfast. Khabbab's back was permanently scarred, a testament to his faith."
+  },
+  {
+    id: 13,
+    name: "Zaid ibn Haritha",
+    title: "The Beloved of the Prophet",
+    bio: "Originally a slave who was gifted to Khadijah, who gave him to the Prophet ﷺ. When his family came to free him, Zaid chose to stay with the Prophet, who then freed and adopted him. He was the first adult male to accept Islam. The Prophet loved him deeply, and he is the only companion mentioned by name in the Quran. He was martyred as the first commander at the Battle of Mu'tah."
+  },
+  {
+    id: 14,
+    name: "Asma bint Abu Bakr",
+    title: "She of the Two Belts",
+    bio: "Daughter of Abu Bakr and elder sister of Aisha. During the Hijrah, she secretly brought food to the Prophet ﷺ and her father in the Cave of Thawr, tearing her belt in two to tie the provisions - earning her the title 'Dhat al-Nitaqayn' (She of the Two Belts). She endured Abu Jahl striking her face when she refused to reveal their location. She lived to be 100 years old and was the mother of Abdullah ibn al-Zubayr."
+  },
+  {
+    id: 15,
+    name: "Sumayyah bint Khayyat",
+    title: "The First Martyr of Islam",
+    bio: "The mother of Ammar ibn Yasir and wife of Yasir. She was among the earliest converts to Islam and, along with her family, endured brutal torture by Abu Jahl and the Quraysh. The Prophet ﷺ would pass by them saying: 'Patience, O family of Yasir! Your appointment is Paradise.' She refused to renounce her faith and was killed by Abu Jahl, becoming the first martyr in Islam."
+  },
+  {
+    id: 16,
+    name: "Nusaybah bint Ka'b",
+    title: "The Warrior of Uhud",
+    bio: "Also known as Umm Umarah, she was from the Ansar of Madinah. At the Battle of Uhud, when the tide turned against the Muslims, she fought fiercely to defend the Prophet ﷺ with her sword and bow, receiving twelve wounds. The Prophet ﷺ said: 'Wherever I turned, I saw her fighting to defend me.' She later fought in several other battles and lost her hand at the Battle of Yamama."
+  },
+  {
+    id: 17,
+    name: "Umm Ayman",
+    title: "The Prophet's Second Mother",
+    bio: "Her name was Barakah. She was the Prophet's nursemaid from his infancy, inherited from his father Abdullah. She remained devoted to him throughout his life. After Khadijah's death, she comforted him. The Prophet ﷺ called her 'my mother after my mother' and said: 'Umm Ayman is the remnant of my household.' She was present at every major event in his life and wept inconsolably when he passed away."
   }
 ];

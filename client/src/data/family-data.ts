@@ -32,9 +32,9 @@ export const familyData: FamilyCard[] = [
   },
   {
     id: 5,
-    name: "Zaid ibn Haritha",
-    relation: "Adopted Son",
-    bio: "Originally a slave who was gifted to Khadijah, who gave him to the Prophet ﷺ. When his family came to free him, Zaid chose to stay with the Prophet, who then freed and adopted him. He was the first adult male to accept Islam. The Prophet loved him deeply, and he is the only companion mentioned by name in the Quran."
+    name: "Jafar ibn Abi Talib",
+    relation: "Cousin",
+    bio: "The elder brother of Ali ibn Abi Talib and cousin of the Prophet ﷺ. He led the first migration to Abyssinia where he eloquently defended the Muslims before the Negus. Known as 'Jafar al-Tayyar' (Jafar the Flyer) because when he was martyred at the Battle of Mu'tah, both his arms were cut off while holding the banner. The Prophet ﷺ said Allah replaced his arms with wings in Paradise."
   },
   {
     id: 6,
