@@ -69,38 +69,39 @@ export default function EventGraphicsSection() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-4">
             {eventGraphicsData.map((event) => (
-              <Link 
-                key={event.id} 
-                href={event.available ? event.route : "#"}
-                className={event.available ? "cursor-pointer" : "cursor-not-allowed"}
-              >
-                <Card 
-                  className={`w-full sm:w-80 overflow-hidden transition-all duration-300 ${
-                    event.available 
-                      ? "hover:shadow-xl hover:scale-[1.02] hover:border-amber-500/50" 
-                      : "opacity-50"
-                  }`}
-                  data-testid={`card-event-${event.id}`}
+              <div key={event.id} className="w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]">
+                <Link 
+                  href={event.available ? event.route : "#"}
+                  className={event.available ? "cursor-pointer" : "cursor-not-allowed"}
                 >
-                  {getEventVisual(event.id)}
-                  <CardContent className="p-5">
-                    <div className="flex items-center justify-between gap-2">
-                      <div>
-                        <h3 className="font-bold text-lg mb-1">{event.title}</h3>
-                        <p className="text-sm text-muted-foreground">{event.description}</p>
+                  <Card 
+                    className={`w-full overflow-hidden transition-all duration-300 ${
+                      event.available 
+                        ? "hover:shadow-xl hover:scale-[1.02] hover:border-amber-500/50" 
+                        : "opacity-50"
+                    }`}
+                    data-testid={`card-event-${event.id}`}
+                  >
+                    {getEventVisual(event.id)}
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="min-w-0 flex-1">
+                          <h3 className="font-bold text-base mb-1 truncate">{event.title}</h3>
+                          <p className="text-sm text-muted-foreground line-clamp-2">{event.description}</p>
+                        </div>
+                        {event.available && (
+                          <ArrowRight className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                        )}
                       </div>
-                      {event.available && (
-                        <ArrowRight className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                      {!event.available && (
+                        <span className="text-xs text-muted-foreground mt-2 block">Coming soon</span>
                       )}
-                    </div>
-                    {!event.available && (
-                      <span className="text-xs text-muted-foreground mt-2 block">Coming soon</span>
-                    )}
-                  </CardContent>
-                </Card>
-              </Link>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
