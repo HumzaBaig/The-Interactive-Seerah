@@ -120,12 +120,10 @@ export default function IsraMiraj() {
 
       <main className="relative z-10 container mx-auto px-6 pb-12">
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Moon className="w-8 h-8 text-amber-300" />
+          <div className="mb-4">
             <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-amber-200 via-amber-300 to-amber-200 bg-clip-text text-transparent">
               Al-Isra wal Mi'raj
             </h1>
-            <Star className="w-8 h-8 text-amber-300" />
           </div>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
             The Night Journey from Makkah to Jerusalem, and the Ascension through the Seven Heavens
