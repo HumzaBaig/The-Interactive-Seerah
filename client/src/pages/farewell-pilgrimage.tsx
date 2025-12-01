@@ -87,7 +87,7 @@ export default function FarewellPilgrimage() {
   const stage = pilgrimageStages[currentStage];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-950 via-purple-950 to-indigo-900 text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-purple-950 via-purple-900 to-purple-800 text-white overflow-hidden">
 
       <header className="relative z-10 p-6">
         <Link href="/">
@@ -105,14 +105,14 @@ export default function FarewellPilgrimage() {
       <main className="relative z-10 container mx-auto px-6 pb-12">
         <div className="text-center mb-8">
           <div className="mb-4">
-            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-indigo-200 via-purple-300 to-indigo-200 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-purple-200 via-purple-300 to-purple-200 bg-clip-text text-transparent">
               The Farewell Pilgrimage
             </h1>
           </div>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
             The completion of the mission - The final sermon and perfection of the religion
           </p>
-          <p className="text-sm text-indigo-300/80 mt-2">Dhul Hijjah, 10 AH</p>
+          <p className="text-sm text-purple-300/80 mt-2">Dhul Hijjah, 10 AH</p>
         </div>
 
         <div className="flex justify-center gap-2 mb-8 flex-wrap">
@@ -126,9 +126,9 @@ export default function FarewellPilgrimage() {
               }}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentStage
-                  ? "bg-indigo-400 scale-125"
+                  ? "bg-purple-400 scale-125"
                   : index < currentStage
-                  ? "bg-indigo-400/50"
+                  ? "bg-purple-400/50"
                   : "bg-white/30"
               }`}
               data-testid={`button-stage-${index}`}
@@ -139,12 +139,12 @@ export default function FarewellPilgrimage() {
         <Card className="max-w-4xl mx-auto bg-white/5 backdrop-blur-lg border-white/10 overflow-hidden">
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
                 <stage.icon className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-white">{stage.title}</h2>
-                <p className="text-indigo-300/80 text-sm">{stage.location}</p>
+                <p className="text-purple-300/80 text-sm">{stage.location}</p>
               </div>
             </div>
 
@@ -157,7 +157,7 @@ export default function FarewellPilgrimage() {
                 <Button
                   onClick={() => setShowSermon(!showSermon)}
                   variant="outline"
-                  className="w-full bg-indigo-500/20 border-indigo-400/50 text-indigo-200 hover:bg-indigo-500/30 hover:text-indigo-100"
+                  className="w-full bg-purple-500/20 border-purple-400/50 text-purple-200 hover:bg-purple-500/30 hover:text-purple-100"
                   data-testid="button-toggle-sermon"
                 >
                   {showSermon ? "Hide" : "Explore"} Key Points of the Sermon
@@ -172,13 +172,13 @@ export default function FarewellPilgrimage() {
                         onClick={() => setSelectedPoint(selectedPoint === point.title ? null : point.title)}
                         className={`w-full text-left p-4 rounded-lg transition-all duration-300 ${
                           selectedPoint === point.title
-                            ? "bg-gradient-to-r from-indigo-500/30 to-purple-600/20 border border-indigo-400/50"
+                            ? "bg-gradient-to-r from-purple-500/30 to-purple-600/20 border border-purple-400/50"
                             : "bg-white/5 hover:bg-white/10 border border-transparent"
                         }`}
                         data-testid={`button-point-${point.title}`}
                       >
                         <div className="flex-1">
-                          <h4 className="font-semibold text-indigo-200">
+                          <h4 className="font-semibold text-purple-200">
                             {point.title}
                           </h4>
                           {selectedPoint === point.title && (
@@ -194,16 +194,16 @@ export default function FarewellPilgrimage() {
 
             {currentStage === 5 && (
               <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-indigo-500/20 border border-indigo-400/30 rounded-lg p-4 text-center">
-                  <p className="text-2xl font-bold text-indigo-400">100,000+</p>
+                <div className="bg-purple-500/20 border border-purple-400/30 rounded-lg p-4 text-center">
+                  <p className="text-2xl font-bold text-purple-400">100,000+</p>
                   <p className="text-xs text-white/60">Pilgrims</p>
                 </div>
                 <div className="bg-purple-500/20 border border-purple-400/30 rounded-lg p-4 text-center">
                   <p className="text-2xl font-bold text-purple-400">10 AH</p>
                   <p className="text-xs text-white/60">Year</p>
                 </div>
-                <div className="bg-indigo-500/20 border border-indigo-400/30 rounded-lg p-4 text-center">
-                  <p className="text-2xl font-bold text-indigo-400">1</p>
+                <div className="bg-purple-500/20 border border-purple-400/30 rounded-lg p-4 text-center">
+                  <p className="text-2xl font-bold text-purple-400">1</p>
                   <p className="text-xs text-white/60">Only Hajj</p>
                 </div>
                 <div className="bg-purple-500/20 border border-purple-400/30 rounded-lg p-4 text-center">

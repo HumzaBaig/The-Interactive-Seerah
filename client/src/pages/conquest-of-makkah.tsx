@@ -89,7 +89,7 @@ export default function ConquestOfMakkah() {
   const stage = battleStages[currentStage];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-950 via-orange-950 to-red-950 text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-yellow-950 via-yellow-900 to-yellow-800 text-white overflow-hidden">
 
       <header className="relative z-10 p-6">
         <Link href="/">
@@ -107,14 +107,14 @@ export default function ConquestOfMakkah() {
       <main className="relative z-10 container mx-auto px-6 pb-12">
         <div className="text-center mb-8">
           <div className="mb-4">
-            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-amber-200 via-orange-300 to-amber-200 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-200 bg-clip-text text-transparent">
               Conquest of Makkah
             </h1>
           </div>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
             The peaceful liberation of the Sacred City - Truth triumphs and idols fall
           </p>
-          <p className="text-sm text-amber-300/80 mt-2">20th Ramadan, 8 AH</p>
+          <p className="text-sm text-yellow-300/80 mt-2">20th Ramadan, 8 AH</p>
         </div>
 
         <div className="flex justify-center gap-2 mb-8 flex-wrap">
@@ -128,9 +128,9 @@ export default function ConquestOfMakkah() {
               }}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentStage
-                  ? "bg-amber-400 scale-125"
+                  ? "bg-yellow-400 scale-125"
                   : index < currentStage
-                  ? "bg-amber-400/50"
+                  ? "bg-yellow-400/50"
                   : "bg-white/30"
               }`}
               data-testid={`button-stage-${index}`}
@@ -141,12 +141,12 @@ export default function ConquestOfMakkah() {
         <Card className="max-w-4xl mx-auto bg-white/5 backdrop-blur-lg border-white/10 overflow-hidden">
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
                 <stage.icon className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-white">{stage.title}</h2>
-                <p className="text-amber-300/80 text-sm">{stage.location}</p>
+                <p className="text-yellow-300/80 text-sm">{stage.location}</p>
               </div>
             </div>
 
@@ -159,7 +159,7 @@ export default function ConquestOfMakkah() {
                 <Button
                   onClick={() => setShowFigures(!showFigures)}
                   variant="outline"
-                  className="w-full bg-amber-500/20 border-amber-400/50 text-amber-200 hover:bg-amber-500/30 hover:text-amber-100"
+                  className="w-full bg-yellow-500/20 border-yellow-400/50 text-yellow-200 hover:bg-yellow-500/30 hover:text-yellow-100"
                   data-testid="button-toggle-figures"
                 >
                   {showFigures ? "Hide" : "Explore"} Key Figures
