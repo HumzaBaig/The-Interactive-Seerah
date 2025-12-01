@@ -15,6 +15,13 @@ export const eventGraphicsData: EventGraphic[] = [
     available: true
   },
   {
+    id: "hijrah",
+    title: "The Hijrah",
+    description: "The Migration from Makkah to Madinah",
+    route: "/events/hijrah",
+    available: true
+  },
+  {
     id: "battle-of-badr",
     title: "Battle of Badr",
     description: "The First Major Battle - Victory Against All Odds",

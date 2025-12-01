@@ -1,12 +1,20 @@
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { eventGraphicsData } from "@/data/event-graphics-data";
-import { ArrowRight, Sparkles, Swords } from "lucide-react";
+import { ArrowRight, Sparkles, Navigation, Swords } from "lucide-react";
 
 function IsraMirajVisual() {
   return (
     <div className="h-40 bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-700 relative overflow-hidden flex items-center justify-center">
       <Sparkles className="w-16 h-16 text-indigo-300" />
+    </div>
+  );
+}
+
+function HijrahVisual() {
+  return (
+    <div className="h-40 bg-gradient-to-br from-green-900 via-green-800 to-green-700 relative overflow-hidden flex items-center justify-center">
+      <Navigation className="w-16 h-16 text-green-300" />
     </div>
   );
 }
@@ -23,6 +31,8 @@ function getEventVisual(eventId: string) {
   switch (eventId) {
     case "isra-miraj":
       return <IsraMirajVisual />;
+    case "hijrah":
+      return <HijrahVisual />;
     case "battle-of-badr":
       return <BattleOfBadrVisual />;
     default:
