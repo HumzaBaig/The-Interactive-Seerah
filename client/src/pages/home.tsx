@@ -8,6 +8,7 @@ import EventGraphicsSection from "@/components/EventGraphicsSection";
 import WivesFlashCards from "@/components/WivesFlashCards";
 import ChildrenFlashCards from "@/components/ChildrenFlashCards";
 import FamilyFlashCards from "@/components/FamilyFlashCards";
+import CompanionsFlashCards from "@/components/CompanionsFlashCards";
 import TenPromisedFlashCards from "@/components/TenPromisedFlashCards";
 import CharacterFlashCards from "@/components/CharacterFlashCards";
 import Footer from "@/components/Footer";
@@ -116,6 +117,8 @@ export default function Home() {
       <TenPromisedFlashCards />
 
       <FamilyFlashCards />
+
+      <CompanionsFlashCards />
 
       <Footer />
     </div>
