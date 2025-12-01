@@ -44,6 +44,32 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarChapter: "In The Shade of Abdul-Muttalib's House"
   },
   {
+    id: "nursing-halimah",
+    title: "Nursing by Halimah Sa'diyah",
+    titleArabic: "رضاعته عند حليمة السعدية",
+    date: "Shortly after birth",
+    year: 570,
+    period: "makkan",
+    category: "people",
+    location: "Desert of Banu Sa'd",
+    description: "Following the Arab custom of sending infants to be nursed in the desert for healthier upbringing and pure Arabic speech, the Prophet ﷺ was entrusted to Halimah bint Abi Dhu'ayb from Banu Sa'd. Initially, wet nurses avoided him due to his orphan status, but Halimah took him when she found no other child. Her family immediately experienced abundant blessings - her weak camel became strong, her milk increased, and their livestock flourished. He remained with Banu Sa'd until age four or five.",
+    significance: "high",
+    sealedNectarChapter: "Childhood"
+  },
+  {
+    id: "first-chest-opening",
+    title: "The First Opening of the Chest",
+    titleArabic: "شق الصدر الأول",
+    date: "When the Prophet was 4 years old",
+    year: 574,
+    period: "makkan",
+    category: "spiritual",
+    location: "Desert of Banu Sa'd",
+    description: "While playing with other children in the desert, two angels (Jibreel and Mikael) came to the young Muhammad ﷺ. They laid him down, opened his chest, removed his heart, extracted a black clot (the portion of Satan), washed his heart with Zamzam water in a golden basin, filled it with wisdom and faith, then returned it and sealed his chest. The other children ran to Halimah saying 'Muhammad has been killed!' but found him pale and shaken. This purification prepared him for prophethood.",
+    significance: "critical",
+    sealedNectarChapter: "Childhood"
+  },
+  {
     id: "death-aminah",
     title: "Death of Aminah (Prophet's Mother)",
     titleArabic: "وفاة آمنة بنت وهب",
