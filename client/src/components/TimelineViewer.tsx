@@ -32,12 +32,29 @@ export default function TimelineViewer({
   });
 
   const totalYears = TIMELINE_END - TIMELINE_START;
-  const timelineWidthPx = totalYears * FIXED_PIXELS_PER_YEAR + 200;
-
+  
   const yearToPixels = (year: number) => {
     const clampedYear = Math.max(TIMELINE_START, Math.min(TIMELINE_END, year));
     return 60 + (clampedYear - TIMELINE_START) * FIXED_PIXELS_PER_YEAR;
   };
+
+  // Calculate maximum event position (including same-year offsets)
+  const getMaxEventPosition = () => {
+    let maxPosition = yearToPixels(TIMELINE_END);
+    events.forEach(event => {
+      const sameYearEvents = events.filter(e => e.year === event.year);
+      const indexInYear = sameYearEvents.findIndex(e => e.id === event.id);
+      const offsetPx = sameYearEvents.length > 1 ? (indexInYear * 70) : 0;
+      const position = yearToPixels(event.year) + offsetPx;
+      if (position > maxPosition) {
+        maxPosition = position;
+      }
+    });
+    return maxPosition;
+  };
+
+  const maxEventPosition = getMaxEventPosition();
+  const timelineWidthPx = maxEventPosition + 100;
 
   const getPeriodColor = (periodId: string) => {
     const period = periods.find(p => p.id === periodId);
@@ -99,7 +116,7 @@ export default function TimelineViewer({
             style={{ 
               top: '50%', 
               left: '60px',
-              width: `${yearToPixels(TIMELINE_END) - 60 + 12}px`,
+              width: `${maxEventPosition - 60 + 12}px`,
               background: 'linear-gradient(to right, hsl(25, 100%, 50%), hsl(25, 100%, 50%) 84%, hsl(140, 70%, 40%) 84%, hsl(140, 70%, 40%))'
             }}
           />
