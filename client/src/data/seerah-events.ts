@@ -96,6 +96,19 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarChapter: "In the Cave of Hira"
   },
   {
+    id: "jibreel-true-form",
+    title: "Seeing Jibreel in His True Form",
+    titleArabic: "رؤية جبريل على صورته الحقيقية",
+    date: "Shortly after the first revelation",
+    year: 610,
+    period: "makkan",
+    category: "spiritual",
+    location: "Horizon of Makkah",
+    description: "After the first revelation, the Prophet ﷺ saw Angel Jibreel in his original, magnificent form with 600 wings, filling the entire horizon between the east and west. This awe-inspiring sight is referenced in the Quran: 'And he certainly saw him in the clear horizon' (81:23) and 'While he was in the highest part of the horizon' (53:7). This vision confirmed the divine nature of his mission and the majesty of the angels.",
+    significance: "critical",
+    sealedNectarChapter: "In the Cave of Hira"
+  },
+  {
     id: "public-dawah",
     title: "Public Declaration of Islam",
     titleArabic: "الدعوة الجهرية",
