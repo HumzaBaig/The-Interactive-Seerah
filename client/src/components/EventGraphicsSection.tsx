@@ -6,9 +6,7 @@ import { ArrowRight, Sparkles, Swords } from "lucide-react";
 function IsraMirajVisual() {
   return (
     <div className="h-40 bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-700 relative overflow-hidden flex items-center justify-center">
-      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center shadow-lg">
-        <Sparkles className="w-12 h-12 text-white" />
-      </div>
+      <Sparkles className="w-16 h-16 text-indigo-300" />
     </div>
   );
 }
@@ -16,9 +14,7 @@ function IsraMirajVisual() {
 function BattleOfBadrVisual() {
   return (
     <div className="h-40 bg-gradient-to-br from-red-900 via-red-800 to-red-700 relative overflow-hidden flex items-center justify-center">
-      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center shadow-lg">
-        <Swords className="w-12 h-12 text-white" />
-      </div>
+      <Swords className="w-16 h-16 text-red-300" />
     </div>
   );
 }
