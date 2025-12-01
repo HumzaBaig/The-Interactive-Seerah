@@ -32,7 +32,7 @@ export default function TimelineViewer({
   });
 
   const totalYears = TIMELINE_END - TIMELINE_START;
-  const timelineWidthPx = totalYears * FIXED_PIXELS_PER_YEAR + 120;
+  const timelineWidthPx = totalYears * FIXED_PIXELS_PER_YEAR + 200;
 
   const yearToPixels = (year: number) => {
     const clampedYear = Math.max(TIMELINE_START, Math.min(TIMELINE_END, year));
@@ -93,13 +93,13 @@ export default function TimelineViewer({
             minWidth: '100%'
           }}
         >
-          {/* Timeline Axis Line */}
+          {/* Timeline Axis Line - extends to the last event (Death of Prophet ﷺ) */}
           <div 
             className="absolute h-1 rounded-full"
             style={{ 
               top: '50%', 
               left: '60px',
-              width: `${timelineWidthPx - 120}px`,
+              width: `${yearToPixels(TIMELINE_END) - 60 + 12}px`,
               background: 'linear-gradient(to right, hsl(25, 100%, 50%), hsl(25, 100%, 50%) 84%, hsl(140, 70%, 40%) 84%, hsl(140, 70%, 40%))'
             }}
           />
