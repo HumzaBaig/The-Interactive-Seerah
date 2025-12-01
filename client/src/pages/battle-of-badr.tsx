@@ -140,9 +140,14 @@ export default function BattleOfBadr() {
 
         <Card className="max-w-4xl mx-auto bg-white/5 backdrop-blur-lg border-white/10 overflow-hidden">
           <div className="p-8">
-            <div className="mb-4">
-              <h2 className="text-2xl font-bold text-white">{stage.title}</h2>
-              <p className="text-amber-300/80 text-sm">{stage.location}</p>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center">
+                <stage.icon className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-white">{stage.title}</h2>
+                <p className="text-amber-300/80 text-sm">{stage.location}</p>
+              </div>
             </div>
 
             <p className="text-white/80 text-lg leading-relaxed mb-6">
