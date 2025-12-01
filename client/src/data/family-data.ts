@@ -10,7 +10,7 @@ export const familyData: FamilyCard[] = [
     id: 1,
     name: "Abu Talib",
     relation: "Uncle",
-    bio: "The Prophet's paternal uncle who raised him after the death of Abdul-Muttalib. He was the chief of Banu Hashim and provided crucial protection to the Prophet ﷺ during the difficult years in Makkah. Though he never publicly accepted Islam, he defended his nephew until his death in the Year of Sorrow (619 CE)."
+    bio: "The Prophet's paternal uncle who raised him after the death of Abdul-Muttalib. He was the chief of Banu Hashim and provided crucial protection to the Prophet ﷺ during the difficult years in Makkah. Though he never publicly accepted Islam, he defended his nephew until his death in the Year of Sorrow (10th year of Prophethood)."
   },
   {
     id: 2,

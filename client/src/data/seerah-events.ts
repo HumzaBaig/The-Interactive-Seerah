@@ -11,7 +11,7 @@ export const timelinePeriods: TimelinePeriod[] = [
     startYear: 570,
     endYear: 621,
     color: "hsl(25, 100%, 50%)",
-    description: "From the birth of the Prophet ﷺ until the migration to Madinah",
+    description: "From the Year of the Elephant until the Hijrah",
     order: 1
   },
   {
@@ -21,7 +21,7 @@ export const timelinePeriods: TimelinePeriod[] = [
     startYear: 622,
     endYear: 632,
     color: "hsl(140, 70%, 40%)",
-    description: "From the migration to Madinah until the death of the Prophet ﷺ",
+    description: "From the Hijrah (1 AH) until 11 AH",
     order: 2
   }
 ];
