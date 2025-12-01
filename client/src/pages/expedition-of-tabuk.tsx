@@ -17,7 +17,6 @@ const keyFigures: KeyFigure[] = [
   { name: "Umar ibn al-Khattab", role: "Donated half his wealth", status: "heroic" },
   { name: "Ka'b ibn Malik", role: "One of three sincere believers who stayed behind", status: "sinful" },
   { name: "Abdullah ibn Ubayy", role: "Chief hypocrite who returned with 300 men", status: "hypocrite" },
-  { name: "Abu Khaythama", role: "Caught up with army after initially staying", status: "heroic" },
 ];
 
 const expeditionStages = [
