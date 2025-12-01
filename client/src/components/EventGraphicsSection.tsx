@@ -9,11 +9,7 @@ export default function EventGraphicsSection() {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Star className="w-6 h-6 text-amber-500" />
-              <h2 className="text-3xl md:text-4xl font-bold font-display">Notable Events</h2>
-              <Star className="w-6 h-6 text-amber-500" />
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold font-display">Notable Events</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Explore interactive visual journeys through major events in the Prophet's ﷺ life.
             </p>
