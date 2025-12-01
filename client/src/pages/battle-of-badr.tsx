@@ -14,8 +14,7 @@ const keyFigures: KeyFigure[] = [
   { name: "Prophet Muhammad ﷺ", role: "Commander of the Muslims", side: "muslim" },
   { name: "Hamza ibn Abdul-Muttalib", role: "Champion - slew Utbah", side: "muslim" },
   { name: "Ali ibn Abi Talib", role: "Champion - slew al-Walid", side: "muslim" },
-  { name: "Abu Bakr al-Siddiq", role: "Chief Advisor", side: "muslim" },
-  { name: "Umar ibn al-Khattab", role: "Warrior", side: "muslim" },
+  { name: "Ubayda ibn al-Harith", role: "Champion - engaged Shaybah", side: "muslim" },
   { name: "Abu Jahl", role: "Quraysh Leader - killed", side: "quraysh" },
   { name: "Utbah ibn Rabi'ah", role: "Champion - killed by Hamza", side: "quraysh" },
   { name: "Umayyah ibn Khalaf", role: "Leader - killed by Bilal", side: "quraysh" },
@@ -196,22 +195,13 @@ export default function BattleOfBadr() {
                         }`}
                         data-testid={`button-figure-${figure.name}`}
                       >
-                        <div className="flex items-center gap-3">
-                          <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
-                            selectedFigure === figure.name
-                              ? figure.side === "muslim" ? "bg-emerald-400 text-slate-900" : "bg-red-400 text-slate-900"
-                              : figure.side === "muslim" ? "bg-emerald-500/30 text-emerald-200" : "bg-red-500/30 text-red-200"
-                          }`}>
-                            {figure.side === "muslim" ? "M" : "Q"}
-                          </div>
-                          <div className="flex-1">
-                            <h4 className={`font-semibold ${figure.side === "muslim" ? "text-emerald-200" : "text-red-200"}`}>
-                              {figure.name}
-                            </h4>
-                            {selectedFigure === figure.name && (
-                              <p className="text-white/70 text-sm mt-2">{figure.role}</p>
-                            )}
-                          </div>
+                        <div className="flex-1">
+                          <h4 className={`font-semibold ${figure.side === "muslim" ? "text-emerald-200" : "text-red-200"}`}>
+                            {figure.name}
+                          </h4>
+                          {selectedFigure === figure.name && (
+                            <p className="text-white/70 text-sm mt-2">{figure.role}</p>
+                          )}
                         </div>
                       </button>
                     ))}
