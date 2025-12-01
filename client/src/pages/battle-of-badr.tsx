@@ -145,71 +145,75 @@ export default function BattleOfBadr() {
         </div>
 
         <Card className="max-w-5xl mx-auto bg-white/5 backdrop-blur-lg border-white/10 overflow-hidden">
-          <div className="relative h-80 md:h-96 overflow-hidden">
-            {/* Map-like background */}
-            <div className="absolute inset-0 bg-gradient-to-b from-amber-800/60 via-yellow-900/50 to-amber-900/60" />
+          <div className="relative h-[420px] md:h-[480px] overflow-hidden">
+            {/* Parchment/Map background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-yellow-50 to-amber-200" />
             
-            {/* Terrain texture overlay */}
-            <svg className="absolute inset-0 w-full h-full opacity-30">
-              <defs>
-                <pattern id="sand" patternUnits="userSpaceOnUse" width="100" height="100">
-                  <circle cx="10" cy="10" r="1" fill="#d4a574" opacity="0.5"/>
-                  <circle cx="50" cy="30" r="1.5" fill="#c4956a" opacity="0.4"/>
-                  <circle cx="80" cy="60" r="1" fill="#b4855a" opacity="0.5"/>
-                  <circle cx="30" cy="80" r="1.2" fill="#d4a574" opacity="0.4"/>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#sand)" />
+            {/* Map texture overlay */}
+            <div className="absolute inset-0 opacity-30" style={{
+              backgroundImage: `repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(139, 115, 85, 0.1) 2px,
+                rgba(139, 115, 85, 0.1) 4px
+              )`
+            }} />
+
+            {/* Topographic contour lines */}
+            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <ellipse cx="15" cy="20" rx="12" ry="8" fill="none" stroke="#8B7355" strokeWidth="0.3" opacity="0.4" />
+              <ellipse cx="15" cy="20" rx="8" ry="5" fill="none" stroke="#8B7355" strokeWidth="0.3" opacity="0.3" />
+              <ellipse cx="85" cy="15" rx="10" ry="6" fill="none" stroke="#8B7355" strokeWidth="0.3" opacity="0.4" />
+              <ellipse cx="10" cy="75" rx="8" ry="5" fill="none" stroke="#8B7355" strokeWidth="0.3" opacity="0.3" />
             </svg>
-            
-            {/* Dune/hill shapes */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-40">
-              <div className="absolute top-[10%] left-[15%] w-32 h-16 bg-amber-700/50 rounded-full blur-xl" />
-              <div className="absolute top-[5%] right-[20%] w-40 h-20 bg-amber-600/40 rounded-full blur-xl" />
-              <div className="absolute bottom-[20%] left-[10%] w-36 h-18 bg-yellow-800/40 rounded-full blur-xl" />
-              <div className="absolute bottom-[15%] right-[15%] w-28 h-14 bg-amber-700/50 rounded-full blur-xl" />
-            </div>
-            
-            {/* Caravan route path */}
-            <svg className="absolute inset-0 w-full h-full opacity-20">
+
+            {/* Hill labels */}
+            <div className="absolute top-[12%] left-[8%] text-[9px] text-amber-800/60 font-medium italic">Hills</div>
+            <div className="absolute top-[8%] right-[12%] text-[9px] text-amber-800/60 font-medium italic">Dunes</div>
+
+            {/* Main road/caravan route */}
+            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
               <path 
-                d="M 0 50 Q 25 45, 50 50 T 100 45" 
-                stroke="#8B7355" 
-                strokeWidth="8" 
+                d="M -5 55 Q 20 52, 50 50 Q 80 48, 105 45" 
+                stroke="#A0826D" 
+                strokeWidth="1.5" 
                 fill="none" 
-                strokeDasharray="20 10"
-                className="translate-y-[45%]"
+                strokeDasharray="4 2"
+                opacity="0.6"
               />
+              <text x="92" y="42" fontSize="2.5" fill="#8B7355" opacity="0.7">To Makkah</text>
+              <text x="2" y="58" fontSize="2.5" fill="#8B7355" opacity="0.7">To Madinah</text>
             </svg>
 
-            {/* Direction labels */}
-            <div className="absolute top-3 right-4 text-xs text-amber-200/70 font-semibold flex items-center gap-1">
-              Makkah <span className="text-amber-300">→</span>
-            </div>
-            <div className="absolute bottom-3 left-4 text-xs text-amber-200/70 font-semibold flex items-center gap-1">
-              <span className="text-amber-300">←</span> Madinah
-            </div>
-            
-            {/* Wells of Badr */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-5">
-              <div className={`w-14 h-14 rounded-full border-2 border-dashed border-blue-400/50 flex items-center justify-center transition-all duration-500 ${
-                phase.highlight === "wells" ? "bg-blue-500/50 border-blue-300 scale-110" : "bg-blue-500/20"
+            {/* Wells of Badr - Central Feature */}
+            <div className="absolute left-[48%] top-[48%] -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className={`flex flex-col items-center transition-all duration-500 ${
+                phase.highlight === "wells" ? "scale-110" : ""
               }`}>
-                <span className="text-[10px] text-blue-200 font-bold">Wells</span>
+                <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center ${
+                  phase.highlight === "wells" 
+                    ? "bg-blue-400 border-blue-600" 
+                    : "bg-blue-300/80 border-blue-500/60"
+                }`}>
+                  <div className="w-5 h-5 rounded-full bg-blue-600/60" />
+                </div>
+                <span className="text-[10px] text-amber-900 font-bold mt-1 bg-amber-100/80 px-1.5 rounded">Wells of Badr</span>
               </div>
             </div>
 
-            {/* Combat/Duels highlight */}
-            {phase.highlight === "duels" && (
-              <div className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 z-20">
-                <Swords className="w-14 h-14 text-amber-300 drop-shadow-lg" />
-              </div>
-            )}
+            {/* Secondary wells */}
+            <div className="absolute left-[42%] top-[52%] z-5">
+              <div className="w-4 h-4 rounded-full bg-blue-300/60 border border-blue-400/50" />
+            </div>
+            <div className="absolute left-[54%] top-[46%] z-5">
+              <div className="w-3 h-3 rounded-full bg-blue-300/60 border border-blue-400/50" />
+            </div>
 
-            {/* Muslim Army */}
+            {/* Muslim Encampment Area */}
             <div 
-              className={`absolute transition-all duration-1000 ease-in-out flex flex-col items-center z-10 ${
-                phase.highlight === "muslim" ? "scale-110" : ""
+              className={`absolute transition-all duration-1000 ease-in-out z-20 ${
+                phase.highlight === "muslim" ? "scale-105" : ""
               }`}
               style={{ 
                 left: `${phase.muslimPosition.x}%`, 
@@ -217,21 +221,29 @@ export default function BattleOfBadr() {
                 transform: "translate(-50%, -50%)"
               }}
             >
-              <div className={`w-16 h-12 rounded bg-gradient-to-br from-emerald-500 to-emerald-700 border-2 border-emerald-300 shadow-lg flex items-center justify-center ${
-                phase.highlight === "muslim" ? "ring-2 ring-emerald-200" : ""
-              }`}>
-                <Flag className="w-5 h-5 text-white" />
-              </div>
-              <div className="mt-1.5 text-center">
-                <span className="text-xs text-emerald-200 font-bold block drop-shadow">Muslims</span>
-                <span className="text-[10px] text-emerald-300/90">313</span>
+              <div className="flex flex-col items-center">
+                {/* Encampment shape */}
+                <div className={`relative px-4 py-2 rounded-lg border-2 shadow-md ${
+                  phase.highlight === "muslim" 
+                    ? "bg-emerald-500 border-emerald-700 ring-2 ring-emerald-300" 
+                    : "bg-emerald-600/90 border-emerald-700/80"
+                }`}>
+                  <Flag className="w-5 h-5 text-white" />
+                  {/* Tent indicators */}
+                  <div className="absolute -top-1 -left-1 w-2 h-2 bg-emerald-300 rounded-full" />
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-300 rounded-full" />
+                </div>
+                <div className="mt-1 bg-white/90 px-2 py-0.5 rounded shadow-sm">
+                  <span className="text-[10px] text-emerald-800 font-bold block">Muslim Army</span>
+                  <span className="text-[9px] text-emerald-700 block text-center">313 men</span>
+                </div>
               </div>
             </div>
 
-            {/* Quraysh Army */}
+            {/* Quraysh Encampment Area */}
             <div 
-              className={`absolute transition-all duration-1000 ease-in-out flex flex-col items-center z-10 ${
-                phase.highlight === "quraish" ? "scale-110" : ""
+              className={`absolute transition-all duration-1000 ease-in-out z-20 ${
+                phase.highlight === "quraish" ? "scale-105" : ""
               }`}
               style={{ 
                 left: `${phase.quraishPosition.x}%`, 
@@ -239,31 +251,90 @@ export default function BattleOfBadr() {
                 transform: "translate(-50%, -50%)"
               }}
             >
-              <div className={`w-20 h-14 rounded bg-gradient-to-br from-red-600 to-red-800 border-2 border-red-400 shadow-lg flex items-center justify-center ${
-                phase.highlight === "quraish" ? "ring-2 ring-red-200" : ""
-              }`}>
-                <Flag className="w-6 h-6 text-white" />
-              </div>
-              <div className="mt-1.5 text-center">
-                <span className="text-xs text-red-200 font-bold block drop-shadow">Quraysh</span>
-                <span className="text-[10px] text-red-300/90">~1000</span>
+              <div className="flex flex-col items-center">
+                {/* Larger encampment */}
+                <div className={`relative px-5 py-2.5 rounded-lg border-2 shadow-md ${
+                  phase.highlight === "quraish" 
+                    ? "bg-red-500 border-red-700 ring-2 ring-red-300" 
+                    : "bg-red-600/90 border-red-700/80"
+                }`}>
+                  <Flag className="w-6 h-6 text-white" />
+                  {/* More tent indicators for larger army */}
+                  <div className="absolute -top-1 -left-1 w-2 h-2 bg-red-300 rounded-full" />
+                  <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-red-300 rounded-full" />
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-300 rounded-full" />
+                </div>
+                <div className="mt-1 bg-white/90 px-2 py-0.5 rounded shadow-sm">
+                  <span className="text-[10px] text-red-800 font-bold block">Quraysh Army</span>
+                  <span className="text-[9px] text-red-700 block text-center">~1000 men</span>
+                </div>
               </div>
             </div>
 
-            {phase.arrows && phase.arrows.map((arrow, i) => (
-              <div 
-                key={i}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-              >
-                <div className={`w-1 h-16 bg-gradient-to-b ${
-                  arrow.from === "muslim" ? "from-emerald-400 to-transparent" : "from-red-400 to-transparent"
-                } animate-pulse`} />
-              </div>
-            ))}
+            {/* Movement arrows */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none z-15" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <defs>
+                <marker id="arrowGreen" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
+                  <path d="M0,0 L4,2 L0,4 Z" fill="#059669" />
+                </marker>
+                <marker id="arrowRed" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
+                  <path d="M0,0 L4,2 L0,4 Z" fill="#DC2626" />
+                </marker>
+              </defs>
+              
+              {phase.id === "march" && (
+                <path d="M 25 68 Q 35 62, 45 58" stroke="#059669" strokeWidth="0.8" fill="none" markerEnd="url(#arrowGreen)" strokeDasharray="2 1" />
+              )}
+              {phase.id === "arrival" && (
+                <path d="M 72 28 Q 62 35, 55 40" stroke="#DC2626" strokeWidth="0.8" fill="none" markerEnd="url(#arrowRed)" strokeDasharray="2 1" />
+              )}
+              {(phase.id === "duels" || phase.id === "battle") && (
+                <>
+                  <path d="M 48 52 L 48 42" stroke="#059669" strokeWidth="0.8" fill="none" markerEnd="url(#arrowGreen)" />
+                  <path d="M 52 32 L 52 42" stroke="#DC2626" strokeWidth="0.8" fill="none" markerEnd="url(#arrowRed)" />
+                </>
+              )}
+              {phase.id === "victory" && (
+                <path d="M 55 35 Q 70 28, 82 18" stroke="#DC2626" strokeWidth="0.8" fill="none" markerEnd="url(#arrowRed)" strokeDasharray="3 1" opacity="0.7" />
+              )}
+            </svg>
 
-            {phase.highlight === "victory" && (
-              <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/20 to-transparent animate-pulse" />
+            {/* Combat Zone indicator */}
+            {(phase.highlight === "duels" || phase.highlight === "battle") && (
+              <div className="absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 z-25">
+                <div className="flex flex-col items-center">
+                  <Swords className="w-8 h-8 text-amber-700" />
+                  <span className="text-[9px] text-amber-900 font-bold bg-amber-200/80 px-1.5 rounded mt-0.5">Combat</span>
+                </div>
+              </div>
             )}
+
+            {/* Victory overlay */}
+            {phase.highlight === "victory" && (
+              <div className="absolute inset-0 bg-gradient-to-t from-emerald-400/30 to-transparent pointer-events-none" />
+            )}
+
+            {/* Map Legend */}
+            <div className="absolute bottom-2 right-2 bg-white/90 rounded p-2 shadow-sm text-[8px] z-30">
+              <div className="font-bold text-amber-900 mb-1">Legend</div>
+              <div className="flex items-center gap-1 mb-0.5">
+                <div className="w-3 h-3 bg-emerald-500 rounded" />
+                <span className="text-amber-800">Muslims</span>
+              </div>
+              <div className="flex items-center gap-1 mb-0.5">
+                <div className="w-3 h-3 bg-red-500 rounded" />
+                <span className="text-amber-800">Quraysh</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <div className="w-3 h-3 bg-blue-400 rounded-full" />
+                <span className="text-amber-800">Wells</span>
+              </div>
+            </div>
+
+            {/* Map title cartouche */}
+            <div className="absolute top-2 left-1/2 -translate-x-1/2 bg-amber-100/95 border-2 border-amber-400 rounded-lg px-4 py-1 shadow-md z-30">
+              <span className="text-sm font-bold text-amber-900">Valley of Badr</span>
+            </div>
           </div>
 
           <div className="p-6">
