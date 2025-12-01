@@ -145,22 +145,64 @@ export default function BattleOfBadr() {
         </div>
 
         <Card className="max-w-5xl mx-auto bg-white/5 backdrop-blur-lg border-white/10 overflow-hidden">
-          <div className="relative h-80 md:h-96 bg-gradient-to-b from-amber-900/30 to-orange-900/30 overflow-hidden">
-            <div className="absolute top-2 left-4 text-xs text-white/50 font-semibold">Makkah Direction</div>
-            <div className="absolute bottom-2 left-4 text-xs text-white/50 font-semibold">Madinah Direction</div>
+          <div className="relative h-80 md:h-96 overflow-hidden">
+            {/* Map-like background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-amber-800/60 via-yellow-900/50 to-amber-900/60" />
             
-            {phase.highlight === "wells" && (
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-                <div className="w-16 h-16 rounded-full bg-blue-500/40 border-2 border-blue-300/60 flex items-center justify-center">
-                  <span className="text-xs text-blue-200 font-bold">Wells</span>
-                </div>
+            {/* Terrain texture overlay */}
+            <svg className="absolute inset-0 w-full h-full opacity-30">
+              <defs>
+                <pattern id="sand" patternUnits="userSpaceOnUse" width="100" height="100">
+                  <circle cx="10" cy="10" r="1" fill="#d4a574" opacity="0.5"/>
+                  <circle cx="50" cy="30" r="1.5" fill="#c4956a" opacity="0.4"/>
+                  <circle cx="80" cy="60" r="1" fill="#b4855a" opacity="0.5"/>
+                  <circle cx="30" cy="80" r="1.2" fill="#d4a574" opacity="0.4"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#sand)" />
+            </svg>
+            
+            {/* Dune/hill shapes */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-40">
+              <div className="absolute top-[10%] left-[15%] w-32 h-16 bg-amber-700/50 rounded-full blur-xl" />
+              <div className="absolute top-[5%] right-[20%] w-40 h-20 bg-amber-600/40 rounded-full blur-xl" />
+              <div className="absolute bottom-[20%] left-[10%] w-36 h-18 bg-yellow-800/40 rounded-full blur-xl" />
+              <div className="absolute bottom-[15%] right-[15%] w-28 h-14 bg-amber-700/50 rounded-full blur-xl" />
+            </div>
+            
+            {/* Caravan route path */}
+            <svg className="absolute inset-0 w-full h-full opacity-20">
+              <path 
+                d="M 0 50 Q 25 45, 50 50 T 100 45" 
+                stroke="#8B7355" 
+                strokeWidth="8" 
+                fill="none" 
+                strokeDasharray="20 10"
+                className="translate-y-[45%]"
+              />
+            </svg>
+
+            {/* Direction labels */}
+            <div className="absolute top-3 right-4 text-xs text-amber-200/70 font-semibold flex items-center gap-1">
+              Makkah <span className="text-amber-300">→</span>
+            </div>
+            <div className="absolute bottom-3 left-4 text-xs text-amber-200/70 font-semibold flex items-center gap-1">
+              <span className="text-amber-300">←</span> Madinah
+            </div>
+            
+            {/* Wells of Badr */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-5">
+              <div className={`w-14 h-14 rounded-full border-2 border-dashed border-blue-400/50 flex items-center justify-center transition-all duration-500 ${
+                phase.highlight === "wells" ? "bg-blue-500/50 border-blue-300 scale-110" : "bg-blue-500/20"
+              }`}>
+                <span className="text-[10px] text-blue-200 font-bold">Wells</span>
               </div>
-            )}
+            </div>
 
             {/* Combat/Duels highlight */}
             {phase.highlight === "duels" && (
               <div className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 z-20">
-                <Swords className="w-16 h-16 text-amber-300" />
+                <Swords className="w-14 h-14 text-amber-300 drop-shadow-lg" />
               </div>
             )}
 
@@ -175,12 +217,14 @@ export default function BattleOfBadr() {
                 transform: "translate(-50%, -50%)"
               }}
             >
-              <div className={`w-16 h-10 rounded bg-gradient-to-br from-emerald-500 to-emerald-700 border-2 border-emerald-300 shadow-lg ${
+              <div className={`w-16 h-12 rounded bg-gradient-to-br from-emerald-500 to-emerald-700 border-2 border-emerald-300 shadow-lg flex items-center justify-center ${
                 phase.highlight === "muslim" ? "ring-2 ring-emerald-200" : ""
-              }`} />
-              <div className="mt-2 text-center">
-                <span className="text-xs text-emerald-200 font-bold block">Muslims</span>
-                <span className="text-[10px] text-emerald-300/80">313</span>
+              }`}>
+                <Flag className="w-5 h-5 text-white" />
+              </div>
+              <div className="mt-1.5 text-center">
+                <span className="text-xs text-emerald-200 font-bold block drop-shadow">Muslims</span>
+                <span className="text-[10px] text-emerald-300/90">313</span>
               </div>
             </div>
 
@@ -195,12 +239,14 @@ export default function BattleOfBadr() {
                 transform: "translate(-50%, -50%)"
               }}
             >
-              <div className={`w-20 h-12 rounded bg-gradient-to-br from-red-600 to-red-800 border-2 border-red-400 shadow-lg ${
+              <div className={`w-20 h-14 rounded bg-gradient-to-br from-red-600 to-red-800 border-2 border-red-400 shadow-lg flex items-center justify-center ${
                 phase.highlight === "quraish" ? "ring-2 ring-red-200" : ""
-              }`} />
-              <div className="mt-2 text-center">
-                <span className="text-xs text-red-200 font-bold block">Quraysh</span>
-                <span className="text-[10px] text-red-300/80">~1000</span>
+              }`}>
+                <Flag className="w-6 h-6 text-white" />
+              </div>
+              <div className="mt-1.5 text-center">
+                <span className="text-xs text-red-200 font-bold block drop-shadow">Quraysh</span>
+                <span className="text-[10px] text-red-300/90">~1000</span>
               </div>
             </div>
 
