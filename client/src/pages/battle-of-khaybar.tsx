@@ -17,7 +17,7 @@ const keyFigures: KeyFigure[] = [
   { name: "Umar ibn al-Khattab", role: "Led an assault but was repelled", side: "muslim" },
   { name: "Marhab", role: "Jewish champion - killed by Ali in single combat", side: "jewish" },
   { name: "Kinanah ibn al-Rabi", role: "Custodian of Banu Nadir's treasure", side: "jewish" },
-  { name: "Safiyya bint Huyayy", role: "Became a Mother of the Believers", side: "jewish" },
+  { name: "Safiyya bint Huyayy", role: "Became a Mother of the Believers", side: "muslim" },
 ];
 
 const battleStages = [
