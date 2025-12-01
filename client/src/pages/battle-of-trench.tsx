@@ -99,7 +99,7 @@ export default function BattleOfTrench() {
             data-testid="button-back-home"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Timeline
+            Back to Home
           </Button>
         </Link>
       </header>

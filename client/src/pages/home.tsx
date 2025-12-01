@@ -93,12 +93,12 @@ export default function Home() {
             <div className="max-w-4xl mx-auto space-y-8">
               <div className="text-center space-y-4">
                 <h2 className="text-3xl md:text-4xl font-bold">
-                  Explore the Timeline
+                  Explore the Seerah
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Use the interactive timeline above to explore major events in the life of Prophet Muhammad ﷺ. 
                   Click on any event node to view detailed information. Filter by time period or event category 
-                  using the sidebar, or search for specific events.
+                  using the sidebar, or search for events, companions, family members, and more.
                 </p>
               </div>
             </div>

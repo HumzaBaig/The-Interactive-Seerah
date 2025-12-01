@@ -51,7 +51,7 @@ function FlashCard({ companion }: { companion: CompanionCard }) {
 
 export default function TenPromisedFlashCards() {
   return (
-    <section className="py-12 bg-background">
+    <section id="promised-section" className="py-12 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center space-y-4 mb-10">

@@ -52,7 +52,7 @@ function FlashCard({ child }: { child: ChildCard }) {
 
 export default function ChildrenFlashCards() {
   return (
-    <section className="py-12 bg-background">
+    <section id="children-section" className="py-12 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center space-y-4 mb-10">
