@@ -105,7 +105,7 @@ export default function Hijrah() {
       <main className="relative z-10 container mx-auto px-6 pb-12">
         <div className="text-center mb-8">
           <div className="mb-4">
-            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-emerald-200 via-emerald-300 to-emerald-200 bg-clip-text text-transparent pb-2">
+            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-emerald-200 via-emerald-300 to-emerald-200 bg-clip-text text-transparent pb-3">
               The Hijrah
             </h1>
           </div>
