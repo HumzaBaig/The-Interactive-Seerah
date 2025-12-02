@@ -107,7 +107,7 @@ export default function BattleOfTrench() {
       <main className="relative z-10 container mx-auto px-6 pb-12">
         <div className="text-center mb-8">
           <div className="mb-4">
-            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-stone-200 via-stone-300 to-stone-200 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-stone-200 via-stone-300 to-stone-200 bg-clip-text text-transparent pb-1">
               Battle of the Trench
             </h1>
           </div>

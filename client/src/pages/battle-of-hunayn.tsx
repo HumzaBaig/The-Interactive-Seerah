@@ -107,7 +107,7 @@ export default function BattleOfHunayn() {
       <main className="relative z-10 container mx-auto px-6 pb-12">
         <div className="text-center mb-8">
           <div className="mb-4">
-            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-orange-200 via-orange-300 to-orange-200 bg-clip-text text-transparent pb-1">
               Battle of Hunayn
             </h1>
           </div>

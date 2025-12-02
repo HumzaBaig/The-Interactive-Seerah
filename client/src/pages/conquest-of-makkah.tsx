@@ -107,7 +107,7 @@ export default function ConquestOfMakkah() {
       <main className="relative z-10 container mx-auto px-6 pb-12">
         <div className="text-center mb-8">
           <div className="mb-4">
-            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-200 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-200 bg-clip-text text-transparent pb-1">
               Conquest of Makkah
             </h1>
           </div>
