@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { MapPin, Calendar, BookOpen } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
 
 interface EventDetailModalProps {
   event: SeerahEvent | null;
@@ -66,26 +66,8 @@ export default function EventDetailModal({ event, onClose }: EventDetailModalPro
         <Separator className="my-4" />
 
         <DialogDescription asChild>
-          <div className="space-y-6">
-            <div className="text-base md:text-lg leading-loose text-foreground font-serif">
-              {event.description}
-            </div>
-
-            {event.sealedNectarChapter && (
-              <div className="bg-accent/20 border border-accent rounded-lg p-4">
-                <div className="flex items-start gap-3">
-                  <BookOpen className="w-5 h-5 text-accent-foreground mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-sm text-accent-foreground mb-1">
-                      Reference from The Sealed Nectar
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {event.sealedNectarChapter}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
+          <div className="text-base md:text-lg leading-loose text-foreground font-serif">
+            {event.description}
           </div>
         </DialogDescription>
       </DialogContent>
