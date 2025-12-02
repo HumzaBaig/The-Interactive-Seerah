@@ -273,7 +273,7 @@ export const seerahEvents: SeerahEvent[] = [
     period: "makkan",
     category: "civic",
     location: "Al-'Aqabah, Mina",
-    description: "73 men and 2 women from Madinah pledged to protect the Prophet ﷺ as they would protect their own families and to support Islam even if it meant war. This 'War Pledge' committed them to defending Islam with their lives. Twelve leaders (nuqaba) were appointed. This paved the way for the Migration to Madinah.",
+    description: "73 men and 2 women from Madinah pledged to protect the Prophet ﷺ as they would protect their own families and to support Islam even if it meant war. This Pledge committed them to defending Islam with their lives. Twelve leaders (nuqaba) were appointed. This paved the way for the Migration to Madinah.",
     significance: "critical",
     sealedNectarChapter: "The Second 'Aqabah Pledge"
   },
