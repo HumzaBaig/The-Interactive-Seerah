@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { SeerahEvent, TimelinePeriod } from "@shared/schema";
 import EventNode from "@/components/EventNode";
 import EventDetailModal from "@/components/EventDetailModal";
@@ -13,6 +13,12 @@ interface TimelineViewerProps {
   selectedCategory?: string;
 }
 
+interface EventLayoutData {
+  positionPx: number;
+  labelPosition: "above" | "below";
+  verticalOffset: number;
+}
+
 const FIXED_PIXELS_PER_YEAR = 120;
 
 export default function TimelineViewer({ 
@@ -25,35 +31,102 @@ export default function TimelineViewer({
   const [isFullscreen, setIsFullscreen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  const yearToPixels = (year: number) => {
+    const clampedYear = Math.max(TIMELINE_START, Math.min(TIMELINE_END, year));
+    return 60 + (clampedYear - TIMELINE_START) * FIXED_PIXELS_PER_YEAR;
+  };
+
+  // Precompute stable layout for ALL events (not affected by filters)
+  const eventLayoutMap = useMemo(() => {
+    const layoutMap: Record<string, EventLayoutData> = {};
+    
+    // Calculate positions for all events
+    const eventPositions = events.map(event => {
+      const sameYearEvents = events.filter(e => e.year === event.year);
+      const indexInYear = sameYearEvents.findIndex(e => e.id === event.id);
+      const offsetPx = sameYearEvents.length > 1 ? (indexInYear * 70) : 0;
+      return {
+        event,
+        positionPx: yearToPixels(event.year) + offsetPx
+      };
+    }).sort((a, b) => a.positionPx - b.positionPx);
+
+    // Calculate label positions and vertical offsets
+    const MIN_SPACING = 100;
+    
+    eventPositions.forEach((item, index) => {
+      let position: "above" | "below" = index % 2 === 0 ? "above" : "below";
+      let offset = 0;
+      
+      let aboveCount = 0;
+      let belowCount = 0;
+      let aboveOffsets: number[] = [];
+      let belowOffsets: number[] = [];
+      
+      for (let i = index - 1; i >= 0 && i >= index - 6; i--) {
+        const prevItem = eventPositions[i];
+        const prevLayout = layoutMap[prevItem.event.id];
+        const distance = item.positionPx - prevItem.positionPx;
+        
+        if (distance < MIN_SPACING && prevLayout) {
+          if (prevLayout.labelPosition === "above") {
+            aboveCount++;
+            aboveOffsets.push(prevLayout.verticalOffset);
+          } else {
+            belowCount++;
+            belowOffsets.push(prevLayout.verticalOffset);
+          }
+        }
+      }
+      
+      if (aboveCount < belowCount) {
+        position = "above";
+      } else if (belowCount < aboveCount) {
+        position = "below";
+      }
+      
+      const usedOffsets = position === "above" ? aboveOffsets : belowOffsets;
+      if (usedOffsets.length > 0) {
+        const offsetLevels = [0, 30, 60, 90];
+        for (const level of offsetLevels) {
+          if (!usedOffsets.includes(level)) {
+            offset = level;
+            break;
+          }
+        }
+        if (usedOffsets.includes(offset)) {
+          offset = Math.max(...usedOffsets) + 30;
+        }
+      }
+      
+      layoutMap[item.event.id] = {
+        positionPx: item.positionPx,
+        labelPosition: position,
+        verticalOffset: offset
+      };
+    });
+    
+    return layoutMap;
+  }, [events]);
+
+  // Filter events for display (positions come from precomputed map)
   const filteredEvents = events.filter(event => {
     const periodMatch = !selectedPeriod || event.period === selectedPeriod;
     const categoryMatch = !selectedCategory || event.category === selectedCategory;
     return periodMatch && categoryMatch;
   });
 
-  const totalYears = TIMELINE_END - TIMELINE_START;
-  
-  const yearToPixels = (year: number) => {
-    const clampedYear = Math.max(TIMELINE_START, Math.min(TIMELINE_END, year));
-    return 60 + (clampedYear - TIMELINE_START) * FIXED_PIXELS_PER_YEAR;
-  };
-
-  // Calculate maximum event position (including same-year offsets)
-  const getMaxEventPosition = () => {
-    let maxPosition = yearToPixels(TIMELINE_END);
-    events.forEach(event => {
-      const sameYearEvents = events.filter(e => e.year === event.year);
-      const indexInYear = sameYearEvents.findIndex(e => e.id === event.id);
-      const offsetPx = sameYearEvents.length > 1 ? (indexInYear * 70) : 0;
-      const position = yearToPixels(event.year) + offsetPx;
-      if (position > maxPosition) {
-        maxPosition = position;
+  // Calculate maximum event position from all events
+  const maxEventPosition = useMemo(() => {
+    let maxPos = yearToPixels(TIMELINE_END);
+    Object.values(eventLayoutMap).forEach(layout => {
+      if (layout.positionPx > maxPos) {
+        maxPos = layout.positionPx;
       }
     });
-    return maxPosition;
-  };
+    return maxPos;
+  }, [eventLayoutMap]);
 
-  const maxEventPosition = getMaxEventPosition();
   const timelineWidthPx = maxEventPosition + 100;
 
   const getPeriodColor = (periodId: string) => {
@@ -121,97 +194,28 @@ export default function TimelineViewer({
             }}
           />
 
-          {/* Event Nodes */}
+          {/* Event Nodes - uses precomputed positions from eventLayoutMap */}
           <div 
             className="absolute inset-x-0" 
             style={{ top: '50%', transform: 'translateY(-50%)' }}
           >
-            {(() => {
-              // Calculate positions for all events first
-              const eventPositions = filteredEvents.map(event => {
-                const sameYearEvents = filteredEvents.filter(e => e.year === event.year);
-                const indexInYear = sameYearEvents.findIndex(e => e.id === event.id);
-                const offsetPx = sameYearEvents.length > 1 ? (indexInYear * 70) : 0;
-                return {
-                  event,
-                  positionPx: yearToPixels(event.year) + offsetPx
-                };
-              }).sort((a, b) => a.positionPx - b.positionPx);
-
-              // Calculate label positions and vertical offsets to prevent overlap
-              const labelData: { position: "above" | "below"; offset: number }[] = [];
-              const MIN_SPACING = 100; // Minimum horizontal spacing before staggering
+            {filteredEvents.map(event => {
+              const layout = eventLayoutMap[event.id];
+              if (!layout) return null;
               
-              eventPositions.forEach((item, index) => {
-                // Default alternating pattern
-                let position: "above" | "below" = index % 2 === 0 ? "above" : "below";
-                let offset = 0;
-                
-                // Count nearby events on each side
-                let aboveCount = 0;
-                let belowCount = 0;
-                let aboveOffsets: number[] = [];
-                let belowOffsets: number[] = [];
-                
-                // Look at previous events within spacing threshold
-                for (let i = index - 1; i >= 0 && i >= index - 6; i--) {
-                  const prevItem = eventPositions[i];
-                  const prevLabel = labelData[i];
-                  const distance = item.positionPx - prevItem.positionPx;
-                  
-                  if (distance < MIN_SPACING) {
-                    if (prevLabel.position === "above") {
-                      aboveCount++;
-                      aboveOffsets.push(prevLabel.offset);
-                    } else {
-                      belowCount++;
-                      belowOffsets.push(prevLabel.offset);
-                    }
-                  }
-                }
-                
-                // Choose less crowded side
-                if (aboveCount < belowCount) {
-                  position = "above";
-                } else if (belowCount < aboveCount) {
-                  position = "below";
-                }
-                
-                // Calculate offset based on used offsets on chosen side
-                const usedOffsets = position === "above" ? aboveOffsets : belowOffsets;
-                if (usedOffsets.length > 0) {
-                  // Find lowest unused offset level (0, 30, 60, 90...)
-                  const offsetLevels = [0, 30, 60, 90];
-                  for (const level of offsetLevels) {
-                    if (!usedOffsets.includes(level)) {
-                      offset = level;
-                      break;
-                    }
-                  }
-                  // If all levels used, use highest + 30
-                  if (usedOffsets.includes(offset)) {
-                    offset = Math.max(...usedOffsets) + 30;
-                  }
-                }
-                
-                labelData.push({ position, offset });
-              });
-
-              return eventPositions.map((item, index) => {
-                const periodColor = getPeriodColor(item.event.period);
-                return (
-                  <EventNode
-                    key={item.event.id}
-                    event={item.event}
-                    positionPx={item.positionPx}
-                    periodColor={periodColor}
-                    onClick={() => setSelectedEvent(item.event)}
-                    labelPosition={labelData[index].position}
-                    verticalOffset={labelData[index].offset}
-                  />
-                );
-              });
-            })()}
+              const periodColor = getPeriodColor(event.period);
+              return (
+                <EventNode
+                  key={event.id}
+                  event={event}
+                  positionPx={layout.positionPx}
+                  periodColor={periodColor}
+                  onClick={() => setSelectedEvent(event)}
+                  labelPosition={layout.labelPosition}
+                  verticalOffset={layout.verticalOffset}
+                />
+              );
+            })}
           </div>
 
         </div>
