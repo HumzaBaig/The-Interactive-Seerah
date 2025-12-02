@@ -242,7 +242,7 @@ export const seerahEvents: SeerahEvent[] = [
     id: "isra-miraj",
     title: "Night Journey and Ascension (Al-Isra wal-Mi'raj)",
     titleArabic: "الإسراء والمعراج",
-    date: "Rajab, 11th year after the first revelation",
+    date: "Rajab, 10th year after the first revelation",
     year: 621,
     period: "makkan",
     category: "spiritual",
