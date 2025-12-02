@@ -65,7 +65,7 @@ export const seerahEvents: SeerahEvent[] = [
     period: "makkan",
     category: "spiritual",
     location: "Desert of Banu Sa'd",
-    description: "While playing with other children in the desert, two angels (Jibreel and Mikael) came to the young Muhammad ﷺ. They laid him down, opened his chest, removed his heart, extracted a black clot (the portion of Satan), washed his heart with Zamzam water in a golden basin, filled it with wisdom and faith, then returned it and sealed his chest. The other children ran to Halimah saying 'Muhammad has been killed!' but found him pale and shaken. This purification prepared him for prophethood.",
+    description: "While playing with other children in the desert, angel Jibreel (AS) came to the young Muhammad ﷺ, opened his chest, removed his heart, extracted a black clot (the portion of Satan), washed his heart with Zamzam water in a golden basin, filled it with wisdom and faith, then returned it and sealed his chest. The other children ran to Halimah saying 'Muhammad has been killed!' but found him pale but alright. This purification prepared him for prophethood.",
     significance: "critical",
     sealedNectarChapter: "Childhood"
   },
