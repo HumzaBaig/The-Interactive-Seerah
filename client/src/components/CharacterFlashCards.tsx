@@ -110,9 +110,7 @@ export default function CharacterFlashCards() {
             <h2 className="text-3xl md:text-4xl font-bold">
               The Noble Character
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Discover the beautiful character traits of Prophet Muhammad ﷺ through authentic narrations. Click on each card and use the arrows to explore multiple narrations.
-            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Discover the beautiful character of the Prophet Muhammad ﷺ through authentic narrations. Click on each card and use the arrows to explore multiple narrations.</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
