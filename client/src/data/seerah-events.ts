@@ -260,7 +260,7 @@ export const seerahEvents: SeerahEvent[] = [
     period: "makkan",
     category: "civic",
     location: "Al-'Aqabah, Mina",
-    description: "During the Hajj season, twelve men from Yathrib (Madinah) secretly met the Prophet ﷺ at Al-'Aqabah and pledged to worship Allah alone, not steal, not commit adultery, not kill their children, and obey the Prophet ﷺ in all that is right. This 'Pledge of Women' laid the foundation for Islam's spread in Madinah.",
+    description: "During the Hajj season, twelve men from Yathrib (Madinah) secretly met the Prophet ﷺ at Al-'Aqabah and pledged to worship Allah alone, not steal, not commit adultery, not kill their children, and obey the Prophet ﷺ in all that is right. This Pledge laid the foundation for Islam's spread in Madinah.",
     significance: "critical",
     sealedNectarChapter: "The First 'Aqabah Pledge"
   },
