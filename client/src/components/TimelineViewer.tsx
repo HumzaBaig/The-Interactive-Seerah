@@ -140,41 +140,57 @@ export default function TimelineViewer({
 
               // Calculate label positions and vertical offsets to prevent overlap
               const labelData: { position: "above" | "below"; offset: number }[] = [];
-              const MIN_SPACING = 130; // Minimum horizontal spacing before staggering
+              const MIN_SPACING = 100; // Minimum horizontal spacing before staggering
               
               eventPositions.forEach((item, index) => {
-                // Check nearby events on same side
+                // Default alternating pattern
                 let position: "above" | "below" = index % 2 === 0 ? "above" : "below";
                 let offset = 0;
                 
-                // Look at previous events with same position (above/below)
-                for (let i = index - 1; i >= 0 && i >= index - 4; i--) {
+                // Count nearby events on each side
+                let aboveCount = 0;
+                let belowCount = 0;
+                let aboveOffsets: number[] = [];
+                let belowOffsets: number[] = [];
+                
+                // Look at previous events within spacing threshold
+                for (let i = index - 1; i >= 0 && i >= index - 6; i--) {
                   const prevItem = eventPositions[i];
                   const prevLabel = labelData[i];
                   const distance = item.positionPx - prevItem.positionPx;
                   
-                  if (distance < MIN_SPACING && prevLabel.position === position) {
-                    // Too close, either switch sides or add offset
-                    const otherPosition = position === "above" ? "below" : "above";
-                    
-                    // Check if other side is also crowded
-                    let otherSideCrowded = false;
-                    for (let j = index - 1; j >= 0 && j >= index - 4; j--) {
-                      const checkItem = eventPositions[j];
-                      const checkLabel = labelData[j];
-                      const checkDist = item.positionPx - checkItem.positionPx;
-                      if (checkDist < MIN_SPACING && checkLabel.position === otherPosition) {
-                        otherSideCrowded = true;
-                        break;
-                      }
-                    }
-                    
-                    if (!otherSideCrowded) {
-                      position = otherPosition;
+                  if (distance < MIN_SPACING) {
+                    if (prevLabel.position === "above") {
+                      aboveCount++;
+                      aboveOffsets.push(prevLabel.offset);
                     } else {
-                      // Both sides crowded, add vertical offset
-                      offset = 35;
+                      belowCount++;
+                      belowOffsets.push(prevLabel.offset);
                     }
+                  }
+                }
+                
+                // Choose less crowded side
+                if (aboveCount < belowCount) {
+                  position = "above";
+                } else if (belowCount < aboveCount) {
+                  position = "below";
+                }
+                
+                // Calculate offset based on used offsets on chosen side
+                const usedOffsets = position === "above" ? aboveOffsets : belowOffsets;
+                if (usedOffsets.length > 0) {
+                  // Find lowest unused offset level (0, 30, 60, 90...)
+                  const offsetLevels = [0, 30, 60, 90];
+                  for (const level of offsetLevels) {
+                    if (!usedOffsets.includes(level)) {
+                      offset = level;
+                      break;
+                    }
+                  }
+                  // If all levels used, use highest + 30
+                  if (usedOffsets.includes(offset)) {
+                    offset = Math.max(...usedOffsets) + 30;
                   }
                 }
                 
