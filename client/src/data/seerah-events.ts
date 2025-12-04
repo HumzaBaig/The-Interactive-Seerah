@@ -368,7 +368,7 @@ export const seerahEvents: SeerahEvent[] = [
     period: "madinan",
     category: "battle",
     location: "Madinah",
-    description: "A coalition of 10,000 (Quraish, allied tribes, and Banu Nadir) besieged Madinah. On Salman al-Farsi's advice, Muslims dug a defensive trench - a tactic unknown to Arabs. Banu Qurayza broke their treaty during the siege. After nearly a month, Allah sent a fierce wind destroying the enemy camp, and they withdrew. The Quran declared: 'Allah repelled the disbelievers in their rage' (33:25).",
+    description: "A coalition of 10,000 (Quraish, allied Arab and Jewish tribes) besieged Madinah. On Salman al-Farsi's advice, Muslims dug a defensive trench - a tactic unknown to Arabs. Banu Qurayza broke their treaty during the siege. After nearly a month, Allah sent a fierce wind destroying the enemy camp, and they withdrew. The Quran declared: 'Allah repelled the disbelievers in their rage' (33:25).",
     significance: "critical",
     sealedNectarChapter: "The Battle of the Confederates (Al-Ahzab)"
   },
