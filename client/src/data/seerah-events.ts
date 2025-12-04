@@ -309,7 +309,7 @@ export const seerahEvents: SeerahEvent[] = [
   },
   {
     id: "brotherhood",
-    title: "Brotherhood Between Emigrants and Helpers",
+    title: "Bonds of Brotherhood",
     titleArabic: "المؤاخاة بين المهاجرين والأنصار",
     date: "1 AH",
     year: 622,
