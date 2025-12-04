@@ -342,7 +342,7 @@ export const seerahEvents: SeerahEvent[] = [
     period: "madinan",
     category: "battle",
     location: "Badr",
-    description: "The first major battle between Muslims and Quraish. Despite being outnumbered 3:1 (313 Muslims vs 1,000+ Quraish), the Muslims achieved a decisive victory with divine assistance through angels as mentioned in the Quran. Key Quraish leaders including Abu Jahl were killed. 14 Muslims were martyred. This was a defining moment establishing Muslim military capability.",
+    description: "The first major battle between Muslims and Quraish. Despite being outnumbered 3:1 (~300 Muslims vs 1,000+ Quraish), the Muslims achieved a decisive victory with divine assistance through angels as mentioned in the Quran. Key Quraish leaders including Abu Jahl were killed. 14 Muslims were martyred. This was a defining moment establishing Muslim military capability.",
     significance: "critical",
     sealedNectarChapter: "The Battle of Badr - The First Decisive Battle in the History of Islam"
   },
