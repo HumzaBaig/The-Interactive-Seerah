@@ -290,7 +290,7 @@ export const seerahEvents: SeerahEvent[] = [
     period: "madinan",
     category: "migration",
     location: "Makkah → Madinah",
-    description: "When the Quraish plotted to assassinate the Prophet ﷺ, Allah commanded him to migrate to Madinah. Ali ibn Abi Talib slept in his bed as a decoy. The Prophet ﷺ and Abu Bakr hid in Cave Thawr for three days while Quraish offered a 100-camel reward for their capture. A spider's web and dove's nest at the cave entrance concealed them. This marks Year 1 of the Islamic calendar.",
+    description: "When the Quraish plotted to assassinate the Prophet ﷺ, Allah commanded him to migrate to Madinah. Ali ibn Abi Talib slept in his bed as a decoy. The Prophet ﷺ and Abu Bakr hid in the Cave of Thawr for three nights while the Quraish offered a 100-camel reward for their capture. This marks Year 1 of the Islamic calendar.",
     significance: "critical",
     sealedNectarChapter: "The Prophet's Migration"
   },
