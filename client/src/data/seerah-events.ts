@@ -316,7 +316,7 @@ export const seerahEvents: SeerahEvent[] = [
     period: "madinan",
     category: "civic",
     location: "Madinah",
-    description: "The Prophet ﷺ established bonds of brotherhood (Mu'akhah) between the Muhajirun (emigrants from Makkah) and Ansar (helpers from Madinah). Each Ansar was paired with a Muhajir, sharing their wealth, homes, and even inheritance. This created unprecedented social unity transcending tribal affiliations.",
+    description: "The Prophet ﷺ established bonds of brotherhood between the Muhajirun (emigrants from Makkah) and Ansar (helpers from Madinah). Each Ansar was paired with a Muhajir, sharing their wealth, homes, and even inheritance. This created unprecedented social unity transcending tribal affiliations.",
     significance: "critical",
     sealedNectarChapter: "The First Phases in Madinah"
   },
