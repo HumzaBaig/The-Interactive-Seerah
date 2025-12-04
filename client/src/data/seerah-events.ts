@@ -342,7 +342,7 @@ export const seerahEvents: SeerahEvent[] = [
     period: "madinan",
     category: "civic",
     location: "Madinah",
-    description: "The Prophet ﷺ established a written constitution regulating relations between Muslims, Jews, and other groups in Madinah. It defined rights and responsibilities for all citizens, established the Prophet ﷺ as the supreme arbiter of disputes, and created the first Islamic state with a clear social contract guaranteeing religious freedom and mutual defense.",
+    description: "The Prophet ﷺ established a written constitution regulating relations between Muslims, Jews, and other groups in Madinah. It defined rights and responsibilities for all citizens, established the Prophet ﷺ as the supreme arbiter of disputes, and created the first Islamic state with a clear social contract guaranteeing religious freedom and mutual defense. It included agreements with major Jewish tribes such as Banu Qainuqa, Banu Nadir, and Banu Qurayzah. However, each of these tribes would eventually breach the treaty over time.",
     significance: "critical",
     sealedNectarChapter: "The First Phases in Madinah"
   },
