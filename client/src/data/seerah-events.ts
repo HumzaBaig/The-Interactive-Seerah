@@ -321,19 +321,6 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarChapter: "The First Phases in Madinah"
   },
   {
-    id: "constitution",
-    title: "Constitution of Madinah",
-    titleArabic: "صحيفة المدينة",
-    date: "1 AH",
-    year: 622,
-    period: "madinan",
-    category: "civic",
-    location: "Madinah",
-    description: "The Prophet ﷺ established a written constitution regulating relations between Muslims, Jews, and other groups in Madinah. It defined rights and responsibilities for all citizens, established the Prophet ﷺ as the supreme arbiter of disputes, and created the first Islamic state with a clear social contract guaranteeing religious freedom and mutual defense.",
-    significance: "critical",
-    sealedNectarChapter: "The First Phases in Madinah"
-  },
-  {
     id: "badr",
     title: "Battle of Badr",
     titleArabic: "غزوة بدر الكبرى",
@@ -345,6 +332,19 @@ export const seerahEvents: SeerahEvent[] = [
     description: "The first major battle between Muslims and Quraish. Despite being outnumbered 3:1 (~300 Muslims vs 1,000+ Quraish), the Muslims achieved a decisive victory with divine assistance through angels as mentioned in the Quran. Key Quraish leaders including Abu Jahl were killed. 14 Muslims were martyred. This was a defining moment establishing Muslim military capability.",
     significance: "critical",
     sealedNectarChapter: "The Battle of Badr - The First Decisive Battle in the History of Islam"
+  },
+  {
+    id: "constitution",
+    title: "Constitution of Madinah",
+    titleArabic: "صحيفة المدينة",
+    date: "1 AH",
+    year: 622,
+    period: "madinan",
+    category: "civic",
+    location: "Madinah",
+    description: "The Prophet ﷺ established a written constitution regulating relations between Muslims, Jews, and other groups in Madinah. It defined rights and responsibilities for all citizens, established the Prophet ﷺ as the supreme arbiter of disputes, and created the first Islamic state with a clear social contract guaranteeing religious freedom and mutual defense.",
+    significance: "critical",
+    sealedNectarChapter: "The First Phases in Madinah"
   },
   {
     id: "uhud",
