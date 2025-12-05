@@ -25,7 +25,7 @@ const battleStages = [
     id: "march",
     title: "The March to Badr",
     location: "From Madinah",
-    description: "The Muslim army of around 300 men marched from Madinah towards Badr to intercept the Quraysh caravan. The Prophet ﷺ consulted with his companions, and the Ansar pledged their full support. Sa'd ibn Mu'adh declared: 'We believe in you and we bear witness that what you have brought is the truth.'",
+    description: "The Muslim army of around 300 men marched from Madinah towards Badr to intercept the Quraysh caravan. The Prophet ﷺ consulted with his companions, and the Ansar pledged their full support. Sa'd ibn Mu'adh declared: 'We have believed in you, and we have followed you, and we testify that what you have brought is the truth. We give you our firm pledge of obedience and sacrifice...'",
     icon: Footprints
   },
   {
