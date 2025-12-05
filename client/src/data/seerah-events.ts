@@ -109,6 +109,19 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarChapter: "Before the Prophethood"
   },
   {
+    id: "hilf-al-fudul",
+    title: "Hilf al-Fudul (Pact of the Virtuous)",
+    titleArabic: "حلف الفضول",
+    date: "Around 20 years after the Year of the Elephant",
+    year: 591,
+    period: "makkan",
+    category: "civic",
+    location: "House of Abdullah ibn Jud'an, Makkah",
+    description: "Following the Sacrilegious War (Harb al-Fijar), noble-minded men from various Quraish clans gathered at the house of Abdullah ibn Jud'an and formed a pact to support the oppressed and ensure justice for anyone wronged in Makkah, regardless of their tribe or status. The young Muhammad ﷺ participated in this alliance. Years later, after prophethood, he said: 'I witnessed a pact in the house of Abdullah ibn Jud'an that was more beloved to me than red camels. If I were called to it in Islam, I would respond.'",
+    significance: "high",
+    sealedNectarChapter: "Before the Prophethood"
+  },
+  {
     id: "marriage-khadijah",
     title: "Marriage to Khadijah",
     titleArabic: "زواجه من خديجة رضي الله عنها",
@@ -120,6 +133,19 @@ export const seerahEvents: SeerahEvent[] = [
     description: "At age 25, the Prophet ﷺ married Khadijah bint Khuwaylid, a noble and wealthy widow. She proposed marriage after witnessing his exceptional honesty and trustworthiness while managing her trade caravans to Syria. She was his only wife for 25 years and bore all his children except Ibrahim. She was the first to believe in his message.",
     significance: "critical",
     sealedNectarChapter: "His Marriage to Khadijah"
+  },
+  {
+    id: "kaaba-rebuilding",
+    title: "Rebuilding of the Ka'bah",
+    titleArabic: "إعادة بناء الكعبة",
+    date: "35 years after the Year of the Elephant",
+    year: 605,
+    period: "makkan",
+    category: "civic",
+    location: "Ka'bah, Makkah",
+    description: "When the Ka'bah was damaged by flooding and fire, the Quraish decided to rebuild it. A dispute arose over who would have the honor of placing the Black Stone (al-Hajar al-Aswad) in its corner. The tribes nearly came to blows until they agreed to let the first person to enter the sanctuary decide. Muhammad ﷺ, then 35 years old, entered and devised a wise solution: he placed the Black Stone on a cloth and had representatives from each tribe hold its edges to lift it together. He then placed the stone in its position with his own hands, satisfying all parties and averting conflict.",
+    significance: "high",
+    sealedNectarChapter: "Before the Prophethood"
   },
   {
     id: "first-revelation",
