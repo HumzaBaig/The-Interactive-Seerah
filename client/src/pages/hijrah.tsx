@@ -51,7 +51,7 @@ const journeyStages = [
     id: "quba",
     title: "Arrival at Quba",
     location: "Quba, outskirts of Madinah",
-    description: "The Prophet ﷺ arrived at Quba on Monday, 8th of Rabi' al-Awwal. He stayed for four days and established Masjid Quba - the first mosque built in Islam. The Prophet ﷺ later said that praying two rak'ahs there equals the reward of an Umrah.",
+    description: "The Prophet ﷺ arrived at Quba on Monday, 8th of Rabi' al-Awwal. He stayed for four days and established Masjid Quba - the first mosque built in Islam. The Prophet ﷺ later said that whoever purifies himself at his home, and then prays two rak'ahs in Quba will have the reward equal of an Umrah.",
     icon: Landmark
   },
   {
