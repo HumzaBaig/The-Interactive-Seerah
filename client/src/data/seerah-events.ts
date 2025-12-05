@@ -96,6 +96,19 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarChapter: "In The Shade of Abdul-Muttalib's House"
   },
   {
+    id: "journey-syria",
+    title: "Journey to Syria",
+    titleArabic: "الرحلة إلى الشام",
+    date: "Age 12 or later",
+    year: 590,
+    period: "makkan",
+    category: "civic",
+    location: "Makkah → Syria",
+    description: "In his youth, the Prophet ﷺ traveled with Khadijah's trading caravans to Syria (Ash-Sham). During this journey, he encountered Christian monks and demonstrated his exceptional moral character and honesty in commerce. The monk Bahira is reported to have recognized signs of prophethood in him. These journeys exposed him to Christian and Jewish teachings and solidified his reputation as 'Al-Amin' (the Trustworthy One) among the merchants of Makkah.",
+    significance: "high",
+    sealedNectarChapter: "Before the Prophethood"
+  },
+  {
     id: "marriage-khadijah",
     title: "Marriage to Khadijah",
     titleArabic: "زواجه من خديجة رضي الله عنها",
