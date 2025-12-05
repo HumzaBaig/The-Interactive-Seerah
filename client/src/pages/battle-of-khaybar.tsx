@@ -25,7 +25,7 @@ const battleStages = [
     id: "march",
     title: "March to Khaybar",
     location: "From Madinah",
-    description: "In Muharram of 7 AH, the Prophet ﷺ led 1,400 Muslims (200 cavalry) towards Khaybar, a fortified Jewish settlement 150 km north of Madinah. The inhabitants had been inciting Arab tribes against the Muslims and were responsible for organizing the Confederate forces at the Trench.",
+    description: "In Muharram of 7 AH, the Prophet ﷺ led 1,400-1,600 Muslims (200 cavalry) towards Khaybar, a fortified Jewish settlement 150 km north of Madinah. The inhabitants had been inciting Arab tribes against the Muslims and were responsible for organizing the Confederate forces at the Trench.",
     icon: Map
   },
   {
