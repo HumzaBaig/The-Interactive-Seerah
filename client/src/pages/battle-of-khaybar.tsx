@@ -46,7 +46,7 @@ const battleStages = [
     id: "conquest",
     title: "Ali's Conquest",
     location: "Fortress of Qamus",
-    description: "Ali marched to the fortress of Qamus, the strongest of all. Marhab, the Jewish champion, came out for single combat, boasting of his prowess. Ali killed him and continued fighting until he reached the fortress gate, using it as a shield. The fortress fell, and other fortifications followed in succession.",
+    description: "Ali marched to the fortress of Qamus, the strongest of all. Marhab, the Jewish champion, came out for single combat, boasting of his prowess. Ali killed him and continued fighting until he reached the fortress gate. He grabbed the gate and used it as a shield. The fortress fell, and other fortifications followed in succession.",
     icon: Swords
   },
   {
