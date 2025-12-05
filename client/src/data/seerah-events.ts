@@ -161,6 +161,19 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarChapter: "Open Preaching"
   },
   {
+    id: "persecution",
+    title: "Persecution of the Early Muslims",
+    titleArabic: "اضطهاد المسلمين الأوائل",
+    date: "4th-5th year after the first revelation",
+    year: 614,
+    period: "makkan",
+    category: "civic",
+    location: "Makkah",
+    description: "After the public declaration, the Quraish unleashed severe persecution on the Muslims, especially those without tribal protection. Bilal ibn Rabah was tortured by Umayyah ibn Khalaf under the scorching sun with heavy rocks on his chest, yet he persisted saying 'Ahad, Ahad' (One, One). Ammar ibn Yasir's family faced brutal torture - his parents Yasir and Sumayyah became the first martyrs of Islam. Khabbab ibn al-Aratt was burned with hot iron. Abu Bakr purchased and freed many tortured slaves including Bilal. The Prophet ﷺ consoled his companions: 'Be patient, O family of Yasir! Your meeting place is Paradise.'",
+    significance: "critical",
+    sealedNectarChapter: "Persecution and Torture"
+  },
+  {
     id: "first-abyssinia",
     title: "First Migration to Abyssinia",
     titleArabic: "الهجرة الأولى إلى الحبشة",
