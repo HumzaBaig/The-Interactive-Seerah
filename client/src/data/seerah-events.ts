@@ -399,6 +399,19 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarChapter: "Al-Hudaibiyah Treaty"
   },
   {
+    id: "letters-kings",
+    title: "Letters to the Kings and Leaders",
+    titleArabic: "الكتب إلى الملوك والأمراء",
+    date: "6-7 AH",
+    year: 628,
+    period: "madinan",
+    category: "civic",
+    location: "Madinah",
+    description: "The Prophet ﷺ sent formal letters to the rulers of the world, inviting them to Islam. Among the recipients were the Byzantine Emperor Heraclius, the Persian Emperor Khosrau, the King of Egypt, the King of Abyssinia, and other rulers. These letters were diplomatic messages calling for submission to Allah and His Prophet. Some rulers rejected the message, while others responded respectfully or showed interest. This marked an important shift from local to global diplomacy.",
+    significance: "high",
+    sealedNectarChapter: "Dispatching Messengers and Letters"
+  },
+  {
     id: "khaybar",
     title: "Conquest of Khaybar",
     titleArabic: "فتح خيبر",
