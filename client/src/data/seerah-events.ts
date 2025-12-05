@@ -425,6 +425,19 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarChapter: "The Conquest of Khaibar"
   },
   {
+    id: "mutah",
+    title: "Battle of Mu'tah",
+    titleArabic: "غزوة مؤتة",
+    date: "Jumada al-Ula, 8 AH",
+    year: 629,
+    period: "madinan",
+    category: "battle",
+    location: "Mu'tah (Northern Arabia)",
+    description: "The first confrontation with the Byzantine Empire. The Prophet ﷺ sent an army of 3,000 Muslim soldiers against 200,000 Byzantine troops. Three commanders were killed: Zayd ibn Harithah, Ja'far ibn Abi Talib, and Abdullah ibn Rawahah. When the fourth commander, Khalid ibn Walid, assumed command, he skillfully retreated the army to save it from complete destruction. Though heavily outnumbered, this battle demonstrated Muslim valor and willingness to face the greatest empires.",
+    significance: "high",
+    sealedNectarChapter: "The Expedition of Mu'tah"
+  },
+  {
     id: "makkah-conquest",
     title: "Conquest of Makkah (Al-Fath)",
     titleArabic: "فتح مكة",
