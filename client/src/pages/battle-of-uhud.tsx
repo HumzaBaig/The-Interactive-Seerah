@@ -15,6 +15,8 @@ const keyFigures: KeyFigure[] = [
   { name: "Hamza ibn Abdul-Muttalib", role: "Lion of Allah - martyred by Wahshi", side: "muslim" },
   { name: "Mus'ab ibn Umayr", role: "Standard bearer - martyred defending the Prophet", side: "muslim" },
   { name: "Abu Dujana", role: "Wielded the Prophet's sword with great valor", side: "muslim" },
+  { name: "Talha ibn Ubaidullah", role: "The Generous - fought with exceptional bravery", side: "muslim" },
+  { name: "Saad ibn Abi Waqas", role: "Skilled archer - among the foremost fighters", side: "muslim" },
   { name: "Abu Sufyan", role: "Commander of the Quraysh army", side: "quraysh" },
   { name: "Khalid ibn al-Walid", role: "Led the cavalry flanking maneuver", side: "quraysh" },
   { name: "Hind bint Utbah", role: "Mutilated Hamza's body in revenge", side: "quraysh" },
