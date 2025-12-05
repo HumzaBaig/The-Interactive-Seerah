@@ -104,7 +104,7 @@ export const seerahEvents: SeerahEvent[] = [
     period: "makkan",
     category: "civic",
     location: "Makkah → Syria",
-    description: "In his youth, the Prophet ﷺ traveled with Khadijah's trading caravans to Syria (Ash-Sham). During this journey, he encountered Christian monks and demonstrated his exceptional moral character and honesty in commerce. The monk Bahira is reported to have recognized signs of prophethood in him. These journeys exposed him to Christian and Jewish teachings and solidified his reputation as 'Al-Amin' (the Trustworthy One) among the merchants of Makkah.",
+    description: "At age 12, the Prophet Muhammad ﷺ accompanied his uncle Abu Talib on a trade journey to Syria. In Busra, a Christian monk named Bahira recognized signs of Prophethood in the young boy, including a cloud of shade and the seal of Prophethood. Fearing harm from the Jews if they discovered his identity, Bahira advised Abu Talib to return to Makkah, which he did, protecting his nephew.",
     significance: "high",
     sealedNectarChapter: "Before the Prophethood"
   },
