@@ -407,7 +407,7 @@ export const seerahEvents: SeerahEvent[] = [
     period: "madinan",
     category: "battle",
     location: "Makkah",
-    description: "After Quraish violated the Treaty of Hudaybiyyah by attacking Banu Khuza'ah, the Prophet ﷺ marched on Makkah with 10,000 Muslims. The city surrendered with minimal bloodshed. The Prophet ﷺ entered humbly, his head bowed in gratitude. He forgave his former enemies, declaring: 'Go, you are free!' He purified the Ka'bah, destroying 360 idols, proclaiming: 'Truth has come, and falsehood has vanished' (17:81).",
+    description: "After Quraish violated the Treaty of Hudaybiyyah by attacking the Muslim allied tribe of Banu Khuza'ah, the Prophet ﷺ marched on Makkah with 10,000 Muslims. The city surrendered with minimal bloodshed. The Prophet ﷺ entered humbly, his head bowed in gratitude. He forgave his former enemies, declaring: 'Go, you are free!' He purified the Ka'bah, destroying 360 idols, proclaiming: 'Truth has come, and falsehood has vanished' (17:81).",
     significance: "critical",
     sealedNectarChapter: "The Conquest of Makkah"
   },
