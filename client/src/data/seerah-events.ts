@@ -420,7 +420,7 @@ export const seerahEvents: SeerahEvent[] = [
     period: "madinan",
     category: "battle",
     location: "Valley of Hunayn",
-    description: "Shortly after Makkah's conquest, the tribes of Hawazin and Thaqif gathered 20,000 warriors against the Muslims. Despite initial Muslim retreat due to an ambush in the narrow valley, the Prophet ﷺ stood firm calling: 'I am the Prophet, no lie!' The Muslims regrouped and achieved victory. The Quran references this: 'Allah has already given you victory at Hunayn' (9:25).",
+    description: "Shortly after Makkah's conquest, the tribes of Hawazin and Thaqif gathered 20,000 warriors against the 12,000 Muslim army (10,000 existing and 2,000 newly converted Muslims from the Quraysh). Despite initial Muslim retreat due to an ambush in the narrow valley, the Prophet ﷺ stood firm calling: 'I am the Prophet, no lie!' The Muslims regrouped and achieved victory. The Quran references this: 'Allah has already given you victory at Hunayn' (9:25).",
     significance: "critical",
     sealedNectarChapter: "The Battle of Hunain"
   },
