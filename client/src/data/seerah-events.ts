@@ -412,6 +412,19 @@ export const seerahEvents: SeerahEvent[] = [
     sealedNectarChapter: "The Battle of Uhud"
   },
   {
+    id: "jewish-expulsions",
+    title: "Expulsion of Banu Qaynuqa and Banu Nadir",
+    titleArabic: "إجلاء بني قينقاع وبني النضير",
+    date: "2-4 AH",
+    year: 625,
+    period: "madinan",
+    category: "civic",
+    location: "Madinah",
+    description: "Two Jewish tribes were expelled from Madinah for violating the Constitution's treaty. Banu Qaynuqa (2 AH): After the Muslim victory at Badr, they grew hostile and publicly humiliated a Muslim woman in their marketplace, leading to bloodshed. When besieged for 15 days, they surrendered and were expelled to Syria. Banu Nadir (4 AH): After Uhud, when the Prophet ﷺ visited them to discuss blood money, Allah revealed their plot to assassinate him by dropping a boulder from above. They were besieged, and after 15 days, allowed to leave with what their camels could carry. Many settled in Khaybar where they continued inciting tribes against Muslims.",
+    significance: "high",
+    sealedNectarChapter: "The Invasion of Banu Qainuqa'"
+  },
+  {
     id: "khandaq",
     title: "Battle of the Trench (Al-Ahzab)",
     titleArabic: "غزوة الخندق / الأحزاب",
@@ -423,6 +436,19 @@ export const seerahEvents: SeerahEvent[] = [
     description: "A coalition of 10,000 (Quraish, allied Arab and Jewish tribes) besieged Madinah. On Salman al-Farsi's advice, Muslims dug a defensive trench - a tactic unknown to Arabs. Banu Qurayza broke their treaty during the siege. After nearly a month, Allah sent a fierce wind destroying the enemy camp, and they withdrew. The Quran declared: 'Allah repelled the disbelievers in their rage' (33:25).",
     significance: "critical",
     sealedNectarChapter: "The Battle of the Confederates (Al-Ahzab)"
+  },
+  {
+    id: "banu-qurayza",
+    title: "Judgment of Banu Qurayza",
+    titleArabic: "حكم بني قريظة",
+    date: "Dhul Qa'dah, 5 AH",
+    year: 627,
+    period: "madinan",
+    category: "civic",
+    location: "Madinah",
+    description: "During the Battle of the Trench, Banu Qurayza committed high treason by breaking their treaty with the Muslims and allying with the Confederate army of 10,000. They opened negotiations to attack the Muslims from within while besieged from outside - an act that would have led to the massacre of all Muslim men, women, and children in Madinah. After the Confederate withdrawal, the Prophet ﷺ besieged them for 25 days until they surrendered. They requested Sa'd ibn Mu'adh, their former ally, to judge them. Sa'd, wounded from battle and near death, ruled according to their own Torah law (Deuteronomy 20:12-14): the fighting men who committed treason were executed, while women and children were spared. The Prophet ﷺ said Sa'd had judged according to the judgment of Allah.",
+    significance: "critical",
+    sealedNectarChapter: "Bani Quraiza Invasion"
   },
   {
     id: "hudaybiyyah",
