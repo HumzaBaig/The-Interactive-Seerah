@@ -102,7 +102,7 @@ export const seerahEvents: SeerahEvent[] = [
     date: "Age 12 or later",
     year: 590,
     period: "makkan",
-    category: "civic",
+    category: "spiritual",
     location: "Makkah → Syria",
     description: "At age 12, the Prophet Muhammad ﷺ accompanied his uncle Abu Talib on a trade journey to Syria. In Busra, a Christian monk named Bahira recognized signs of Prophethood in the young boy, including a cloud of shade and the seal of Prophethood. Fearing harm from the Jews if they discovered his identity, Bahira advised Abu Talib to return to Makkah, which he did, protecting his nephew.",
     significance: "high",
