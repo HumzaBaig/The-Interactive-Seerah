@@ -56,9 +56,7 @@ export default function Home() {
           <ThemeToggle />
         </div>
       </header>
-
       <HeroSection />
-
       <div id="timeline-section" className="flex flex-1" ref={timelineRef}>
         <div className="hidden md:block">
           <FilterSidebar
@@ -76,11 +74,7 @@ export default function Home() {
                 <h2 className="text-3xl md:text-4xl font-bold">
                   Explore the Seerah
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Use the interactive timeline below to explore major events in the life of Prophet Muhammad ﷺ. 
-                  Click on any event node to view detailed information. Filter by time period or event category 
-                  using the sidebar, or search for events, companions, family members, and more.
-                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">Use the interactive timeline below to explore major events in the life of Prophet Muhammad ﷺ. Click on any event node to view detailed information. Filter by time period or event category, or search for events, companions, family members, and more.</p>
               </div>
             </div>
           </div>
@@ -99,21 +93,13 @@ export default function Home() {
           />
         </div>
       </div>
-
       <EventGraphicsSection />
-
       <CharacterFlashCards />
-
       <WivesFlashCards />
-
       <ChildrenFlashCards />
-
       <TenPromisedFlashCards />
-
       <FamilyFlashCards />
-
       <CompanionsFlashCards />
-
       <Footer />
     </div>
   );
