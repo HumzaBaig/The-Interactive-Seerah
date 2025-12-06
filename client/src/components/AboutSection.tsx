@@ -1,4 +1,4 @@
-import { BookOpen, Info } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function AboutSection() {
@@ -13,11 +13,6 @@ export default function AboutSection() {
           <Card>
             <CardContent className="p-6 md:p-8">
               <div className="flex flex-col md:flex-row gap-6">
-                <div className="flex-shrink-0 flex justify-center">
-                  <div className="w-16 h-16 rounded-full bg-amber-500/10 flex items-center justify-center">
-                    <Info className="w-8 h-8 text-amber-500" />
-                  </div>
-                </div>
                 <div className="space-y-4">
                   <p className="text-muted-foreground leading-relaxed">
                     The Interactive Seerah is designed to help people become familiar with the life and times of Prophet Muhammad ﷺ in an engaging and accessible way. This website serves as an introductory resource to spark interest and provide a foundational understanding of the Seerah.
