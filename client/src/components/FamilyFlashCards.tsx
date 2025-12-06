@@ -63,9 +63,9 @@ export default function FamilyFlashCards() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:flex-wrap md:justify-center md:overflow-visible md:pb-0 md:gap-6">
             {familyData.map((member) => (
-              <div key={member.id} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+              <div key={member.id} className="w-[260px] flex-shrink-0 snap-center md:w-[calc(50%-12px)] md:flex-shrink lg:w-[calc(33.333%-16px)]">
                 <FlashCard member={member} />
               </div>
             ))}

@@ -145,9 +145,9 @@ export default function EventGraphicsSection() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:flex-wrap md:justify-center md:overflow-visible md:pb-0">
             {eventGraphicsData.map((event) => (
-              <div key={event.id} className="w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]">
+              <div key={event.id} className="w-[280px] flex-shrink-0 snap-center md:w-[calc(50%-8px)] md:flex-shrink lg:w-[calc(33.333%-11px)]">
                 <Link 
                   href={event.available ? event.route : "#"}
                   className={event.available ? "cursor-pointer" : "cursor-not-allowed"}
