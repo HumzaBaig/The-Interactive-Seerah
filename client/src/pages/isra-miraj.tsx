@@ -89,7 +89,7 @@ export default function IsraMiraj() {
   const stage = journeyStages[currentStage];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-indigo-950 to-purple-950 text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 text-white overflow-hidden">
 
       <header className="relative z-10 p-6">
         <Link href="/">
@@ -107,14 +107,14 @@ export default function IsraMiraj() {
       <main className="relative z-10 container mx-auto px-6 pb-12">
         <div className="text-center mb-8">
           <div className="mb-4">
-            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-amber-200 via-amber-300 to-amber-200 bg-clip-text text-transparent pb-3">
+            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 bg-clip-text text-transparent pb-3">
               Al-Isra wal Mi'raj
             </h1>
           </div>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
             The Night Journey from Makkah to Jerusalem, and the Ascension through the Seven Heavens
           </p>
-          <p className="text-sm text-amber-300/80 mt-2">10th year of Prophethood</p>
+          <p className="text-sm text-slate-300/80 mt-2">10th year of Prophethood</p>
         </div>
 
         <div className="flex justify-center gap-2 mb-8 flex-wrap">

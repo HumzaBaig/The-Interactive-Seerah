@@ -89,7 +89,7 @@ export default function BattleOfBadr() {
   const stage = battleStages[currentStage];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-950 via-orange-950 to-red-950 text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 text-white overflow-hidden">
       <header className="relative z-10 p-6">
         <Link href="/">
           <Button 
@@ -105,14 +105,14 @@ export default function BattleOfBadr() {
       <main className="relative z-10 container mx-auto px-6 pb-12">
         <div className="text-center mb-8">
           <div className="mb-4">
-            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-amber-200 via-orange-300 to-amber-200 bg-clip-text text-transparent pb-3">
+            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 bg-clip-text text-transparent pb-3">
               Battle of Badr
             </h1>
           </div>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
             The first major battle between the Muslims and the Quraysh - A decisive victory that changed history
           </p>
-          <p className="text-sm text-amber-300/80 mt-2">17th Ramadan, 2 AH</p>
+          <p className="text-sm text-slate-300/80 mt-2">17th Ramadan, 2 AH</p>
         </div>
 
         <div className="flex justify-center gap-2 mb-8 flex-wrap">
@@ -126,9 +126,9 @@ export default function BattleOfBadr() {
               }}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentStage
-                  ? "bg-amber-400 scale-125"
+                  ? "bg-slate-400 scale-125"
                   : index < currentStage
-                  ? "bg-amber-400/50"
+                  ? "bg-slate-400/50"
                   : "bg-white/30"
               }`}
               data-testid={`button-stage-${index}`}
@@ -139,12 +139,12 @@ export default function BattleOfBadr() {
         <Card className="max-w-4xl mx-auto bg-white/5 backdrop-blur-lg border-white/10 overflow-hidden">
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-slate-400 to-slate-600 flex items-center justify-center">
                 <stage.icon className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-white">{stage.title}</h2>
-                <p className="text-amber-300/80 text-sm">{stage.location}</p>
+                <p className="text-slate-300/80 text-sm">{stage.location}</p>
               </div>
             </div>
 

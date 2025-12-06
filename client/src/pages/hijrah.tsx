@@ -87,7 +87,7 @@ export default function Hijrah() {
   const stage = journeyStages[currentStage];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-emerald-950 to-teal-950 text-white overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 text-white overflow-hidden">
 
       <header className="relative z-10 p-6">
         <Link href="/">
@@ -105,14 +105,14 @@ export default function Hijrah() {
       <main className="relative z-10 container mx-auto px-6 pb-12">
         <div className="text-center mb-8">
           <div className="mb-4">
-            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-emerald-200 via-emerald-300 to-emerald-200 bg-clip-text text-transparent pb-3">
+            <h1 className="text-4xl md:text-5xl font-bold font-display bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 bg-clip-text text-transparent pb-3">
               The Hijrah
             </h1>
           </div>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
             The Migration from Makkah to Madinah - A Journey That Changed History
           </p>
-          <p className="text-sm text-emerald-300/80 mt-2">1 AH (After Hijrah)</p>
+          <p className="text-sm text-slate-300/80 mt-2">1 AH (After Hijrah)</p>
         </div>
 
         <div className="flex justify-center gap-2 mb-8 flex-wrap">
