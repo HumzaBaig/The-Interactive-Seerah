@@ -18,88 +18,88 @@ import {
 
 function IsraMirajVisual() {
   return (
-    <div className="h-40 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 relative overflow-hidden flex items-center justify-center">
-      <Sparkles className="w-16 h-16 text-slate-300" />
+    <div className="h-40 bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 relative overflow-hidden flex items-center justify-center">
+      <Sparkles className="w-16 h-16 text-slate-600 dark:text-slate-300" />
     </div>
   );
 }
 
 function HijrahVisual() {
   return (
-    <div className="h-40 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 relative overflow-hidden flex items-center justify-center">
-      <Navigation className="w-16 h-16 text-slate-300" />
+    <div className="h-40 bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 relative overflow-hidden flex items-center justify-center">
+      <Navigation className="w-16 h-16 text-slate-600 dark:text-slate-300" />
     </div>
   );
 }
 
 function BadrVisual() {
   return (
-    <div className="h-40 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 relative overflow-hidden flex items-center justify-center">
-      <Trophy className="w-16 h-16 text-slate-300" />
+    <div className="h-40 bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 relative overflow-hidden flex items-center justify-center">
+      <Trophy className="w-16 h-16 text-slate-600 dark:text-slate-300" />
     </div>
   );
 }
 
 function UhudVisual() {
   return (
-    <div className="h-40 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 relative overflow-hidden flex items-center justify-center">
-      <Mountain className="w-16 h-16 text-slate-300" />
+    <div className="h-40 bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 relative overflow-hidden flex items-center justify-center">
+      <Mountain className="w-16 h-16 text-slate-600 dark:text-slate-300" />
     </div>
   );
 }
 
 function TrenchVisual() {
   return (
-    <div className="h-40 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 relative overflow-hidden flex items-center justify-center">
-      <Shield className="w-16 h-16 text-slate-300" />
+    <div className="h-40 bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 relative overflow-hidden flex items-center justify-center">
+      <Shield className="w-16 h-16 text-slate-600 dark:text-slate-300" />
     </div>
   );
 }
 
 function KhaybarVisual() {
   return (
-    <div className="h-40 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 relative overflow-hidden flex items-center justify-center">
-      <Castle className="w-16 h-16 text-slate-300" />
+    <div className="h-40 bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 relative overflow-hidden flex items-center justify-center">
+      <Castle className="w-16 h-16 text-slate-600 dark:text-slate-300" />
     </div>
   );
 }
 
 function MutahVisual() {
   return (
-    <div className="h-40 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 relative overflow-hidden flex items-center justify-center">
-      <Target className="w-16 h-16 text-slate-300" />
+    <div className="h-40 bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 relative overflow-hidden flex items-center justify-center">
+      <Target className="w-16 h-16 text-slate-600 dark:text-slate-300" />
     </div>
   );
 }
 
 function MakkahConquestVisual() {
   return (
-    <div className="h-40 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 relative overflow-hidden flex items-center justify-center">
-      <Crown className="w-16 h-16 text-slate-300" />
+    <div className="h-40 bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 relative overflow-hidden flex items-center justify-center">
+      <Crown className="w-16 h-16 text-slate-600 dark:text-slate-300" />
     </div>
   );
 }
 
 function HunaynVisual() {
   return (
-    <div className="h-40 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 relative overflow-hidden flex items-center justify-center">
-      <Swords className="w-16 h-16 text-slate-300" />
+    <div className="h-40 bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 relative overflow-hidden flex items-center justify-center">
+      <Swords className="w-16 h-16 text-slate-600 dark:text-slate-300" />
     </div>
   );
 }
 
 function TabukVisual() {
   return (
-    <div className="h-40 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 relative overflow-hidden flex items-center justify-center">
-      <Compass className="w-16 h-16 text-slate-300" />
+    <div className="h-40 bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 relative overflow-hidden flex items-center justify-center">
+      <Compass className="w-16 h-16 text-slate-600 dark:text-slate-300" />
     </div>
   );
 }
 
 function FarewellVisual() {
   return (
-    <div className="h-40 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 relative overflow-hidden flex items-center justify-center">
-      <Flag className="w-16 h-16 text-slate-300" />
+    <div className="h-40 bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 relative overflow-hidden flex items-center justify-center">
+      <Flag className="w-16 h-16 text-slate-600 dark:text-slate-300" />
     </div>
   );
 }
