@@ -92,7 +92,7 @@ export default function ConquestOfMakkah() {
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 text-white overflow-hidden">
 
       <header className="relative z-10 p-6">
-        <Link href="/">
+        <Link href="/#graphics-section">
           <Button 
             variant="ghost" 
             className="text-white/80 hover:text-white hover:bg-white/10"
