@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { MapPin, Calendar, Mountain } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
 
 interface EventDetailModalProps {
   event: SeerahEvent | null;
@@ -33,22 +33,13 @@ const categoryColors: Record<string, string> = {
   spiritual: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300"
 };
 
-function EventVisualHeader() {
-  return (
-    <div className="h-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 relative overflow-hidden flex items-center justify-center -mx-6 -mt-6 mb-6">
-      <Mountain className="w-16 h-16 text-slate-300" />
-    </div>
-  );
-}
-
 export default function EventDetailModal({ event, onClose }: EventDetailModalProps) {
   if (!event) return null;
 
   return (
     <Dialog open={!!event} onOpenChange={onClose}>
-      <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto p-0" data-testid="modal-event-detail">
-        <EventVisualHeader />
-        <DialogHeader className="px-6 pt-6">
+      <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto" data-testid="modal-event-detail">
+        <DialogHeader>
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
               <DialogTitle className="text-2xl md:text-3xl font-semibold mb-2">
@@ -72,10 +63,10 @@ export default function EventDetailModal({ event, onClose }: EventDetailModalPro
           </div>
         </DialogHeader>
 
-        <Separator className="mx-6" />
+        <Separator className="my-4" />
 
         <DialogDescription asChild>
-          <div className="px-6 pb-6 text-base md:text-lg leading-loose text-foreground font-serif">
+          <div className="text-base md:text-lg leading-loose text-foreground font-serif">
             {event.description}
           </div>
         </DialogDescription>
