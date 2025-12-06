@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -70,6 +70,27 @@ export default function ConquestOfMakkah() {
   const [showFigures, setShowFigures] = useState(false);
   const [selectedFigure, setSelectedFigure] = useState<string | null>(null);
 
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+    
+    if (Math.abs(diff) > minSwipeDistance) {
+      if (diff > 0) {
+        nextStage();
+      } else {
+        prevStage();
+      }
+    }
+  };
+
   const nextStage = () => {
     if (currentStage < battleStages.length - 1) {
       setCurrentStage(currentStage + 1);
@@ -138,7 +159,11 @@ export default function ConquestOfMakkah() {
           ))}
         </div>
 
-        <Card className="max-w-4xl mx-auto bg-white/5 backdrop-blur-lg border-white/10 overflow-hidden">
+        <Card 
+          className="max-w-4xl mx-auto bg-white/5 backdrop-blur-lg border-white/10 overflow-hidden"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <div className="p-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-slate-400 to-slate-600 flex items-center justify-center">
