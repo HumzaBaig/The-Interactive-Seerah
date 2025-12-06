@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import HeroSection from "@/components/HeroSection";
 import TimelineViewer from "@/components/TimelineViewer";
 import FilterSidebar from "@/components/FilterSidebar";
@@ -23,6 +23,18 @@ export default function Home() {
   const [selectedPeriod, setSelectedPeriod] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, []);
 
   const handleEventSelect = (event: SeerahEvent) => {
     setSelectedPeriod(event.period);
