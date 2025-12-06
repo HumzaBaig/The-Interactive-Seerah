@@ -2,6 +2,8 @@ import { useState, useRef } from "react";
 import HeroSection from "@/components/HeroSection";
 import TimelineViewer from "@/components/TimelineViewer";
 import FilterSidebar from "@/components/FilterSidebar";
+import MobileFilters from "@/components/MobileFilters";
+import SectionNav from "@/components/SectionNav";
 import SearchBar from "@/components/SearchBar";
 import ThemeToggle from "@/components/ThemeToggle";
 import EventGraphicsSection from "@/components/EventGraphicsSection";
@@ -14,13 +16,10 @@ import CharacterFlashCards from "@/components/CharacterFlashCards";
 import Footer from "@/components/Footer";
 import { seerahEvents, timelinePeriods } from "@/data/seerah-events";
 import { SeerahEvent } from "@shared/schema";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
 
 export default function Home() {
   const [selectedPeriod, setSelectedPeriod] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
 
   const handleEventSelect = (event: SeerahEvent) => {
@@ -41,18 +40,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-background">
       <header className="sticky top-0 z-50 bg-card/95 backdrop-blur border-b">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              data-testid="button-toggle-sidebar"
-            >
-              {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </Button>
-            <h1 className="text-xl md:text-2xl font-bold font-display">The Interactive Seerah</h1>
-          </div>
+          <h1 className="text-xl md:text-2xl font-bold font-display">The Interactive Seerah</h1>
           
           <SearchBar 
             events={seerahEvents}
@@ -63,25 +51,27 @@ export default function Home() {
         </div>
       </header>
 
+      <SectionNav />
+
       <HeroSection />
 
-      <div className="flex flex-1" ref={timelineRef}>
-        <div className={`${isSidebarOpen ? 'block' : 'hidden'} md:block fixed md:relative inset-0 z-40 bg-background/80 md:bg-transparent backdrop-blur md:backdrop-blur-none`}
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setIsSidebarOpen(false);
-          }}
-        >
-          <div className="h-full md:h-auto">
-            <FilterSidebar
-              selectedCategory={selectedCategory}
-              onCategoryChange={setSelectedCategory}
-              selectedPeriod={selectedPeriod}
-              onPeriodChange={setSelectedPeriod}
-            />
-          </div>
+      <div id="timeline-section" className="flex flex-1" ref={timelineRef}>
+        <div className="hidden md:block">
+          <FilterSidebar
+            selectedCategory={selectedCategory}
+            onCategoryChange={setSelectedCategory}
+            selectedPeriod={selectedPeriod}
+            onPeriodChange={setSelectedPeriod}
+          />
         </div>
 
         <div className="flex-1 overflow-hidden">
+          <MobileFilters
+            selectedCategory={selectedCategory}
+            onCategoryChange={setSelectedCategory}
+            selectedPeriod={selectedPeriod}
+            onPeriodChange={setSelectedPeriod}
+          />
           <TimelineViewer
             events={seerahEvents}
             periods={timelinePeriods}
