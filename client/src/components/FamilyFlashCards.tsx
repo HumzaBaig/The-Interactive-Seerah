@@ -21,13 +21,13 @@ function FlashCard({ member }: { member: FamilyCard }) {
         }}
       >
         <Card
-          className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 bg-gradient-to-br from-sky-500/10 to-sky-600/15 border-sky-500/20"
+          className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 bg-[hsl(var(--event-card))] border-[hsl(var(--event-card-border))]"
           style={{ backfaceVisibility: "hidden" }}
         >
           <div className="text-center space-y-3">
             <h3 className="text-xl font-semibold">{member.name}</h3>
             <p className="text-sm text-muted-foreground">{member.relation}</p>
-            <p className="text-xs text-sky-600 dark:text-sky-400 mt-4">Click to read bio</p>
+            <p className="text-xs text-[hsl(var(--event-accent))] mt-4">Click to read bio</p>
           </div>
         </Card>
 
@@ -42,7 +42,7 @@ function FlashCard({ member }: { member: FamilyCard }) {
           <p className="text-sm text-muted-foreground leading-relaxed flex-1">
             {member.bio}
           </p>
-          <p className="text-xs text-sky-600 dark:text-sky-400 mt-3">Click to flip back</p>
+          <p className="text-xs text-[hsl(var(--event-accent))] mt-3">Click to flip back</p>
         </Card>
       </div>
     </div>
