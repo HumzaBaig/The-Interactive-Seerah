@@ -170,7 +170,7 @@ export default function SearchBar({ events, onEventSelect }: SearchBarProps) {
         <Input
           ref={inputRef}
           type="text"
-          placeholder="Search events, companions, family..."
+          placeholder=""
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);

@@ -39,19 +39,23 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <header className="sticky top-0 z-50 bg-card/95 backdrop-blur border-b">
-        <div className="container mx-auto px-6 py-4 flex items-center justify-between gap-4">
-          <h1 className="text-xl md:text-2xl font-bold font-display">The Interactive Seerah</h1>
+        <div className="container mx-auto px-4 md:px-6 py-3 flex items-center gap-3">
+          <SectionNav />
           
-          <SearchBar 
-            events={seerahEvents}
-            onEventSelect={handleEventSelect}
-          />
+          <h1 className="text-lg md:text-xl font-bold font-display whitespace-nowrap">
+            The Interactive Seerah
+          </h1>
+          
+          <div className="flex-1 flex justify-end">
+            <SearchBar 
+              events={seerahEvents}
+              onEventSelect={handleEventSelect}
+            />
+          </div>
           
           <ThemeToggle />
         </div>
       </header>
-
-      <SectionNav />
 
       <HeroSection />
 
