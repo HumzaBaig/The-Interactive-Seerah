@@ -18,6 +18,7 @@ const sections = [
   { id: "promised-section", label: "The Ten Promised Paradise" },
   { id: "family-section", label: "The Close Family" },
   { id: "companions-section", label: "Notable Companions" },
+  { id: "about-section", label: "About This Project" },
 ];
 
 export default function SectionNav() {

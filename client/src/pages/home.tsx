@@ -14,6 +14,7 @@ import CompanionsFlashCards from "@/components/CompanionsFlashCards";
 import TenPromisedFlashCards from "@/components/TenPromisedFlashCards";
 import CharacterFlashCards from "@/components/CharacterFlashCards";
 import Footer from "@/components/Footer";
+import AboutSection from "@/components/AboutSection";
 import { seerahEvents, timelinePeriods } from "@/data/seerah-events";
 import { SeerahEvent } from "@shared/schema";
 
@@ -100,6 +101,7 @@ export default function Home() {
       <TenPromisedFlashCards />
       <FamilyFlashCards />
       <CompanionsFlashCards />
+      <AboutSection />
       <Footer />
     </div>
   );
