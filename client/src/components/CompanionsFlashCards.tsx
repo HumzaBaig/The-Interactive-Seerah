@@ -63,9 +63,9 @@ export default function CompanionsFlashCards() {
             </p>
           </div>
 
-          <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:flex-wrap md:justify-center md:overflow-visible md:pb-0 md:gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {companionsData.map((companion) => (
-              <div key={companion.id} className="w-[260px] flex-shrink-0 snap-center md:w-[calc(50%-12px)] md:flex-shrink lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)]">
+              <div key={companion.id} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)]">
                 <FlashCard companion={companion} />
               </div>
             ))}
