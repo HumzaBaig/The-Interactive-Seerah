@@ -21,14 +21,14 @@ function FlashCard({ wife }: { wife: WifeCard }) {
         }}
       >
         <Card
-          className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 bg-[hsl(var(--event-card))] border-[hsl(var(--event-card-border))]"
+          className="absolute inset-0 backface-hidden flex flex-col items-center justify-center p-6 bg-gradient-to-br from-pink-500/10 to-pink-600/15 border-pink-500/20"
           style={{ backfaceVisibility: "hidden" }}
         >
           <div className="text-center space-y-3">
             <h3 className="text-xl font-semibold">{wife.name}</h3>
             <p className="text-sm text-muted-foreground">{wife.title}</p>
             <p className="text-xs text-muted-foreground">Married: {wife.yearMarried}</p>
-            <p className="text-xs text-[hsl(var(--event-accent))] mt-4">Click to read bio</p>
+            <p className="text-xs text-pink-600 dark:text-pink-400 mt-4">Click to read bio</p>
           </div>
         </Card>
 
@@ -43,7 +43,7 @@ function FlashCard({ wife }: { wife: WifeCard }) {
           <p className="text-sm text-muted-foreground leading-relaxed flex-1">
             {wife.bio}
           </p>
-          <p className="text-xs text-[hsl(var(--event-accent))] mt-3">Click to flip back</p>
+          <p className="text-xs text-pink-600 dark:text-pink-400 mt-3">Click to flip back</p>
         </Card>
       </div>
     </div>

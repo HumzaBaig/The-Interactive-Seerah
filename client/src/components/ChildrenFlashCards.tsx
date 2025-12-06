@@ -6,9 +6,13 @@ function FlashCard({ child }: { child: ChildCard }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const isGrandchild = child.relation === "grandchild";
   
-  const cardGradient = "bg-[hsl(var(--event-card))] border-[hsl(var(--event-card-border))]";
+  const cardGradient = isGrandchild 
+    ? "bg-gradient-to-br from-emerald-500/10 to-emerald-600/15 border-emerald-500/20"
+    : "bg-gradient-to-br from-violet-500/10 to-violet-600/15 border-violet-500/20";
   
-  const accentColor = "text-[hsl(var(--event-accent))]";
+  const accentColor = isGrandchild
+    ? "text-emerald-600 dark:text-emerald-400"
+    : "text-violet-600 dark:text-violet-400";
 
   return (
     <div

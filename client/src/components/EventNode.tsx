@@ -25,12 +25,12 @@ const categoryLabels: Record<string, string> = {
 };
 
 const categoryColors: Record<string, string> = {
-  revelation: "bg-[hsl(var(--event-card))] text-[hsl(var(--event-card-foreground))]",
-  battle: "bg-[hsl(var(--event-card))] text-[hsl(var(--event-card-foreground))]",
-  migration: "bg-[hsl(var(--event-card))] text-[hsl(var(--event-card-foreground))]",
-  civic: "bg-[hsl(var(--event-card))] text-[hsl(var(--event-card-foreground))]",
-  people: "bg-[hsl(var(--event-card))] text-[hsl(var(--event-card-foreground))]",
-  spiritual: "bg-[hsl(var(--event-card))] text-[hsl(var(--event-card-foreground))]"
+  revelation: "bg-blue-500/10 text-blue-700 dark:text-blue-300",
+  battle: "bg-red-500/10 text-red-700 dark:text-red-300",
+  migration: "bg-green-500/10 text-green-700 dark:text-green-300",
+  civic: "bg-purple-500/10 text-purple-700 dark:text-purple-300",
+  people: "bg-pink-500/10 text-pink-700 dark:text-pink-300",
+  spiritual: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300"
 };
 
 export default function EventNode({ event, positionPx, periodColor, onClick, labelPosition, verticalOffset }: EventNodeProps) {
