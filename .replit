@@ -63,6 +63,10 @@ localPort = 44593
 externalPort = 6800
 
 [[ports]]
+localPort = 44743
+externalPort = 8008
+
+[[ports]]
 localPort = 44759
 externalPort = 5173
 
@@ -89,3 +93,6 @@ author = "agent"
 task = "shell.exec"
 args = "npm run dev"
 waitForPort = 5000
+
+[agent]
+integrations = ["javascript_database:1.0.0"]
