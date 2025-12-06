@@ -70,6 +70,21 @@ export default function Home() {
         </div>
 
         <div className="flex-1 overflow-hidden">
+          <div className="container mx-auto px-6 py-12">
+            <div className="max-w-4xl mx-auto space-y-8">
+              <div className="text-center space-y-4">
+                <h2 className="text-3xl md:text-4xl font-bold">
+                  Explore the Seerah
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Use the interactive timeline below to explore major events in the life of Prophet Muhammad ﷺ. 
+                  Click on any event node to view detailed information. Filter by time period or event category 
+                  using the sidebar, or search for events, companions, family members, and more.
+                </p>
+              </div>
+            </div>
+          </div>
+          
           <MobileFilters
             selectedCategory={selectedCategory}
             onCategoryChange={setSelectedCategory}
@@ -82,21 +97,6 @@ export default function Home() {
             selectedPeriod={selectedPeriod || undefined}
             selectedCategory={selectedCategory || undefined}
           />
-          
-          <div className="container mx-auto px-6 py-12">
-            <div className="max-w-4xl mx-auto space-y-8">
-              <div className="text-center space-y-4">
-                <h2 className="text-3xl md:text-4xl font-bold">
-                  Explore the Seerah
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Use the interactive timeline above to explore major events in the life of Prophet Muhammad ﷺ. 
-                  Click on any event node to view detailed information. Filter by time period or event category 
-                  using the sidebar, or search for events, companions, family members, and more.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
