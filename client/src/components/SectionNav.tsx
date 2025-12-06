@@ -11,13 +11,13 @@ import {
 
 const sections = [
   { id: "timeline-section", label: "Timeline" },
-  { id: "graphics-section", label: "Events" },
-  { id: "character-section", label: "Character" },
-  { id: "wives-section", label: "Wives" },
-  { id: "children-section", label: "Children" },
-  { id: "promised-section", label: "Ten Promised" },
-  { id: "family-section", label: "Family" },
-  { id: "companions-section", label: "Companions" },
+  { id: "graphics-section", label: "Notable Events" },
+  { id: "character-section", label: "The Noble Character" },
+  { id: "wives-section", label: "The Mothers of the Believers" },
+  { id: "children-section", label: "The Children of the Prophet ﷺ" },
+  { id: "promised-section", label: "The Ten Promised Paradise" },
+  { id: "family-section", label: "The Close Family" },
+  { id: "companions-section", label: "Notable Companions" },
 ];
 
 export default function SectionNav() {
