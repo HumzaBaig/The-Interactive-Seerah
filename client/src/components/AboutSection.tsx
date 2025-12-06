@@ -13,9 +13,7 @@ export default function AboutSection() {
           <Card>
             <CardContent className="p-6 md:p-8">
               <div className="space-y-4 text-center">
-                <p className="text-muted-foreground leading-relaxed">
-                  The Interactive Seerah is designed to help people become familiar with the life and times of Prophet Muhammad ﷺ in an engaging and accessible way. This website serves as an introductory resource to spark interest and provide a foundational understanding of the Seerah.
-                </p>
+                <p className="text-muted-foreground leading-relaxed">The Interactive Seerah is designed to help people become familiar with the life of Prophet Muhammad ﷺ and his companions in an engaging and accessible way. This website serves as an introductory resource to spark interest and provide a foundational understanding of the Seerah.</p>
                 <p className="text-muted-foreground leading-relaxed">
                   Please note that this platform is not intended to replace comprehensive academic study, scholarly books, or traditional lectures. For a deeper understanding, we encourage you to explore detailed works and attend classes with qualified teachers.
                 </p>
