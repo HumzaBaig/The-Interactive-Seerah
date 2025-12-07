@@ -40,7 +40,7 @@ export const wivesData: WifeCard[] = [
     name: "Zaynab bint Khuzayma",
     title: "Mother of the Poor",
     yearMarried: "3 AH",
-    bio: "Known as 'Umm al-Masakin' (Mother of the Poor) for her exceptional generosity to the needy. She was widowed at Uhud and married the Prophet shortly after. She passed away only eight months after the marriage."
+    bio: "Known as 'Umm al-Masakin' (Mother of the Poor) for her exceptional generosity to the needy. She was widowed at Uhud and married the Prophet shortly after. She passed away only two or three months after the marriage."
   },
   {
     id: 6,
