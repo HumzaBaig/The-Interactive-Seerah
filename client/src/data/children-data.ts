@@ -25,7 +25,7 @@ export const childrenData: ChildCard[] = [
     id: 3,
     name: "Ruqayyah",
     mother: "Khadijah bint Khuwaylid",
-    bio: "She married Uthman ibn Affan and migrated with him twice to Abyssinia, then to Madinah. During the Battle of Badr, she fell ill and passed away in 2 AH."
+    bio: "She married Uthman ibn Affan and migrated with him twice to Abyssinia, then to Madinah. Known for her beauty and piety, she passed away during the Battle of Badr. Her death deeply grieved the Prophet ﷺ."
   },
   {
     id: 4,
