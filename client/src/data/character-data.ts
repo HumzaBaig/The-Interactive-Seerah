@@ -209,7 +209,7 @@ export const characterData: CharacterTrait[] = [
         source: "Ṣaḥīḥ al-Bukhārī 3149"
       },
       {
-        text: "When a Bedouin urinated in the mosque, the companions shouted to stop him. The Prophet ﷺ said: 'Leave him alone.' After he finished, he gently taught him and ordered water to be poured over the spot.",
+        text: "When a Bedouin urinated in the mosque, the companions shouted to stop him. The Prophet ﷺ said: 'Leave him alone.' After he finished, he ordered water to be poured over the spot.",
         source: "Ṣaḥīḥ al-Bukhārī 6025"
       },
       {
