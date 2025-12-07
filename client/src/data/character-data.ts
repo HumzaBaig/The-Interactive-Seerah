@@ -329,5 +329,23 @@ export const characterData: CharacterTrait[] = [
         source: "Ṣaḥīḥ al-Bukhārī 5889"
       }
     ]
+  },
+  {
+    id: 20,
+    trait: "With Animals",
+    narrations: [
+      {
+        text: "The Prophet ﷺ entered a garden belonging to a man from the Ansar. There was a camel that groaned and shed tears when it saw the Prophet ﷺ. He went to it and wiped its head, and it became calm. He asked: 'Who is the owner of this camel?' A young man said: 'It belongs to me.' The Prophet ﷺ said: 'Do you not fear Allah regarding this beast? It complained to me that you starve it and overwork it.'",
+        source: "Sunan Abī Dāwūd 2549"
+      },
+      {
+        text: "A woman was punished in Hell because of a cat which she had confined until it died. She did not give it food or water, nor did she set it free to eat from the vermin of the earth.",
+        source: "Ṣaḥīḥ al-Bukhārī 3318"
+      },
+      {
+        text: "While a man was walking he became very thirsty. He found a well and went down into it and drank, then came out. There was a dog panting and eating mud out of thirst. The man said: 'This dog has become as thirsty as I was.' So he went down into the well again and filled his shoe with water, then climbed out holding it in his mouth, and gave it to the dog. Allah thanked him for that and forgave him. They asked: 'O Messenger of Allah, will we have a reward for animals?' He said: 'In every living thing there is reward.'",
+        source: "Ṣaḥīḥ al-Bukhārī 2466"
+      }
+    ]
   }
 ];
