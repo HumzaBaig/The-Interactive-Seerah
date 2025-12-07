@@ -1,7 +1,46 @@
-import { BookOpen } from "lucide-react";
+import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { BookOpen, Mail, CheckCircle, Loader2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function AboutSection() {
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const { toast } = useToast();
+
+  const subscribeMutation = useMutation({
+    mutationFn: async (email: string) => {
+      const response = await apiRequest("POST", "/api/subscribe", { email });
+      return response.json();
+    },
+    onSuccess: () => {
+      setIsSubscribed(true);
+      setEmail("");
+      toast({
+        title: "Successfully subscribed!",
+        description: "You'll receive updates about new features and content.",
+      });
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Subscription failed",
+        description: error.message || "Please try again later.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email.trim()) {
+      subscribeMutation.mutate(email.trim());
+    }
+  };
+
   return (
     <section id="about-section" className="py-12 bg-background border-t">
       <div className="container mx-auto px-6">
@@ -12,7 +51,7 @@ export default function AboutSection() {
           
           <Card>
             <CardContent className="p-6 md:p-8">
-              <div className="space-y-4 text-center">
+              <div className="space-y-6 text-center">
                 <p className="text-muted-foreground leading-relaxed">The Interactive Seerah is designed to help people become familiar with the life of Prophet Muhammad ﷺ and his companions in an engaging and accessible way. This website serves as an introductory resource to spark interest and provide a foundational understanding of the Seerah.</p>
                 <p className="text-muted-foreground leading-relaxed">
                   Please note that this platform is not intended to replace comprehensive academic study, scholarly books, or traditional lectures. For a deeper understanding, we encourage you to explore detailed works and attend classes with qualified teachers.
@@ -22,6 +61,51 @@ export default function AboutSection() {
                   <p className="text-sm text-muted-foreground">
                     <span className="font-medium text-foreground">Sources:</span> <span className="italic">The Sealed Nectar (Ar-Raheeq Al-Makhtum)</span> by Sheikh Safi-ur-Rahman al-Mubarakpuri
                   </p>
+                </div>
+
+                <div className="border-t pt-6 mt-6">
+                  <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-amber-500" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Stay Updated</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Subscribe to receive updates when new content and features are added to the website.
+                  </p>
+                  
+                  {isSubscribed ? (
+                    <div className="flex items-center justify-center gap-2 text-green-600 dark:text-green-400 py-2">
+                      <CheckCircle className="w-5 h-5" />
+                      <span className="font-medium">You're subscribed!</span>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                      <Input
+                        type="email"
+                        placeholder="Enter your email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        className="flex-1"
+                        data-testid="input-email-signup"
+                      />
+                      <Button 
+                        type="submit" 
+                        disabled={subscribeMutation.isPending}
+                        data-testid="button-subscribe"
+                      >
+                        {subscribeMutation.isPending ? (
+                          <>
+                            <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                            Subscribing...
+                          </>
+                        ) : (
+                          "Subscribe"
+                        )}
+                      </Button>
+                    </form>
+                  )}
                 </div>
               </div>
             </CardContent>
