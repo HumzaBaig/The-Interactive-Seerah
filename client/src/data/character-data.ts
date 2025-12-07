@@ -69,10 +69,6 @@ export const characterData: CharacterTrait[] = [
       {
         text: "The Prophet ﷺ used to stand in prayer at night until his feet would swell. When asked why he prayed so much despite being forgiven, he replied: 'Should I not be a thankful slave?'",
         source: "Ṣaḥīḥ al-Bukhārī 1130"
-      },
-      {
-        text: "Aisha reported the Prophet ﷺ prayed so long that his feet would crack. She asked why he did this when Allah had forgiven his sins. He responded: 'Should I not be a grateful servant of Allah?'",
-        source: "Ṣaḥīḥ Muslim 819"
       }
     ]
   },
@@ -125,10 +121,6 @@ export const characterData: CharacterTrait[] = [
       {
         text: "The Prophet ﷺ said: 'There is no bad omen, but I like the good omen.' They asked: 'What is a good omen?' He said: 'A good word.'",
         source: "Ṣaḥīḥ al-Bukhārī 5756"
-      },
-      {
-        text: "The Prophet ﷺ was optimistic, he did not see evil omens, and he liked good names.",
-        source: "Musnad Ahmad 2762"
       }
     ]
   },
