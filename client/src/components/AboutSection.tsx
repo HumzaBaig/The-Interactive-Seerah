@@ -56,11 +56,17 @@ export default function AboutSection() {
                 <p className="text-muted-foreground leading-relaxed">
                   Please note that this platform is not intended to replace comprehensive academic study, scholarly books, or traditional lectures. For a deeper understanding, we encourage you to explore detailed works and attend classes with qualified teachers.
                 </p>
-                <div className="flex items-center justify-center gap-2 pt-2">
-                  <BookOpen className="w-5 h-5 text-amber-500 flex-shrink-0" />
-                  <p className="text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">Sources:</span> <span className="italic">The Sealed Nectar (Ar-Raheeq Al-Makhtum)</span> by Sheikh Safi-ur-Rahman al-Mubarakpuri
-                  </p>
+                <div className="pt-2 space-y-3">
+                  <div className="flex items-center justify-center gap-2">
+                    <BookOpen className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                    <span className="font-medium text-foreground text-sm">Sources</span>
+                  </div>
+                  <div className="text-sm text-muted-foreground space-y-1">
+                    <p><span className="italic">The Sealed Nectar (Ar-Raheeq Al-Makhtum)</span> by Sheikh Safi-ur-Rahman al-Mubarakpuri</p>
+                    <p className="text-xs text-muted-foreground/80">
+                      Ṣaḥīḥ al-Bukhārī · Ṣaḥīḥ Muslim · Jāmiʿ at-Tirmidhī · Sunan Abī Dāwūd · Sunan Ibn Mājah · Musnad Aḥmad · Shamāʾil at-Tirmidhī
+                    </p>
+                  </div>
                 </div>
 
                 <div className="border-t pt-6 mt-6">
