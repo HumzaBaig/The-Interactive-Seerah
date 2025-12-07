@@ -34,7 +34,7 @@ export const tenPromisedData: CompanionCard[] = [
     id: 5,
     name: "Talha ibn Ubaydullah",
     title: "The Generous",
-    bio: "One of the earliest converts to Islam who endured severe persecution. At the Battle of Uhud, he shielded the Prophet with his own body, receiving over 70 wounds. The Prophet said of him: 'He who wishes to see a martyr walking on earth, let him look at Talha.'"
+    bio: "One of the earliest converts to Islam who endured severe persecution. At the Battle of Uhud, he shielded the Prophet with his own body, receiving several wounds. The Prophet said of him: 'He who wishes to see a martyr walking on earth, let him look at Talha.'"
   },
   {
     id: 6,
