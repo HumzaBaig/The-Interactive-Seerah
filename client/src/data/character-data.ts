@@ -175,6 +175,10 @@ export const characterData: CharacterTrait[] = [
       {
         text: "Aisha said: 'The family of Muhammad ﷺ never ate their fill of barley bread for two consecutive days until he passed away.'",
         source: "Ṣaḥīḥ al-Bukhārī 5416"
+      },
+      {
+        text: "The Prophet ﷺ went out one day and found Abu Bakr and Umar. He asked what brought them out, and they replied: 'Hunger, O Messenger of Allah.' He said: 'By Him in Whose Hand is my life, what brought you out has brought me out too.' They went to an Ansari's house who joyfully hosted them.",
+        source: "Ṣaḥīḥ Muslim 2038"
       }
     ]
   },
