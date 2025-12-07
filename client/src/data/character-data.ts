@@ -211,10 +211,6 @@ export const characterData: CharacterTrait[] = [
       {
         text: "When a Bedouin urinated in the mosque, the companions shouted to stop him. The Prophet ﷺ said: 'Leave him alone.' After he finished, he ordered water to be poured over the spot.",
         source: "Ṣaḥīḥ al-Bukhārī 6025"
-      },
-      {
-        text: "The Bedouin later testified: 'He got up and came to me, and may my father and mother be ransomed for him, he did not rebuke me nor revile me.'",
-        source: "Jāmiʿ at-Tirmidhī 147"
       }
     ]
   },
