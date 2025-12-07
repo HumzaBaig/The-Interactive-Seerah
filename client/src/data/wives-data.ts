@@ -11,7 +11,7 @@ export const wivesData: WifeCard[] = [
     id: 1,
     name: "Khadijah bint Khuwaylid",
     title: "Mother of the Believers",
-    yearMarried: "25 years before Hijrah",
+    yearMarried: "28 years before Hijrah",
     bio: "The first wife of the Prophet and the first person to accept Islam. A successful businesswoman, she was 15 years his senior and supported him throughout the early years of prophethood. She bore all of his children except Ibrahim. The Prophet said she was the best woman of her time."
   },
   {
