@@ -50,6 +50,94 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 3,
+    trait: "His Care For His Ummah",
+    narrations: [
+      {
+        text: "The Prophet ﷺ recited verses about Ibrahim and Isa, then raised his hands and said: 'O Allah! My Ummah, my Ummah,' and wept. Allah sent Jibril to ask what made him weep, and Allah responded: 'We will please you regarding your Ummah and never displease you.'",
+        source: "Ṣaḥīḥ Muslim 202"
+      },
+      {
+        text: "On the Day of Judgment, every prophet will say 'Myself, myself' but Prophet Muhammad ﷺ will say: 'My Ummah, my Ummah!'",
+        source: "Ṣaḥīḥ Muslim 202"
+      },
+      {
+        text: "Were I not afraid that it would be hard on my Ummah, I would have ordered them to use the siwak before every prayer.",
+        source: "Ṣaḥīḥ al-Bukhārī 887"
+      }
+    ]
+  },
+  {
+    id: 4,
+    trait: "His Long Prayers",
+    narrations: [
+      {
+        text: "The Prophet ﷺ used to stand in prayer at night until his feet would swell. When asked why he prayed so much despite being forgiven, he replied: 'Should I not be a thankful slave?'",
+        source: "Ṣaḥīḥ al-Bukhārī 1130"
+      },
+      {
+        text: "Aisha reported the Prophet ﷺ prayed so long that his feet would crack. She asked why he did this when Allah had forgiven his sins. He responded: 'Should I not be a grateful servant of Allah?'",
+        source: "Ṣaḥīḥ Muslim 819"
+      }
+    ]
+  },
+  {
+    id: 5,
+    trait: "His Grief",
+    narrations: [
+      {
+        text: "When his son Ibrahim was dying, the Prophet ﷺ took him, kissed him, and his eyes began shedding tears. When asked 'Even you weep?' he said: 'This is mercy.' Then he said: 'The eyes shed tears and the heart grieves, but we only say what pleases our Lord. O Ibrahim, we are grieved by your separation.'",
+        source: "Ṣaḥīḥ al-Bukhārī 1303"
+      }
+    ]
+  },
+  {
+    id: 6,
+    trait: "His Forgiveness",
+    narrations: [
+      {
+        text: "Wahshi, who had killed the Prophet's ﷺ beloved uncle Hamza at Uhud, later accepted Islam. The Prophet ﷺ forgave him completely, only asking that he not appear before him as seeing him reopened the wound of Hamza's death.",
+        source: "Ṣaḥīḥ al-Bukhārī 4072"
+      },
+      {
+        text: "When the Prophet ﷺ conquered Makkah, he addressed the Quraysh who had persecuted him for years and said: 'There is no reproach upon you today. Go, for you are free.'",
+        source: "The Sealed Nectar"
+      }
+    ]
+  },
+  {
+    id: 7,
+    trait: "His Humor",
+    narrations: [
+      {
+        text: "The companions asked: 'O Messenger of Allah, you joke with us?' He replied: 'Yes, but I only speak the truth.'",
+        source: "Jāmiʿ at-Tirmidhī 1990"
+      },
+      {
+        text: "An elderly woman asked the Prophet ﷺ to pray for her to enter Paradise. He said: 'There are no old women in Paradise.' She cried until he explained that everyone enters Paradise young and beautiful.",
+        source: "Shamāʾil at-Tirmidhī"
+      },
+      {
+        text: "The Prophet ﷺ raced his wife Aisha twice. When she was young, she won. Years later when she had gained weight, he won and laughed: 'We are even now!'",
+        source: "Sunan Abī Dāwūd 2578"
+      }
+    ]
+  },
+  {
+    id: 8,
+    trait: "His Optimism",
+    narrations: [
+      {
+        text: "The Prophet ﷺ said: 'There is no bad omen, but I like the good omen.' They asked: 'What is a good omen?' He said: 'A good word.'",
+        source: "Ṣaḥīḥ al-Bukhārī 5756"
+      },
+      {
+        text: "The Prophet ﷺ was optimistic, he did not see evil omens, and he liked good names.",
+        source: "Musnad Ahmad 2762"
+      }
+    ]
+  },
+  {
+    id: 9,
     trait: "His Diet",
     narrations: [
       {
@@ -75,7 +163,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 4,
+    id: 10,
     trait: "When He Was Oppressed",
     narrations: [
       {
@@ -93,7 +181,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 5,
+    id: 11,
     trait: "When He Had The Upper Hand",
     narrations: [
       {
@@ -103,7 +191,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 6,
+    id: 12,
     trait: "With Children",
     narrations: [
       {
@@ -125,7 +213,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 7,
+    id: 13,
     trait: "With His Wives",
     narrations: [
       {
@@ -147,7 +235,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 8,
+    id: 14,
     trait: "When He Had Wealth",
     narrations: [
       {
@@ -165,7 +253,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 9,
+    id: 15,
     trait: "Living With Limited Means",
     narrations: [
       {
@@ -183,7 +271,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 10,
+    id: 16,
     trait: "His Bravery",
     narrations: [
       {
@@ -201,7 +289,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 11,
+    id: 17,
     trait: "When Faced With Rudeness",
     narrations: [
       {
@@ -215,7 +303,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 12,
+    id: 18,
     trait: "His Hygiene",
     narrations: [
       {
