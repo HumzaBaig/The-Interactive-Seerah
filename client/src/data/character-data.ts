@@ -50,7 +50,7 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 3,
-    trait: "His Care For His Ummah",
+    trait: "His Ummah",
     narrations: [
       {
         text: "The Prophet ﷺ recited verses about Ibrahim and Isa, then raised his hands and said: 'O Allah! My Ummah, my Ummah,' and wept. Allah sent Jibril to ask what made him weep, and Allah responded: 'We will please you regarding your Ummah and never displease you.'",
@@ -64,7 +64,7 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 4,
-    trait: "His Love of Allah",
+    trait: "Love of Allah",
     narrations: [
       {
         text: "The Prophet ﷺ used to stand in prayer at night until his feet would swell. When asked why he prayed so much despite being forgiven, he replied: 'Should I not be a thankful slave?'",
@@ -88,7 +88,7 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 6,
-    trait: "His Care For Others",
+    trait: "His Generosity",
     narrations: [
       {
         text: "When a cup of milk was brought to the Prophet ﷺ, he instructed that it be given to all the companions of Suffah first. Each person drank their fill, and only after everyone else had drunk did the Prophet ﷺ drink from what remained.",
@@ -170,7 +170,7 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 11,
-    trait: "When He Was Oppressed",
+    trait: "When Oppressed",
     narrations: [
       {
         text: "After the people of Ta'if rejected him and pelted him with stones until his feet bled, the Angel of the Mountains offered to crush the city between the two mountains. The Prophet ﷺ replied: 'No, rather I hope that Allah will raise from among their descendants people who will worship Allah alone.'",
@@ -188,7 +188,7 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 12,
-    trait: "When He Had The Upper Hand",
+    trait: "In Victory",
     narrations: [
       {
         text: "When the Prophet ﷺ conquered Makkah, he addressed the Quraysh who had persecuted him for years and said: 'There is no reproach upon you today. Go, for you are free.'",
@@ -220,7 +220,7 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 14,
-    trait: "With His Wives",
+    trait: "With Wives",
     narrations: [
       {
         text: "When asked 'Who is the person you love most in the world?' the Prophet ﷺ responded: 'Aisha.'",
@@ -242,7 +242,7 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 15,
-    trait: "When He Had Wealth",
+    trait: "With Wealth",
     narrations: [
       {
         text: "The Prophet ﷺ was the most generous of all people. He was never asked for anything for the sake of Islam but that he would give it. A man came and he gave him sheep filling the valley between two mountains.",
@@ -260,7 +260,7 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 16,
-    trait: "Living With Limited Means",
+    trait: "With Little",
     narrations: [
       {
         text: "The Prophet ﷺ died while his armor was mortgaged to a Jewish merchant for thirty sa's of barley.",
@@ -296,7 +296,7 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 18,
-    trait: "When Faced With Rudeness",
+    trait: "Facing Rudeness",
     narrations: [
       {
         text: "A Bedouin pulled the Prophet's ﷺ cloak so violently that it left marks on his neck, demanding: 'Give me from Allah's wealth!' The Prophet ﷺ turned to him, smiled, and ordered that he be given what he wanted.",
