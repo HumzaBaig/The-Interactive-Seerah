@@ -54,7 +54,7 @@ export const characterData: CharacterTrait[] = [
     narrations: [
       {
         text: "The son of Adam does not fill any vessel worse than his stomach. It is sufficient for the son of Adam to eat a few mouthfuls to keep him going. If he must do that, then let him fill one third with food, one third with drink and one third with air.",
-        source: "Jāmiʿ at-Tirmidhī 1381"
+        source: "Sunan Ibn Mājah 3349"
       },
       {
         text: "The Prophet ﷺ never criticized any food. If he liked it, he would eat it, and if he did not like it, he would leave it without saying anything.",
