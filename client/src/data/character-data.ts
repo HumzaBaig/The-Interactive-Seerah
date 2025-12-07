@@ -95,14 +95,6 @@ export const characterData: CharacterTrait[] = [
       {
         text: "When the Prophet ﷺ conquered Makkah, he addressed the Quraysh who had persecuted him for years and said: 'There is no reproach upon you today. Go, for you are free.'",
         source: "The Sealed Nectar"
-      },
-      {
-        text: "On the day of the Conquest of Makkah, the Prophet ﷺ said: 'I say to you as Yusuf (Joseph) said to his brothers: No blame upon you today. Allah will forgive you, for He is the Most Merciful of the merciful.'",
-        source: "Qur'an 12:92"
-      },
-      {
-        text: "Before entering Makkah, the Prophet ﷺ declared: 'Whoever drops their weapon will be safe. Whoever shuts the door of their home will be protected. Whoever enters the house of Abu Sufyan will be protected.'",
-        source: "The Sealed Nectar"
       }
     ]
   },
