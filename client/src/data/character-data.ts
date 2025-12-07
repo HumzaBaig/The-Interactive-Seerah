@@ -50,7 +50,7 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 3,
-    trait: "His Ummah",
+    trait: "Concern for Ummah",
     narrations: [
       {
         text: "The Prophet ﷺ recited verses about Ibrahim and Isa, then raised his hands and said: 'O Allah! My Ummah, my Ummah,' and wept. Allah sent Jibril to ask what made him weep, and Allah responded: 'We will please you regarding your Ummah and never displease you.'",
