@@ -119,5 +119,11 @@ export const companionsData: NotableCompanion[] = [
     name: "Mu'awiyah ibn Abi Sufyan",
     title: "The Scribe of Revelation",
     bio: "Son of Abu Sufyan and Hind bint Utbah. He accepted Islam during the Conquest of Makkah and became one of the scribes who wrote down the Quranic revelations. He served as governor of Syria during the caliphates of Umar and Uthman. After the martyrdom of Ali, he became the first Umayyad Caliph, establishing his capital in Damascus. He was known for his political acumen and forbearance (hilm)."
+  },
+  {
+    id: 20,
+    name: "An-Najashi (Negus)",
+    title: "The Just King",
+    bio: "Ashama ibn Abjar, the Christian King of Abyssinia (Ethiopia), who gave refuge to the early Muslims fleeing persecution in Makkah. When the Quraysh sent envoys demanding their return, he refused after hearing the Muslims recite Surah Maryam. He later accepted Islam secretly. When he died, the Prophet ﷺ announced his death to the companions in Madinah and led the funeral prayer for him in absentia - the only time he did so for someone who died abroad."
   }
 ];
