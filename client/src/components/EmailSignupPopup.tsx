@@ -60,7 +60,7 @@ export default function EmailSignupPopup({ isOpen, onClose }: EmailSignupPopupPr
           </div>
           <DialogTitle className="text-xl font-bold text-center">Stay Updated</DialogTitle>
           <DialogDescription className="text-center">
-            Subscribe to receive updates when new content and features are added to the website.
+            Subscribe to receive updates as new content and features are added.
           </DialogDescription>
         </DialogHeader>
         

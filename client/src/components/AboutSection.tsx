@@ -71,7 +71,7 @@ export default function AboutSection() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Stay Updated</h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    Subscribe to receive updates when new content and features are added to the website.
+                    Subscribe to receive updates as new content and features are added.
                   </p>
                   
                   {isSubscribed ? (
