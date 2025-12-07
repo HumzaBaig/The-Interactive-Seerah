@@ -40,7 +40,7 @@ export const tenPromisedData: CompanionCard[] = [
     id: 6,
     name: "Zubayr ibn al-Awwam",
     title: "Disciple of the Prophet",
-    bio: "The Prophet's cousin and one of the first to embrace Islam at age 15. Known for his exceptional bravery, he was the first to draw his sword in defense of Islam. He participated in all major battles and was known for his skill as a warrior and his generosity."
+    bio: "The Prophet's cousin and one of the first to embrace Islam at age 15-16. Known for his exceptional bravery, he was the first to draw his sword in defense of Islam. He participated in all major battles and was known for his skill as a warrior and his generosity."
   },
   {
     id: 7,
