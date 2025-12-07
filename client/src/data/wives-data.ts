@@ -19,7 +19,7 @@ export const wivesData: WifeCard[] = [
     name: "Sawda bint Zam'a",
     title: "Mother of the Believers",
     yearMarried: "10th year of Prophethood",
-    bio: "Married shortly after Khadijah's death. She was an early convert to Islam who migrated to Abyssinia with her first husband. Known for her generosity and sense of humor, she devoted her life to caring for the Prophet's household."
+    bio: "An early convert to Islam who migrated to Abyssinia with her first husband. After her first husband died, she married the Prophet shortly after Khadijah's death. Known for her generosity and sense of humor, she devoted her life to caring for the Prophet's household."
   },
   {
     id: 3,
