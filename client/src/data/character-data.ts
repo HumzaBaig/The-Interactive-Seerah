@@ -220,7 +220,7 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 14,
-    trait: "With Wives",
+    trait: "With His Wives",
     narrations: [
       {
         text: "When asked 'Who is the person you love most in the world?' the Prophet ﷺ responded: 'Aisha.'",
