@@ -93,7 +93,7 @@ export default function AboutSection() {
                       data-testid="link-seerah-series-2"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
-                      The Prophetic Timeline
+                      Meeting Muhammad ﷺ
                     </a>
                     <a 
                       href="https://www.youtube.com/playlist?list=PLQ02IYL5pmhHvZ02LKQVeey8H-2XBKMGb" 
