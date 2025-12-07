@@ -67,6 +67,10 @@ export const characterData: CharacterTrait[] = [
       {
         text: "The Prophet ﷺ used to love pumpkin. He would actively pick it out from the dish.",
         source: "Sunan Abī Dāwūd 3782"
+      },
+      {
+        text: "The Prophet ﷺ never ate from a large tray, never had fine bread, and never ate at a dining table. He would eat on a leather mat spread on the ground.",
+        source: "Ṣaḥīḥ al-Bukhārī 5386"
       }
     ]
   },
@@ -171,10 +175,6 @@ export const characterData: CharacterTrait[] = [
       {
         text: "Aisha said: 'The family of Muhammad ﷺ never ate their fill of barley bread for two consecutive days until he passed away.'",
         source: "Ṣaḥīḥ al-Bukhārī 5416"
-      },
-      {
-        text: "The Prophet ﷺ never ate from a large tray, never had fine bread, and never ate at a dining table. He would eat on a leather mat spread on the ground.",
-        source: "Ṣaḥīḥ al-Bukhārī 5386"
       }
     ]
   },
