@@ -166,7 +166,7 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 9,
-    trait: "When He Did Not Have Wealth",
+    trait: "In Hardship",
     narrations: [
       {
         text: "The Prophet ﷺ died while his armor was mortgaged to a Jewish merchant for thirty sa's of barley.",
