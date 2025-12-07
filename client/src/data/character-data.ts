@@ -64,11 +64,15 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 4,
-    trait: "His Long Prayers",
+    trait: "His Love of Allah",
     narrations: [
       {
         text: "The Prophet ﷺ used to stand in prayer at night until his feet would swell. When asked why he prayed so much despite being forgiven, he replied: 'Should I not be a thankful slave?'",
         source: "Ṣaḥīḥ al-Bukhārī 1130"
+      },
+      {
+        text: "The closest that a servant comes to his Lord is during the last part of the night.",
+        source: "Jāmiʿ at-Tirmidhī 3579"
       }
     ]
   },
@@ -84,6 +88,20 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 6,
+    trait: "His Care For Others",
+    narrations: [
+      {
+        text: "When a cup of milk was brought to the Prophet ﷺ, he instructed that it be given to all the companions of Suffah first. Each person drank their fill, and only after everyone else had drunk did the Prophet ﷺ drink from what remained.",
+        source: "Ṣaḥīḥ al-Bukhārī 6452"
+      },
+      {
+        text: "Aisha reported that they slaughtered a sheep and gave it all away in charity. The Prophet ﷺ asked: 'What remains of it?' She said: 'Only its shoulder.' He replied: 'All of it remains except its shoulder.' — meaning what is given in charity endures.",
+        source: "Jāmiʿ at-Tirmidhī 2470"
+      }
+    ]
+  },
+  {
+    id: 7,
     trait: "His Forgiveness",
     narrations: [
       {
@@ -97,7 +115,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 7,
+    id: 8,
     trait: "His Humor",
     narrations: [
       {
@@ -115,7 +133,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 8,
+    id: 9,
     trait: "His Optimism",
     narrations: [
       {
@@ -125,7 +143,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 9,
+    id: 10,
     trait: "His Diet",
     narrations: [
       {
@@ -151,7 +169,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 10,
+    id: 11,
     trait: "When He Was Oppressed",
     narrations: [
       {
@@ -169,7 +187,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 11,
+    id: 12,
     trait: "When He Had The Upper Hand",
     narrations: [
       {
@@ -179,7 +197,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 12,
+    id: 13,
     trait: "With Children",
     narrations: [
       {
@@ -201,7 +219,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 13,
+    id: 14,
     trait: "With His Wives",
     narrations: [
       {
@@ -223,7 +241,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 14,
+    id: 15,
     trait: "When He Had Wealth",
     narrations: [
       {
@@ -241,7 +259,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 15,
+    id: 16,
     trait: "Living With Limited Means",
     narrations: [
       {
@@ -259,7 +277,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 16,
+    id: 17,
     trait: "His Bravery",
     narrations: [
       {
@@ -277,7 +295,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 17,
+    id: 18,
     trait: "When Faced With Rudeness",
     narrations: [
       {
@@ -291,7 +309,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 18,
+    id: 19,
     trait: "His Hygiene",
     narrations: [
       {
