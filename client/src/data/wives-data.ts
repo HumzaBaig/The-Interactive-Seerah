@@ -33,7 +33,7 @@ export const wivesData: WifeCard[] = [
     name: "Hafsa bint Umar",
     title: "Mother of the Believers",
     yearMarried: "3 AH",
-    bio: "Daughter of Umar ibn al-Khattab. A widow whose first husband died at Badr, she was known for her piety and knowledge. She was entrusted with the original manuscript of the Quran after the Prophet's death."
+    bio: "Daughter of Umar ibn al-Khattab. A widow whose first husband died at Badr, she was known for her piety and fasting. She was entrusted with the original manuscript of the Quran after the Prophet's death."
   },
   {
     id: 5,
