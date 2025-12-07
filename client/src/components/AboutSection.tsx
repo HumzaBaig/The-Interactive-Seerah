@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { BookOpen, Mail, CheckCircle, Loader2 } from "lucide-react";
+import { BookOpen, Mail, CheckCircle, Loader2, Video, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -66,6 +66,25 @@ export default function AboutSection() {
                     <p className="text-xs text-muted-foreground/80">
                       Ṣaḥīḥ al-Bukhārī · Ṣaḥīḥ Muslim · Jāmiʿ at-Tirmidhī · Sunan Abī Dāwūd · Sunan Ibn Mājah · Musnad Aḥmad · Shamāʾil at-Tirmidhī
                     </p>
+                  </div>
+                </div>
+
+                <div className="pt-4 space-y-3">
+                  <div className="flex items-center justify-center gap-2">
+                    <Video className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                    <span className="font-medium text-foreground text-sm">Additional Learning</span>
+                  </div>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    <a 
+                      href="https://www.youtube.com/playlist?list=PLAEA99D24CA2F9A8F" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm text-amber-600 dark:text-amber-400 hover:underline"
+                      data-testid="link-seerah-series"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      Seerah of the Prophet
+                    </a>
                   </div>
                 </div>
 
