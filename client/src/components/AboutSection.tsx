@@ -74,16 +74,36 @@ export default function AboutSection() {
                     <Video className="w-5 h-5 text-amber-500 flex-shrink-0" />
                     <span className="font-medium text-foreground text-sm">Additional Learning</span>
                   </div>
-                  <div className="flex flex-wrap justify-center gap-3">
+                  <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
                     <a 
                       href="https://www.youtube.com/playlist?list=PLAEA99D24CA2F9A8F" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-sm text-amber-600 dark:text-amber-400 hover:underline"
-                      data-testid="link-seerah-series"
+                      data-testid="link-seerah-series-1"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                       Seerah of the Prophet
+                    </a>
+                    <a 
+                      href="https://www.youtube.com/playlist?list=PLQ02IYL5pmhHFl7j6wPcFTZmlQvRhsejp" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm text-amber-600 dark:text-amber-400 hover:underline"
+                      data-testid="link-seerah-series-2"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      The Prophetic Timeline
+                    </a>
+                    <a 
+                      href="https://www.youtube.com/playlist?list=PLQ02IYL5pmhHvZ02LKQVeey8H-2XBKMGb" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm text-amber-600 dark:text-amber-400 hover:underline"
+                      data-testid="link-seerah-series-3"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      Lives of the Sahaba
                     </a>
                   </div>
                 </div>
