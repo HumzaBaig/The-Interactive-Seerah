@@ -58,7 +58,7 @@ export const characterData: CharacterTrait[] = [
       },
       {
         text: "The Prophet ﷺ never criticized any food. If he liked it, he would eat it, and if he did not like it, he would leave it without saying anything.",
-        source: "Ṣaḥīḥ al-Bukhārī 3370"
+        source: "Ṣaḥīḥ al-Bukhārī 5409"
       },
       {
         text: "He who eats seven Ajwa dates every morning will not be affected by poison or magic on the day he eats them.",
