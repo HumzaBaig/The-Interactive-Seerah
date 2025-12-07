@@ -46,7 +46,7 @@ export const tenPromisedData: CompanionCard[] = [
     id: 7,
     name: "Abdur-Rahman ibn Awf",
     title: "The Trustworthy Merchant",
-    bio: "A successful businessman who gave up his wealth in Makkah when he migrated. In Madinah, he rebuilt his fortune and donated generously. He gave half his wealth for the expedition of Tabuk. Known for his integrity, he was trusted to lead the consultation that chose Uthman as Caliph."
+    bio: "A successful businessman who gave up his wealth in Makkah when he migrated. In Madinah, he rebuilt his fortune and donated generously. He gave a lot of his wealth for the expedition of Tabuk. Known for his integrity, he was trusted to lead the consultation that chose Uthman as Caliph."
   },
   {
     id: 8,
