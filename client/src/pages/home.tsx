@@ -15,18 +15,13 @@ import TenPromisedFlashCards from "@/components/TenPromisedFlashCards";
 import CharacterFlashCards from "@/components/CharacterFlashCards";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
-import EmailSignupPopup from "@/components/EmailSignupPopup";
 import { seerahEvents, timelinePeriods } from "@/data/seerah-events";
 import { SeerahEvent } from "@shared/schema";
-
-const POPUP_SHOWN_KEY = "seerah_email_popup_shown";
 
 export default function Home() {
   const [selectedPeriod, setSelectedPeriod] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [showEmailPopup, setShowEmailPopup] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
-  const popupTriggered = useRef(false);
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -39,36 +34,6 @@ export default function Home() {
       }
     }
   }, []);
-
-  useEffect(() => {
-    const hasSeenPopup = localStorage.getItem(POPUP_SHOWN_KEY);
-    if (hasSeenPopup || popupTriggered.current) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !popupTriggered.current) {
-            popupTriggered.current = true;
-            setTimeout(() => {
-              setShowEmailPopup(true);
-            }, 1500);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    if (timelineRef.current) {
-      observer.observe(timelineRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const handleClosePopup = () => {
-    setShowEmailPopup(false);
-    localStorage.setItem(POPUP_SHOWN_KEY, "true");
-  };
 
   const handleEventSelect = (event: SeerahEvent) => {
     setSelectedPeriod(event.period);
@@ -150,7 +115,6 @@ export default function Home() {
       <CompanionsFlashCards />
       <AboutSection />
       <Footer />
-      <EmailSignupPopup isOpen={showEmailPopup} onClose={handleClosePopup} />
     </div>
   );
 }
