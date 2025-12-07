@@ -188,7 +188,7 @@ export const characterData: CharacterTrait[] = [
     narrations: [
       {
         text: "Ali said: 'When the battle became fierce and eyes grew red, we would seek protection behind the Prophet ﷺ. He would be the closest to the enemy.'",
-        source: "Musnad Ahmad 654"
+        source: "Musnad Ahmad 1347"
       },
       {
         text: "Once the people of Madinah were alarmed by a noise at night. The Prophet ﷺ was the first to investigate, riding ahead alone on an unsaddled horse, returning to tell them: 'Do not be afraid.'",
