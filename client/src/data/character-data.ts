@@ -144,42 +144,6 @@ export const characterData: CharacterTrait[] = [
   },
   {
     id: 8,
-    trait: "With The Poor",
-    narrations: [
-      {
-        text: "The Prophet ﷺ told Aisha: 'O Aisha, love the poor and let them come to you and Allah will draw you near to Himself.'",
-        source: "Ṣaḥīḥ al-Bukhārī 6071"
-      },
-      {
-        text: "The one who looks after a widow or a poor person is like a Mujahid (warrior) who fights for Allah's Cause, or like him who performs prayers all the night and fasts all the day.",
-        source: "Ṣaḥīḥ al-Bukhārī 5353"
-      },
-      {
-        text: "Save yourself from hellfire by giving even half a date-fruit in charity.",
-        source: "Ṣaḥīḥ al-Bukhārī 1417"
-      }
-    ]
-  },
-  {
-    id: 9,
-    trait: "With The Rich",
-    narrations: [
-      {
-        text: "The Prophet ﷺ established bonds of brotherhood between wealthy and poor companions, such as between Abdurrahman ibn Awf and Sa'd bin Ar-Rabi.",
-        source: "Ṣaḥīḥ al-Bukhārī 2048"
-      },
-      {
-        text: "The best charity is that which is practiced by a wealthy person. And start giving first to your dependents.",
-        source: "Ṣaḥīḥ al-Bukhārī 1426"
-      },
-      {
-        text: "By Allah, it is not poverty which I fear for you, but I fear that riches may be given to you as they were given to those before you, and that you begin to vie with one another for them as they did, and that they may destroy you as they destroyed them.",
-        source: "Ṣaḥīḥ al-Bukhārī 3158"
-      }
-    ]
-  },
-  {
-    id: 10,
     trait: "When He Had Wealth",
     narrations: [
       {
@@ -197,7 +161,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 11,
+    id: 9,
     trait: "When He Did Not Have Wealth",
     narrations: [
       {
@@ -215,7 +179,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 12,
+    id: 10,
     trait: "His Bravery",
     narrations: [
       {
@@ -233,7 +197,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 13,
+    id: 11,
     trait: "When Faced With Rudeness",
     narrations: [
       {
@@ -251,7 +215,7 @@ export const characterData: CharacterTrait[] = [
     ]
   },
   {
-    id: 14,
+    id: 12,
     trait: "His Hygiene",
     narrations: [
       {
