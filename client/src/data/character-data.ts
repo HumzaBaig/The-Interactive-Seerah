@@ -59,10 +59,6 @@ export const characterData: CharacterTrait[] = [
       {
         text: "On the Day of Judgment, every prophet will say 'Myself, myself' but Prophet Muhammad ﷺ will say: 'My Ummah, my Ummah!'",
         source: "Ṣaḥīḥ Muslim 202"
-      },
-      {
-        text: "Were I not afraid that it would be hard on my Ummah, I would have ordered them to use the siwak before every prayer.",
-        source: "Ṣaḥīḥ al-Bukhārī 887"
       }
     ]
   },
