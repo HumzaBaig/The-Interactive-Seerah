@@ -235,24 +235,19 @@ export default function TimelineViewer({
             }}
           />
 
-          {/* Axis Markers */}
+          {/* Axis Markers - positioned at bottom */}
           {axisMarkers.map((marker) => (
             <div
               key={marker.year}
               className="absolute flex flex-col items-center"
               style={{
                 left: `${marker.positionPx}px`,
-                top: '50%',
+                bottom: '16px',
                 transform: 'translateX(-50%)'
               }}
             >
-              {/* Tick mark */}
-              <div 
-                className="w-px h-3 bg-foreground/30"
-                style={{ marginTop: '8px' }}
-              />
               {/* Label */}
-              <div className="text-xs text-muted-foreground mt-1 whitespace-nowrap">
+              <div className="text-xs text-muted-foreground whitespace-nowrap">
                 {formatAxisLabel(marker.year)}
               </div>
             </div>
