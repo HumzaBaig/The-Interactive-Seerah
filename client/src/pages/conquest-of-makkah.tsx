@@ -39,7 +39,7 @@ const battleStages = [
     id: "abusufyan",
     title: "Abu Sufyan's Conversion",
     location: "Marr al-Zahran",
-    description: "At Marr al-Zahran, the Prophet's uncle Abbas brought Abu Sufyan to the Muslim camp. Seeing the 10,000 campfires, Abu Sufyan realized resistance was futile. The Prophet ﷺ offered amnesty: 'Whoever enters Abu Sufyan's house is safe, whoever closes their door is safe, whoever enters the Haram is safe.'",
+    description: "The Prophet's uncle Abbas brought Abu Sufyan to the Muslim camp. Seeing the Muslim army, Abu Sufyan realized resistance was futile. The Prophet ﷺ offered amnesty: 'Whoever enters Abu Sufyan's house will be safe, whoever lays down arms will be safe, and whoever locks their door will be safe'",
     icon: Moon
   },
   {
