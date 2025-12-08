@@ -111,7 +111,6 @@ export default function BattleOfKhaybar() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 text-white overflow-hidden">
-
       <header className="relative z-10 p-6">
         <Link href="/#graphics-section">
           <Button 
@@ -124,7 +123,6 @@ export default function BattleOfKhaybar() {
           </Button>
         </Link>
       </header>
-
       <main className="relative z-10 container mx-auto px-6 pb-12">
         <div className="text-center mb-8">
           <div className="mb-4">
@@ -228,7 +226,7 @@ export default function BattleOfKhaybar() {
                   <p className="text-xs text-white/60">Muslim Fighters</p>
                 </div>
                 <div className="bg-red-500/20 border border-red-400/30 rounded-lg p-4 text-center">
-                  <p className="text-2xl font-bold text-red-400">10,000</p>
+                  <p className="text-2xl font-bold text-red-400">~10,000</p>
                   <p className="text-xs text-white/60">Jewish Inhabitants</p>
                 </div>
                 <div className="bg-amber-500/20 border border-amber-400/30 rounded-lg p-4 text-center">
