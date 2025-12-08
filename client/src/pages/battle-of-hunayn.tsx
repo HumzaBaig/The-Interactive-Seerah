@@ -235,10 +235,6 @@ export default function BattleOfHunayn() {
                   <p className="text-2xl font-bold text-amber-400">24,000</p>
                   <p className="text-xs text-white/60">Camels Captured</p>
                 </div>
-                <div className="bg-orange-500/20 border border-orange-400/30 rounded-lg p-4 text-center">
-                  <p className="text-2xl font-bold text-orange-400">6,000</p>
-                  <p className="text-xs text-white/60">Captives Released</p>
-                </div>
               </div>
             )}
 
