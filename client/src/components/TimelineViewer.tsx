@@ -5,11 +5,6 @@ import EventDetailModal from "@/components/EventDetailModal";
 import { TIMELINE_START, TIMELINE_END } from "@/data/seerah-events";
 import { Button } from "@/components/ui/button";
 import { Maximize2, Minimize2, X } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
-
-const PROPHET_BIRTH_YEAR = 570;
-const HIJRA_YEAR = 622;
 
 interface TimelineViewerProps {
   events: SeerahEvent[];
@@ -34,7 +29,6 @@ export default function TimelineViewer({
 }: TimelineViewerProps) {
   const [selectedEvent, setSelectedEvent] = useState<SeerahEvent | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [showAge, setShowAge] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   // Generate axis markers (every 5 years)
@@ -56,19 +50,7 @@ export default function TimelineViewer({
     return markers;
   }, []);
 
-  const yearToAge = (year: number) => year - PROPHET_BIRTH_YEAR;
-
-  const yearToHijri = (year: number) => {
-    if (year >= HIJRA_YEAR) {
-      return `${year - HIJRA_YEAR} AH`;
-    }
-    return `${HIJRA_YEAR - year} BH`;
-  };
-
   const formatAxisLabel = (year: number) => {
-    if (showAge) {
-      return yearToHijri(year);
-    }
     return `${year} CE`;
   };
 
@@ -292,27 +274,6 @@ export default function TimelineViewer({
           </div>
         </div>
         <div className="flex items-center gap-4">
-          {/* CE/Hijri Toggle */}
-          <div className="flex items-center gap-2">
-            <Label 
-              htmlFor="age-toggle" 
-              className={`text-xs cursor-pointer ${!showAge ? 'text-foreground font-medium' : 'text-muted-foreground'}`}
-            >
-              CE
-            </Label>
-            <Switch
-              id="age-toggle"
-              checked={showAge}
-              onCheckedChange={setShowAge}
-              data-testid="switch-years-age-toggle"
-            />
-            <Label 
-              htmlFor="age-toggle" 
-              className={`text-xs cursor-pointer ${showAge ? 'text-foreground font-medium' : 'text-muted-foreground'}`}
-            >
-              AH/BH
-            </Label>
-          </div>
           <span className="font-medium">{filteredEvents.length} events</span>
           <Button
             variant="outline"
