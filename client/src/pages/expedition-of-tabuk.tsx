@@ -39,7 +39,7 @@ const expeditionStages = [
     id: "generosity",
     title: "Unprecedented Generosity",
     location: "Madinah",
-    description: "The companions showed extraordinary sacrifice. Uthman equipped one-third of the army (300 camels, 50 horses, and 1,000 dinars). Abu Bakr brought everything he owned. When asked what he left for his family, he said: 'Allah and His Messenger.' Umar brought half his wealth. Women donated their jewelry.",
+    description: "The companions showed extraordinary sacrifice. Uthman equipped a large portion of the army (300 camels, 50 horses, and 1,000 dinars). Abu Bakr brought everything he owned. When asked what he left for his family, he said: 'Allah and His Messenger.' Umar brought half his wealth. Women donated their jewelry.",
     icon: Users
   },
   {
