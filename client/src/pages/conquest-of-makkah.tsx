@@ -32,7 +32,7 @@ const battleStages = [
     id: "preparation",
     title: "The Secret March",
     location: "From Madinah",
-    description: "The Prophet ﷺ secretly prepared an army of 10,000 - the largest Muslim force ever assembled. He asked Allah to blind the Quraysh from any news until the Muslims arrived. When Abu Sufyan came to renew the treaty, he was not received. The army marched during Ramadan, with each tribe lighting fires at night.",
+    description: "The Prophet ﷺ prepared an army of approximately 10,000 Muslims, the largest force assembled up to that point, while maintaining strict secrecy to prevent Quraysh from receiving any advance warning. When Abu Sufyān came to Madīnah to seek renewal of the treaty, his efforts were unsuccessful. The Muslim army then marched during the month of Ramaḍān, and when it camped at night, countless fires lit the valley, revealing the vast size of the force.",
     icon: Users
   },
   {
