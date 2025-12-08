@@ -49,14 +49,20 @@ export default function EmailCaptureForm({ variant = "inline", onSuccess }: Emai
       toast({
         title: "Subscribed!",
         description: "Thank you for subscribing. We'll keep you updated.",
+        duration: 3000,
       });
       onSuccess?.();
     },
     onError: (error: Error) => {
+      const errorMessage = error.message || "";
+      const isAlreadySubscribed = errorMessage.toLowerCase().includes("already subscribed");
+      
       toast({
-        title: "Subscription failed",
-        description: error.message || "Please try again.",
-        variant: "destructive",
+        title: isAlreadySubscribed ? "Already subscribed" : "Subscription failed",
+        description: isAlreadySubscribed 
+          ? "This email is already signed up." 
+          : "Please try again.",
+        duration: 3000,
       });
     },
   });
