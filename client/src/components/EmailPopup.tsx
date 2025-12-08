@@ -6,8 +6,6 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
 import EmailCaptureForm from "./EmailCaptureForm";
 
 interface EmailPopupProps {
@@ -65,15 +63,6 @@ export default function EmailPopup({ triggerElementId }: EmailPopupProps) {
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
       <DialogContent className="sm:max-w-md" data-testid="modal-email-popup">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute right-4 top-4"
-          onClick={handleClose}
-          data-testid="button-close-popup"
-        >
-          <X className="w-4 h-4" />
-        </Button>
         <DialogHeader>
           <DialogTitle className="text-xl font-semibold text-center">
             Stay Connected
