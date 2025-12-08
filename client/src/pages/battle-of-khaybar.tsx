@@ -230,7 +230,7 @@ export default function BattleOfKhaybar() {
                   <p className="text-xs text-white/60">Jewish Inhabitants</p>
                 </div>
                 <div className="bg-amber-500/20 border border-amber-400/30 rounded-lg p-4 text-center">
-                  <p className="text-2xl font-bold text-amber-400">15</p>
+                  <p className="text-2xl font-bold text-amber-400">~15</p>
                   <p className="text-xs text-white/60">Muslim Martyrs</p>
                 </div>
                 <div className="bg-orange-500/20 border border-orange-400/30 rounded-lg p-4 text-center">
