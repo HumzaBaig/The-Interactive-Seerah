@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Dialog,
   DialogContent,
@@ -10,14 +10,16 @@ import EmailCaptureForm from "./EmailCaptureForm";
 
 interface EmailPopupProps {
   triggerElementId: string;
+  delayMs?: number;
 }
 
 const POPUP_DISMISSED_KEY = "email_popup_dismissed";
 const POPUP_COOLDOWN_HOURS = 24;
 
-export default function EmailPopup({ triggerElementId }: EmailPopupProps) {
+export default function EmailPopup({ triggerElementId, delayMs = 60000 }: EmailPopupProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const dismissedTime = localStorage.getItem(POPUP_DISMISSED_KEY);
@@ -29,6 +31,17 @@ export default function EmailPopup({ triggerElementId }: EmailPopupProps) {
       }
     }
 
+    const triggerPopup = () => {
+      if (hasTriggered) return;
+      setIsOpen(true);
+      setHasTriggered(true);
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+
+    timerRef.current = setTimeout(triggerPopup, delayMs);
+
     const handleScroll = () => {
       if (hasTriggered) return;
 
@@ -39,14 +52,19 @@ export default function EmailPopup({ triggerElementId }: EmailPopupProps) {
       const isFullyScrolledPast = rect.bottom < 0;
 
       if (isFullyScrolledPast) {
-        setIsOpen(true);
-        setHasTriggered(true);
+        triggerPopup();
       }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [triggerElementId, hasTriggered]);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, [triggerElementId, delayMs, hasTriggered]);
 
   const handleClose = () => {
     setIsOpen(false);

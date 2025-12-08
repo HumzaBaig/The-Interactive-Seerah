@@ -116,7 +116,7 @@ export default function Home() {
       <CompanionsFlashCards />
       <AboutSection />
       <Footer />
-      <EmailPopup triggerElementId="timeline-section" />
+      <EmailPopup triggerElementId="character-section" delayMs={60000} />
     </div>
   );
 }
