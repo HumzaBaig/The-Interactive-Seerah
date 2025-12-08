@@ -222,7 +222,7 @@ export default function BattleOfHunayn() {
             )}
 
             {currentStage === 5 && (
-              <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="mt-6 flex justify-center gap-4">
                 <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-lg p-4 text-center">
                   <p className="text-2xl font-bold text-emerald-400">12,000</p>
                   <p className="text-xs text-white/60">Muslim Army</p>
