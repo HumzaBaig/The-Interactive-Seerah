@@ -1,5 +1,7 @@
 import { BookOpen, Video, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import EmailCaptureForm from "./EmailCaptureForm";
 
 export default function AboutSection() {
   return (
@@ -68,6 +70,10 @@ export default function AboutSection() {
                     </a>
                   </div>
                 </div>
+
+                <Separator className="my-6" />
+
+                <EmailCaptureForm variant="card" />
               </div>
             </CardContent>
           </Card>

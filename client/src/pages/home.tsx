@@ -15,6 +15,7 @@ import TenPromisedFlashCards from "@/components/TenPromisedFlashCards";
 import CharacterFlashCards from "@/components/CharacterFlashCards";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
+import EmailPopup from "@/components/EmailPopup";
 import { seerahEvents, timelinePeriods } from "@/data/seerah-events";
 import { SeerahEvent } from "@shared/schema";
 
@@ -115,6 +116,7 @@ export default function Home() {
       <CompanionsFlashCards />
       <AboutSection />
       <Footer />
+      <EmailPopup triggerElementId="timeline-section" />
     </div>
   );
 }
