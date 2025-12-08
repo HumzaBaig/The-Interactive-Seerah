@@ -60,7 +60,7 @@ const battleStages = [
     id: "amnesty",
     title: "General Amnesty",
     location: "Makkah",
-    description: "Standing at the Ka'bah door, the Prophet ﷺ addressed the Quraysh who feared retribution. He asked: 'What do you think I will do with you?' They replied: 'Good, a noble brother and nephew.' He declared: 'I say as Yusuf said to his brothers - no blame on you today. Go, you are free.' Even Hind, who had mutilated Hamza, was forgiven.",
+    description: "Standing near the Kaaba, the Prophet ﷺ addressed the Quraysh who feared retribution. He asked: 'What do you think I will do with you?' They replied: 'Good, a noble brother and nephew.' He declared: 'I say as Yusuf said to his brothers - no blame on you today. Go, you are free.' Even Hind, who had mutilated Hamza, was forgiven.",
     icon: Star
   }
 ];
