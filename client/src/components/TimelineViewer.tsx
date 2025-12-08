@@ -5,6 +5,10 @@ import EventDetailModal from "@/components/EventDetailModal";
 import { TIMELINE_START, TIMELINE_END } from "@/data/seerah-events";
 import { Button } from "@/components/ui/button";
 import { Maximize2, Minimize2, X } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
+
+const PROPHET_BIRTH_YEAR = 570;
 
 interface TimelineViewerProps {
   events: SeerahEvent[];
@@ -29,7 +33,37 @@ export default function TimelineViewer({
 }: TimelineViewerProps) {
   const [selectedEvent, setSelectedEvent] = useState<SeerahEvent | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [showAge, setShowAge] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Generate axis markers (every 5 years)
+  const axisMarkers = useMemo(() => {
+    const markers: { year: number; positionPx: number }[] = [];
+    for (let year = TIMELINE_START; year <= TIMELINE_END; year += 5) {
+      markers.push({
+        year,
+        positionPx: 60 + (year - TIMELINE_START) * FIXED_PIXELS_PER_YEAR
+      });
+    }
+    // Add the final year if not already included
+    if ((TIMELINE_END - TIMELINE_START) % 5 !== 0) {
+      markers.push({
+        year: TIMELINE_END,
+        positionPx: 60 + (TIMELINE_END - TIMELINE_START) * FIXED_PIXELS_PER_YEAR
+      });
+    }
+    return markers;
+  }, []);
+
+  const yearToAge = (year: number) => year - PROPHET_BIRTH_YEAR;
+
+  const formatAxisLabel = (year: number) => {
+    if (showAge) {
+      const age = yearToAge(year);
+      return age === 0 ? "Birth" : `${age}`;
+    }
+    return `${year} CE`;
+  };
 
   const yearToPixels = (year: number) => {
     const clampedYear = Math.max(TIMELINE_START, Math.min(TIMELINE_END, year));
@@ -194,6 +228,29 @@ export default function TimelineViewer({
             }}
           />
 
+          {/* Axis Markers */}
+          {axisMarkers.map((marker) => (
+            <div
+              key={marker.year}
+              className="absolute flex flex-col items-center"
+              style={{
+                left: `${marker.positionPx}px`,
+                top: '50%',
+                transform: 'translateX(-50%)'
+              }}
+            >
+              {/* Tick mark */}
+              <div 
+                className="w-px h-3 bg-foreground/30"
+                style={{ marginTop: '8px' }}
+              />
+              {/* Label */}
+              <div className="text-xs text-muted-foreground mt-1 whitespace-nowrap">
+                {formatAxisLabel(marker.year)}
+              </div>
+            </div>
+          ))}
+
           {/* Event Nodes - uses precomputed positions from eventLayoutMap */}
           <div 
             className="absolute inset-x-0" 
@@ -233,6 +290,27 @@ export default function TimelineViewer({
           </div>
         </div>
         <div className="flex items-center gap-4">
+          {/* Years/Age Toggle */}
+          <div className="flex items-center gap-2">
+            <Label 
+              htmlFor="age-toggle" 
+              className={`text-xs cursor-pointer ${!showAge ? 'text-foreground font-medium' : 'text-muted-foreground'}`}
+            >
+              Years
+            </Label>
+            <Switch
+              id="age-toggle"
+              checked={showAge}
+              onCheckedChange={setShowAge}
+              data-testid="switch-years-age-toggle"
+            />
+            <Label 
+              htmlFor="age-toggle" 
+              className={`text-xs cursor-pointer ${showAge ? 'text-foreground font-medium' : 'text-muted-foreground'}`}
+            >
+              Age
+            </Label>
+          </div>
           <span className="font-medium">{filteredEvents.length} events</span>
           <Button
             variant="outline"
