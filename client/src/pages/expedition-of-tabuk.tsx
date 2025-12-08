@@ -32,7 +32,7 @@ const expeditionStages = [
     id: "hardship",
     title: "The Army of Hardship",
     location: "Madinah",
-    description: "This expedition was called 'Jaysh al-Usra' (Army of Hardship). The heat was intense, the journey long (over 700 km), and it was harvest time. Resources were scarce - sometimes few men shared a single camel. The hypocrites made excuses and tried to discourage others. Despite this, 30,000 Muslims responded to the call.",
+    description: "This expedition was called 'Jaysh al-Usra' (Army of Hardship). The heat was intense, the journey long (over 700 km), and it was harvest time. Resources were scarce - sometimes many men shares a single camel. The hypocrites made excuses and tried to discourage others. Despite this, 30,000 Muslims responded to the call.",
     icon: Sun
   },
   {
