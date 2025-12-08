@@ -9,6 +9,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 
 const PROPHET_BIRTH_YEAR = 570;
+const HIJRA_YEAR = 622;
 
 interface TimelineViewerProps {
   events: SeerahEvent[];
@@ -57,10 +58,16 @@ export default function TimelineViewer({
 
   const yearToAge = (year: number) => year - PROPHET_BIRTH_YEAR;
 
+  const yearToHijri = (year: number) => {
+    if (year >= HIJRA_YEAR) {
+      return `${year - HIJRA_YEAR} AH`;
+    }
+    return `${HIJRA_YEAR - year} BH`;
+  };
+
   const formatAxisLabel = (year: number) => {
     if (showAge) {
-      const age = yearToAge(year);
-      return age === 0 ? "Birth" : `${age}`;
+      return yearToHijri(year);
     }
     return `${year} CE`;
   };
@@ -290,13 +297,13 @@ export default function TimelineViewer({
           </div>
         </div>
         <div className="flex items-center gap-4">
-          {/* Years/Age Toggle */}
+          {/* CE/Hijri Toggle */}
           <div className="flex items-center gap-2">
             <Label 
               htmlFor="age-toggle" 
               className={`text-xs cursor-pointer ${!showAge ? 'text-foreground font-medium' : 'text-muted-foreground'}`}
             >
-              Years
+              CE
             </Label>
             <Switch
               id="age-toggle"
@@ -308,7 +315,7 @@ export default function TimelineViewer({
               htmlFor="age-toggle" 
               className={`text-xs cursor-pointer ${showAge ? 'text-foreground font-medium' : 'text-muted-foreground'}`}
             >
-              Age
+              AH/BH
             </Label>
           </div>
           <span className="font-medium">{filteredEvents.length} events</span>
