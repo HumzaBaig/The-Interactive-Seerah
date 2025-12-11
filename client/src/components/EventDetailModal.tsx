@@ -40,11 +40,11 @@ export default function EventDetailModal({ event, onClose }: EventDetailModalPro
   return (
     <Dialog open={!!event} onOpenChange={onClose}>
       <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto" data-testid="modal-event-detail">
-        <DialogHeader>
+        <DialogHeader className="text-left">
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
-              <DialogTitle className="text-2xl md:text-3xl font-semibold mb-2">
-                {event.title}
+              <DialogTitle className="text-2xl md:text-3xl font-semibold mb-2 text-left">
+                <StyledText>{event.title}</StyledText>
               </DialogTitle>
             </div>
             <Badge className={categoryColors[event.category]}>

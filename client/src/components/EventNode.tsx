@@ -5,6 +5,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Badge } from "@/components/ui/badge";
+import { StyledText } from "@/components/StyledText";
 
 interface EventNodeProps {
   event: SeerahEvent;
@@ -74,14 +75,14 @@ export default function EventNode({ event, positionPx, periodColor, onClick, lab
             }}
           >
             <div className="text-xs font-medium text-center leading-tight text-foreground/80 group-hover:text-foreground transition-colors">
-              {event.title}
+              <StyledText>{event.title}</StyledText>
             </div>
           </div>
         </button>
       </TooltipTrigger>
       <TooltipContent side={isAbove ? "bottom" : "top"} className="max-w-xs z-50">
         <div className="space-y-1.5">
-          <div className="font-semibold text-sm">{event.title}</div>
+          <div className="font-semibold text-sm"><StyledText>{event.title}</StyledText></div>
           <div className="text-xs text-muted-foreground">{event.location}</div>
           <Badge className={`text-xs ${categoryColors[event.category]}`}>
             {categoryLabels[event.category]}
