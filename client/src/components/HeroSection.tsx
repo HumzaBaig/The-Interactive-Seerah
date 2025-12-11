@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section className="relative py-16 flex items-center justify-center bg-gradient-to-b from-background to-accent/10 border-b overflow-hidden">
+    <section className="relative py-16 flex items-center justify-center bg-background border-b overflow-hidden">
       <div className="absolute inset-0 opacity-15">
         <svg
           className="w-full h-full"
