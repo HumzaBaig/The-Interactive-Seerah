@@ -87,8 +87,7 @@ export default function Home() {
               <div 
                 className="text-center space-y-4 p-6 md:p-8 rounded-lg"
                 style={{
-                  border: '1px solid rgba(217, 119, 6, 0.3)',
-                  boxShadow: '0 0 20px rgba(251, 191, 36, 0.08), inset 0 0 30px rgba(251, 191, 36, 0.03)'
+                  border: '2px solid rgba(217, 119, 6, 0.5)'
                 }}
               >
                 <h2 className="text-3xl md:text-4xl font-semibold" style={{ letterSpacing: '0.02em' }}>
