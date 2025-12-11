@@ -8,53 +8,28 @@ export default function HeroSection() {
         }}
       />
       
-      <div className="absolute inset-0 opacity-[0.05]">
+      <div className="absolute inset-0 opacity-[0.03]">
         <svg
           className="w-full h-full"
-          viewBox="0 0 400 400"
+          viewBox="0 0 800 600"
           preserveAspectRatio="xMidYMid slice"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            <pattern id="islamic-weave" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-              <g fill="none" stroke="#d97706" strokeWidth="1.5">
-                <polygon points="100,10 115,30 140,30 150,50 140,70 115,70 100,90 85,70 60,70 50,50 60,30 85,30" />
-                <polygon points="100,10 115,30 140,30 150,50 140,70 115,70 100,90 85,70 60,70 50,50 60,30 85,30" transform="rotate(30 100 50)" />
-                <polygon points="100,10 115,30 140,30 150,50 140,70 115,70 100,90 85,70 60,70 50,50 60,30 85,30" transform="rotate(60 100 50)" />
-                
-                <polygon points="100,110 115,130 140,130 150,150 140,170 115,170 100,190 85,170 60,170 50,150 60,130 85,130" />
-                <polygon points="100,110 115,130 140,130 150,150 140,170 115,170 100,190 85,170 60,170 50,150 60,130 85,130" transform="rotate(30 100 150)" />
-                <polygon points="100,110 115,130 140,130 150,150 140,170 115,170 100,190 85,170 60,170 50,150 60,130 85,130" transform="rotate(60 100 150)" />
-                
-                <line x1="50" y1="50" x2="50" y2="150" />
-                <line x1="150" y1="50" x2="150" y2="150" />
-                <line x1="50" y1="50" x2="0" y2="0" />
-                <line x1="150" y1="50" x2="200" y2="0" />
-                <line x1="50" y1="150" x2="0" y2="200" />
-                <line x1="150" y1="150" x2="200" y2="200" />
-                
-                <polygon points="0,100 15,85 35,85 50,100 35,115 15,115" />
-                <polygon points="0,100 15,85 35,85 50,100 35,115 15,115" transform="rotate(45 25 100)" />
-                
-                <polygon points="150,100 165,85 185,85 200,100 185,115 165,115" />
-                <polygon points="150,100 165,85 185,85 200,100 185,115 165,115" transform="rotate(45 175 100)" />
-                
-                <polygon points="100,0 108,8 108,18 100,25 92,18 92,8" />
-                <polygon points="100,175 108,183 108,193 100,200 92,193 92,183" />
-                
-                <line x1="50" y1="50" x2="100" y2="0" />
-                <line x1="150" y1="50" x2="100" y2="0" />
-                <line x1="50" y1="150" x2="100" y2="200" />
-                <line x1="150" y1="150" x2="100" y2="200" />
-                
-                <line x1="0" y1="100" x2="50" y2="50" />
-                <line x1="0" y1="100" x2="50" y2="150" />
-                <line x1="200" y1="100" x2="150" y2="50" />
-                <line x1="200" y1="100" x2="150" y2="150" />
+            <pattern id="islamic-geo" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+              <g fill="none" stroke="currentColor" strokeWidth="0.5">
+                <polygon points="50,8 58,23 75,23 62,35 67,52 50,42 33,52 38,35 25,23 42,23" />
+                <polygon points="50,8 58,23 75,23 62,35 67,52 50,42 33,52 38,35 25,23 42,23" transform="rotate(45 50 50)" />
+                <circle cx="50" cy="50" r="12" />
+                <circle cx="50" cy="50" r="30" />
+                <line x1="0" y1="50" x2="20" y2="50" />
+                <line x1="80" y1="50" x2="100" y2="50" />
+                <line x1="50" y1="0" x2="50" y2="20" />
+                <line x1="50" y1="80" x2="50" y2="100" />
               </g>
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#islamic-weave)" />
+          <rect width="100%" height="100%" fill="url(#islamic-geo)" className="text-foreground" />
         </svg>
       </div>
 
