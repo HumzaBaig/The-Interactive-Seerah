@@ -56,7 +56,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 py-3 flex items-center gap-3">
           <SectionNav />
           
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-center">
             <h1 className="text-lg md:text-xl font-semibold font-display whitespace-nowrap" style={{ letterSpacing: '0.02em' }}>
               The Interactive Seerah
             </h1>
