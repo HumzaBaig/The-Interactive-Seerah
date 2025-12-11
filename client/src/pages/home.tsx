@@ -85,9 +85,32 @@ export default function Home() {
           <div className="container mx-auto px-6 py-12">
             <div className="max-w-4xl mx-auto space-y-8">
               <div className="text-center space-y-4">
-                <h2 className="text-3xl md:text-4xl font-bold">
-                  Explore the Seerah
-                </h2>
+                <div className="space-y-3">
+                  <h2 className="text-3xl md:text-4xl font-semibold" style={{ letterSpacing: '0.02em' }}>
+                    Explore the Seerah
+                  </h2>
+                  {/* Gold light streak underline */}
+                  <div className="flex justify-center">
+                    <div className="relative">
+                      <div 
+                        className="absolute inset-0 -inset-y-1"
+                        style={{
+                          background: 'linear-gradient(90deg, transparent 10%, #fbbf24 35%, #fbbf24 65%, transparent 90%)',
+                          filter: 'blur(8px)',
+                          opacity: 0.25
+                        }}
+                      />
+                      <div 
+                        className="relative w-32 h-[4px] rounded-full"
+                        style={{
+                          background: 'linear-gradient(90deg, transparent 0%, #d97706 20%, #f59e0b 35%, #fbbf24 50%, #f59e0b 65%, #d97706 80%, transparent 100%)',
+                          maskImage: 'linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%)',
+                          WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%)'
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
                 <p className="text-lg text-muted-foreground leading-relaxed">Use the interactive timeline below to explore major events in the life of Prophet Muhammad <span className="text-amber-600 dark:text-amber-400" style={{ textShadow: '0 0 6px rgba(217, 119, 6, 0.3)' }}>ﷺ</span>. Click any event node for details, or filter by time period and event category.</p>
               </div>
             </div>
