@@ -96,16 +96,16 @@ export default function HeroSection() {
       {/* Mobile-only explore button */}
       <button
         onClick={scrollToTimeline}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 md:hidden"
+        className="absolute bottom-8 left-0 right-0 flex flex-col items-center gap-2 md:hidden"
         data-testid="button-explore-timeline"
       >
         <span 
-          className="text-sm font-medium text-amber-600 dark:text-amber-400"
+          className="text-sm font-medium text-amber-700 dark:text-amber-500 text-center"
           style={{ letterSpacing: '0.05em' }}
         >
           Explore the Timeline & More
         </span>
-        <ChevronDown className="w-5 h-5 text-amber-600 dark:text-amber-400 animate-bounce" />
+        <ChevronDown className="w-5 h-5 text-amber-700 dark:text-amber-500 animate-bounce" />
       </button>
     </section>
   );
