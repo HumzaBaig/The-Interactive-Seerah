@@ -84,12 +84,7 @@ export default function Home() {
         <div className="flex-1 overflow-hidden">
           <div className="container mx-auto px-6 py-12">
             <div className="max-w-4xl mx-auto space-y-8">
-              <div 
-                className="text-center space-y-4 p-6 md:p-8 rounded-lg"
-                style={{
-                  border: '2px solid rgba(217, 119, 6, 0.5)'
-                }}
-              >
+              <div className="text-center space-y-4">
                 <h2 className="text-3xl md:text-4xl font-semibold" style={{ letterSpacing: '0.02em' }}>
                   Explore the Seerah
                 </h2>
