@@ -38,20 +38,20 @@ export default function HeroSection() {
             {/* Gold light streak underline */}
             <div className="flex justify-center">
               <div className="relative">
-                {/* Blur glow behind */}
+                {/* Outer glow */}
                 <div 
-                  className="absolute inset-0 -inset-y-2"
+                  className="absolute -inset-x-4 -inset-y-3"
                   style={{
-                    background: 'linear-gradient(90deg, transparent 5%, #fbbf24 30%, #fbbf24 70%, transparent 95%)',
-                    filter: 'blur(12px)',
-                    opacity: 0.5
+                    background: 'radial-gradient(ellipse 100% 100% at center, rgba(251, 191, 36, 0.4) 0%, transparent 70%)',
+                    filter: 'blur(8px)'
                   }}
                 />
-                {/* Main gradient bar */}
+                {/* Main streak */}
                 <div 
-                  className="relative w-36 h-[5px] rounded-full"
+                  className="relative w-40 h-[4px]"
                   style={{
-                    background: 'linear-gradient(90deg, transparent 0%, #d97706 15%, #f59e0b 35%, #fbbf24 50%, #f59e0b 65%, #d97706 85%, transparent 100%)'
+                    background: 'linear-gradient(90deg, transparent 0%, rgba(217, 119, 6, 0.3) 10%, rgba(245, 158, 11, 0.7) 25%, #fbbf24 50%, rgba(245, 158, 11, 0.7) 75%, rgba(217, 119, 6, 0.3) 90%, transparent 100%)',
+                    boxShadow: '0 0 10px rgba(251, 191, 36, 0.6), 0 0 20px rgba(251, 191, 36, 0.3)'
                   }}
                 />
               </div>
