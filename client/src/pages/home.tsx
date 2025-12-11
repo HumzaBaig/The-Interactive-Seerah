@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import HeroSection from "@/components/HeroSection";
+import MobileSplash from "@/components/MobileSplash";
 import TimelineViewer from "@/components/TimelineViewer";
 import FilterSidebar from "@/components/FilterSidebar";
 import MobileFilters from "@/components/MobileFilters";
@@ -22,6 +23,7 @@ import { SeerahEvent } from "@shared/schema";
 export default function Home() {
   const [selectedPeriod, setSelectedPeriod] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [showSplash, setShowSplash] = useState(true);
   const timelineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -34,6 +36,13 @@ export default function Home() {
         }, 100);
       }
     }
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 2000);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleEventSelect = (event: SeerahEvent) => {
@@ -52,6 +61,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      {/* Mobile-only splash screen */}
+      <MobileSplash isVisible={showSplash} />
+      
       <header className="sticky top-0 z-50 bg-background border-b">
         <div className="container mx-auto px-4 md:px-6 py-3 flex items-center gap-3">
           <SectionNav />
