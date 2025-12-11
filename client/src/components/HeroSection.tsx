@@ -35,14 +35,26 @@ export default function HeroSection() {
               The Interactive Seerah
             </h1>
             
-            {/* Gold underline */}
+            {/* Gold light streak underline */}
             <div className="flex justify-center">
-              <div 
-                className="w-20 h-[3px] rounded-full"
-                style={{
-                  background: 'linear-gradient(90deg, #f7b733, #fc4a1a)'
-                }}
-              />
+              <div className="relative">
+                {/* Blur glow behind */}
+                <div 
+                  className="absolute inset-0 -inset-y-2"
+                  style={{
+                    background: 'linear-gradient(90deg, transparent 5%, #fbbf24 30%, #fbbf24 70%, transparent 95%)',
+                    filter: 'blur(12px)',
+                    opacity: 0.5
+                  }}
+                />
+                {/* Main gradient bar */}
+                <div 
+                  className="relative w-36 h-[5px] rounded-full"
+                  style={{
+                    background: 'linear-gradient(90deg, transparent 0%, #d97706 15%, #f59e0b 35%, #fbbf24 50%, #f59e0b 65%, #d97706 85%, transparent 100%)'
+                  }}
+                />
+              </div>
             </div>
           </div>
           
