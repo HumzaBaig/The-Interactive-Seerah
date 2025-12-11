@@ -10,15 +10,15 @@ import {
 } from "@/components/ui/sheet";
 
 const sections = [
-  { id: "timeline-section", label: "Timeline" },
-  { id: "graphics-section", label: "Notable Events" },
-  { id: "character-section", label: "The Noble Character" },
-  { id: "wives-section", label: "The Mothers of the Believers" },
-  { id: "children-section", label: "The Children of the Prophet ﷺ" },
-  { id: "promised-section", label: "The Ten Promised Paradise" },
-  { id: "family-section", label: "The Close Family" },
-  { id: "companions-section", label: "Notable Companions" },
-  { id: "about-section", label: "About This Project" },
+  { id: "timeline-section", label: "Timeline", hasSaw: false },
+  { id: "graphics-section", label: "Notable Events", hasSaw: false },
+  { id: "character-section", label: "The Noble Character", hasSaw: false },
+  { id: "wives-section", label: "The Mothers of the Believers", hasSaw: false },
+  { id: "children-section", label: "The Children of the Prophet", hasSaw: true },
+  { id: "promised-section", label: "The Ten Promised Paradise", hasSaw: false },
+  { id: "family-section", label: "The Close Family", hasSaw: false },
+  { id: "companions-section", label: "Notable Companions", hasSaw: false },
+  { id: "about-section", label: "About This Project", hasSaw: false },
 ];
 
 export default function SectionNav() {
@@ -67,6 +67,14 @@ export default function SectionNav() {
               data-testid={`nav-${section.id}`}
             >
               {section.label}
+              {section.hasSaw && (
+                <span 
+                  className="ml-1 text-amber-600 dark:text-amber-400"
+                  style={{ textShadow: '0 0 8px rgba(217, 119, 6, 0.4), 0 0 12px rgba(217, 119, 6, 0.2)' }}
+                >
+                  ﷺ
+                </span>
+              )}
             </button>
           ))}
         </nav>
