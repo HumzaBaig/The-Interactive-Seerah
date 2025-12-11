@@ -102,6 +102,8 @@ function FlashCard({ trait }: { trait: CharacterTrait }) {
 }
 
 export default function CharacterFlashCards() {
+  const styledSaw = <span className="text-amber-600 dark:text-amber-400" style={{ textShadow: '0 0 6px rgba(217, 119, 6, 0.3)' }}>&#xFDFA;</span>;
+
   return (
     <section id="character-section" className="py-12 bg-background border-t">
       <div className="container mx-auto px-6">
@@ -110,7 +112,7 @@ export default function CharacterFlashCards() {
             <h2 className="text-3xl md:text-4xl font-bold">
               The Noble Character
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Discover the beautiful character of the Prophet Muhammad ﷺ through authentic narrations. Click on each card and use the arrows to explore multiple narrations.</p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Discover the beautiful character of the Prophet Muhammad {styledSaw} through authentic narrations. Click on each card and use the arrows to explore multiple narrations.</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">

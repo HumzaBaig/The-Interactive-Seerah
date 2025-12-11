@@ -51,6 +51,8 @@ function FlashCard({ wife }: { wife: WifeCard }) {
 }
 
 export default function WivesFlashCards() {
+  const styledSaw = <span className="text-amber-600 dark:text-amber-400" style={{ textShadow: '0 0 6px rgba(217, 119, 6, 0.3)' }}>&#xFDFA;</span>;
+
   return (
     <section id="wives-section" className="py-12 bg-background border-t">
       <div className="container mx-auto px-6">
@@ -60,7 +62,7 @@ export default function WivesFlashCards() {
               The Mothers of the Believers
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Learn about the blessed wives of Prophet Muhammad ﷺ. Click on each card to reveal their biography.
+              Learn about the blessed wives of Prophet Muhammad {styledSaw}. Click on each card to reveal their biography.
             </p>
           </div>
 

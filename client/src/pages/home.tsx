@@ -88,7 +88,7 @@ export default function Home() {
                 <h2 className="text-3xl md:text-4xl font-bold">
                   Explore the Seerah
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">Use the interactive timeline below to explore major events in the life of Prophet Muhammad ﷺ. Click any event node for details, or filter by time period and event category.</p>
+                <p className="text-lg text-muted-foreground leading-relaxed">Use the interactive timeline below to explore major events in the life of Prophet Muhammad <span className="text-amber-600 dark:text-amber-400" style={{ textShadow: '0 0 6px rgba(217, 119, 6, 0.3)' }}>ﷺ</span>. Click any event node for details, or filter by time period and event category.</p>
               </div>
             </div>
           </div>

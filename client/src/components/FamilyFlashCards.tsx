@@ -59,7 +59,7 @@ export default function FamilyFlashCards() {
               The Close Family
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Learn about the beloved family members of Prophet Muhammad ﷺ. Click on each card to reveal their biography.
+              Learn about the beloved family members of Prophet Muhammad <span className="text-amber-600 dark:text-amber-400" style={{ textShadow: '0 0 6px rgba(217, 119, 6, 0.3)' }}>ﷺ</span>. Click on each card to reveal their biography.
             </p>
           </div>
 

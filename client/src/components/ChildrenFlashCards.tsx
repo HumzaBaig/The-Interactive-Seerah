@@ -14,6 +14,8 @@ function FlashCard({ child }: { child: ChildCard }) {
     ? "text-emerald-600 dark:text-emerald-400"
     : "text-violet-600 dark:text-violet-400";
 
+  const styledSaw = <span className="text-amber-600 dark:text-amber-400" style={{ textShadow: '0 0 6px rgba(217, 119, 6, 0.3)' }}>&#xFDFA;</span>;
+
   return (
     <div
       className="perspective-1000 cursor-pointer h-64"
@@ -36,7 +38,7 @@ function FlashCard({ child }: { child: ChildCard }) {
           <div className="text-center space-y-3">
             <h3 className="text-xl font-semibold">{child.name}</h3>
             <p className="text-sm text-muted-foreground">
-              {isGrandchild ? "Grandson of the Prophet ﷺ" : "Child of the Prophet ﷺ"}
+              {isGrandchild ? <>Grandson of the Prophet {styledSaw}</> : <>Child of the Prophet {styledSaw}</>}
             </p>
             {isGrandchild && child.father ? (
               <div className="text-xs text-muted-foreground space-y-0.5">
@@ -69,14 +71,16 @@ function FlashCard({ child }: { child: ChildCard }) {
 }
 
 export default function ChildrenFlashCards() {
+  const styledSaw = <span className="text-amber-600 dark:text-amber-400" style={{ textShadow: '0 0 6px rgba(217, 119, 6, 0.3)' }}>&#xFDFA;</span>;
+
   return (
     <section id="children-section" className="py-12 bg-background border-t">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center space-y-4 mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold">The Children of the Prophet ﷺ</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">The Children of the Prophet {styledSaw}</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Learn about the blessed children of Prophet Muhammad ﷺ. Click on each card to reveal their biography.
+              Learn about the blessed children of Prophet Muhammad {styledSaw}. Click on each card to reveal their biography.
             </p>
           </div>
 

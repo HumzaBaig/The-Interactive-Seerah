@@ -3,6 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import EmailCaptureForm from "./EmailCaptureForm";
 
+const StyledSaw = () => (
+  <span className="text-amber-600 dark:text-amber-400" style={{ textShadow: '0 0 6px rgba(217, 119, 6, 0.3)' }}>&#xFDFA;</span>
+);
+
 export default function AboutSection() {
   return (
     <section id="about-section" className="py-12 bg-background border-t">
@@ -15,7 +19,7 @@ export default function AboutSection() {
           <Card>
             <CardContent className="p-6 md:p-8">
               <div className="space-y-6 text-center">
-                <p className="text-muted-foreground leading-relaxed">The Interactive Seerah is designed to help people become familiar with the life of Prophet Muhammad ﷺ and his companions in an engaging and accessible way. This website serves as an introductory resource to spark interest and provide a foundational understanding of the Seerah.</p>
+                <p className="text-muted-foreground leading-relaxed">The Interactive Seerah is designed to help people become familiar with the life of Prophet Muhammad <StyledSaw /> and his companions in an engaging and accessible way. This website serves as an introductory resource to spark interest and provide a foundational understanding of the Seerah.</p>
                 <p className="text-muted-foreground leading-relaxed">
                   Please note that this platform is not intended to replace comprehensive academic study, scholarly books, or traditional lectures. For a deeper understanding, we encourage you to explore detailed works and attend classes with qualified teachers.
                 </p>
@@ -27,7 +31,7 @@ export default function AboutSection() {
                   <div className="text-sm text-muted-foreground space-y-1">
                     <p><span className="italic">The Sealed Nectar (Ar-Raheeq Al-Makhtum)</span> by Sheikh Safi-ur-Rahman al-Mubarakpuri</p>
                     <p className="text-xs text-muted-foreground/80">
-                      Ṣaḥīḥ al-Bukhārī · Ṣaḥīḥ Muslim · Jāmiʿ at-Tirmidhī · Sunan Abī Dāwūd · Sunan Ibn Mājah · Musnad Aḥmad · Shamāʾil at-Tirmidhī
+                      Sahih al-Bukhari, Sahih Muslim, Jami at-Tirmidhi, Sunan Abi Dawud, Sunan Ibn Majah, Musnad Ahmad, Shamail at-Tirmidhi
                     </p>
                   </div>
                 </div>
@@ -66,7 +70,7 @@ export default function AboutSection() {
                       data-testid="link-seerah-series-3"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
-                      Meeting Muhammad ﷺ
+                      Meeting Muhammad <StyledSaw />
                     </a>
                   </div>
                 </div>

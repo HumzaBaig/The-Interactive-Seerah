@@ -50,6 +50,8 @@ function FlashCard({ companion }: { companion: CompanionCard }) {
 }
 
 export default function TenPromisedFlashCards() {
+  const styledSaw = <span className="text-amber-600 dark:text-amber-400" style={{ textShadow: '0 0 6px rgba(217, 119, 6, 0.3)' }}>&#xFDFA;</span>;
+
   return (
     <section id="promised-section" className="py-12 bg-background border-t">
       <div className="container mx-auto px-6">
@@ -59,7 +61,7 @@ export default function TenPromisedFlashCards() {
               The Ten Promised Paradise
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Learn about the blessed companions whom the Prophet ﷺ gave glad tidings of Paradise. Click on each card to reveal their biography.
+              Learn about the blessed companions whom the Prophet {styledSaw} gave glad tidings of Paradise. Click on each card to reveal their biography.
             </p>
           </div>
 

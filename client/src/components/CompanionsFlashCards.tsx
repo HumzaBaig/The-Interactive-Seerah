@@ -50,6 +50,8 @@ function FlashCard({ companion }: { companion: NotableCompanion }) {
 }
 
 export default function CompanionsFlashCards() {
+  const styledSaw = <span className="text-amber-600 dark:text-amber-400" style={{ textShadow: '0 0 6px rgba(217, 119, 6, 0.3)' }}>&#xFDFA;</span>;
+
   return (
     <section id="companions-section" className="py-12 bg-background border-t">
       <div className="container mx-auto px-6">
@@ -59,7 +61,7 @@ export default function CompanionsFlashCards() {
               Notable Companions
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Learn about the distinguished companions of Prophet Muhammad ﷺ who shaped Islamic history. Click on each card to reveal their biography.
+              Learn about the distinguished companions of Prophet Muhammad {styledSaw} who shaped Islamic history. Click on each card to reveal their biography.
             </p>
           </div>
 
