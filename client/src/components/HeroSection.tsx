@@ -21,31 +21,6 @@ export default function HeroSection() {
           filter: 'blur(40px)'
         }}
       />
-      
-      <div className="absolute inset-0 opacity-[0.03]">
-        <svg
-          className="w-full h-full"
-          viewBox="0 0 800 600"
-          preserveAspectRatio="xMidYMid slice"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <pattern id="islamic-geo" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <g fill="none" stroke="currentColor" strokeWidth="0.5">
-                <polygon points="50,8 58,23 75,23 62,35 67,52 50,42 33,52 38,35 25,23 42,23" />
-                <polygon points="50,8 58,23 75,23 62,35 67,52 50,42 33,52 38,35 25,23 42,23" transform="rotate(45 50 50)" />
-                <circle cx="50" cy="50" r="12" />
-                <circle cx="50" cy="50" r="30" />
-                <line x1="0" y1="50" x2="20" y2="50" />
-                <line x1="80" y1="50" x2="100" y2="50" />
-                <line x1="50" y1="0" x2="50" y2="20" />
-                <line x1="50" y1="80" x2="50" y2="100" />
-              </g>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#islamic-geo)" className="text-foreground" />
-        </svg>
-      </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
         <div className="space-y-6">
