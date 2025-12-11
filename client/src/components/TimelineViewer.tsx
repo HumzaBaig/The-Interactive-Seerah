@@ -266,6 +266,25 @@ export default function TimelineViewer({
               </div>
             );
           })}
+          {/* Age 63 marker at death event position */}
+          {(() => {
+            const deathPosition = eventLayoutMap['death']?.positionPx;
+            if (!deathPosition) return null;
+            return (
+              <div
+                className="absolute flex flex-col items-center"
+                style={{
+                  left: `${deathPosition}px`,
+                  top: '16px',
+                  transform: 'translateX(-50%)'
+                }}
+              >
+                <div className="text-xs text-muted-foreground whitespace-nowrap">
+                  Age 63
+                </div>
+              </div>
+            );
+          })()}
 
           {/* Axis Markers - positioned at bottom */}
           {axisMarkers.map((marker) => (
