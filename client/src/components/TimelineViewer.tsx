@@ -206,6 +206,26 @@ export default function TimelineViewer({
             minWidth: '100%'
           }}
         >
+          {/* Period background overlays */}
+          <div 
+            className="absolute inset-y-0 pointer-events-none"
+            style={{
+              left: '0px',
+              width: `${yearToPixels(622)}px`,
+              backgroundColor: 'hsl(25, 100%, 50%)',
+              opacity: 0.2
+            }}
+          />
+          <div 
+            className="absolute inset-y-0 pointer-events-none"
+            style={{
+              left: `${yearToPixels(622)}px`,
+              right: '0px',
+              backgroundColor: 'hsl(140, 70%, 40%)',
+              opacity: 0.2
+            }}
+          />
+          
           {/* Timeline Axis Line - extends to the last event (Death of Prophet ﷺ) */}
           <div 
             className="absolute h-1 rounded-full"
@@ -324,26 +344,8 @@ export default function TimelineViewer({
     );
   }
 
-  // Get overlay color based on selected period
-  const getOverlayStyle = () => {
-    if (!selectedPeriod) return {};
-    const period = periods.find(p => p.id === selectedPeriod);
-    if (!period) return {};
-    return {
-      backgroundColor: period.color,
-      opacity: 0.3
-    };
-  };
-
   return (
     <div className="relative bg-card border-y overflow-hidden">
-      {/* Period color overlay */}
-      {selectedPeriod && (
-        <div 
-          className="absolute inset-0 z-10 pointer-events-none transition-opacity duration-300"
-          style={getOverlayStyle()}
-        />
-      )}
       {timelineContent}
     </div>
   );
