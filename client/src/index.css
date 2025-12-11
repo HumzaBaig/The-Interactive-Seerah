@@ -287,3 +287,29 @@
     inset: -1px;
   }
 }
+
+/* Golden pulse animation for hero title - sweeps right to left */
+@keyframes golden-pulse {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.golden-pulse-text {
+  background: linear-gradient(
+    90deg,
+    currentColor 0%,
+    currentColor 40%,
+    #fbbf24 50%,
+    currentColor 60%,
+    currentColor 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: golden-pulse 2s ease-in-out forwards;
+}
