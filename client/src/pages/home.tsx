@@ -22,6 +22,7 @@ import { SeerahEvent } from "@shared/schema";
 export default function Home() {
   const [selectedPeriod, setSelectedPeriod] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [headerVisible, setHeaderVisible] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,6 +34,19 @@ export default function Home() {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }
+    }
+  }, []);
+
+  // Mobile header delay animation
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      const timer = setTimeout(() => {
+        setHeaderVisible(true);
+      }, 2000);
+      return () => clearTimeout(timer);
+    } else {
+      setHeaderVisible(true);
     }
   }, []);
 
@@ -52,7 +66,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <header className="sticky top-0 z-50 bg-background border-b">
+      <header 
+        className={`sticky top-0 z-50 bg-background border-b transition-transform duration-500 ease-out ${
+          headerVisible ? 'translate-y-0' : '-translate-y-full md:translate-y-0'
+        }`}
+      >
         <div className="container mx-auto px-4 md:px-6 py-3 flex items-center gap-3">
           <SectionNav />
           
