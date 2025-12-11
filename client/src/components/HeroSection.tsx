@@ -1,10 +1,24 @@
 export default function HeroSection() {
   return (
     <section className="relative py-20 md:py-28 flex items-center justify-center overflow-hidden border-b">
+      {/* Rising Full Moon Gradient */}
       <div 
         className="absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse at center, hsl(var(--accent) / 0.15) 0%, hsl(var(--background)) 70%)'
+          background: `
+            radial-gradient(ellipse 80% 60% at 50% 120%, rgba(251, 191, 36, 0.25) 0%, rgba(251, 191, 36, 0.15) 20%, rgba(245, 158, 11, 0.08) 40%, transparent 70%),
+            radial-gradient(ellipse 100% 80% at 50% 130%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+            radial-gradient(ellipse at center, hsl(var(--accent) / 0.1) 0%, hsl(var(--background)) 70%)
+          `
+        }}
+      />
+      
+      {/* Moon glow effect */}
+      <div 
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle, rgba(251, 191, 36, 0.15) 0%, rgba(251, 191, 36, 0.08) 30%, rgba(245, 158, 11, 0.03) 50%, transparent 70%)',
+          filter: 'blur(40px)'
         }}
       />
       
