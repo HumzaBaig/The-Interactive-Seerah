@@ -47,11 +47,12 @@ export default function HeroSection() {
                     opacity: 0.5
                   }}
                 />
-                {/* Main gradient bar */}
+                {/* Main gradient bar - pointed streak shape */}
                 <div 
-                  className="relative w-36 h-[5px] rounded-full"
+                  className="relative w-36 h-[5px]"
                   style={{
-                    background: 'linear-gradient(90deg, transparent 0%, #d97706 15%, #f59e0b 35%, #fbbf24 50%, #f59e0b 65%, #d97706 85%, transparent 100%)'
+                    background: 'linear-gradient(90deg, transparent 0%, #d97706 15%, #f59e0b 35%, #fbbf24 50%, #f59e0b 65%, #d97706 85%, transparent 100%)',
+                    clipPath: 'polygon(0% 50%, 8% 0%, 92% 0%, 100% 50%, 92% 100%, 8% 100%)'
                   }}
                 />
               </div>
