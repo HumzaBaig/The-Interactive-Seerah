@@ -311,5 +311,5 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: golden-pulse 2s ease-in-out forwards;
+  animation: golden-pulse 3s ease-in-out 2s forwards;
 }
