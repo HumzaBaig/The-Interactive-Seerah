@@ -66,8 +66,8 @@ export default function Home() {
                 className="absolute inset-0 -inset-y-1"
                 style={{
                   background: 'linear-gradient(90deg, transparent 10%, #fbbf24 35%, #fbbf24 65%, transparent 90%)',
-                  filter: 'blur(6px)',
-                  opacity: 0.2
+                  filter: 'blur(4px)',
+                  opacity: 0.1
                 }}
               />
               <div 
