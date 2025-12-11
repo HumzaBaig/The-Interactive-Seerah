@@ -336,17 +336,15 @@ export default function TimelineViewer({
   };
 
   return (
-    <div className="relative bg-card border-y">
+    <div className="relative bg-card border-y overflow-hidden">
       {/* Period color overlay */}
       {selectedPeriod && (
         <div 
-          className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+          className="absolute inset-0 z-10 pointer-events-none transition-opacity duration-300"
           style={getOverlayStyle()}
         />
       )}
-      <div className="relative">
-        {timelineContent}
-      </div>
+      {timelineContent}
     </div>
   );
 }
