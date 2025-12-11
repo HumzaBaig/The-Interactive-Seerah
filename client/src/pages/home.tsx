@@ -82,14 +82,14 @@ export default function Home() {
         </div>
 
         <div className="flex-1 overflow-hidden">
-          <div className="container mx-auto px-6 py-12">
-            <div className="max-w-4xl mx-auto space-y-8">
-              <div className="text-center space-y-4">
-                <h2 className="text-3xl md:text-4xl font-bold">
-                  Explore the Seerah
-                </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">Use the interactive timeline below to explore major events in the life of Prophet Muhammad ﷺ. Click any event node for details, or filter by time period and event category.</p>
-              </div>
+          <div className="container mx-auto px-6 py-8">
+            <div className="explore-card fade-up" data-testid="card-explore-seerah">
+              <h2 className="explore-title font-display" data-testid="text-explore-title">
+                Explore the Seerah
+              </h2>
+              <p className="explore-description" data-testid="text-explore-description">
+                Use the interactive timeline below to explore major events in the life of Prophet Muhammad <span className="salawat-glow">ﷺ</span>. Click any event node for details, or filter by time period and event category.
+              </p>
             </div>
           </div>
           
