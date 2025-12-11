@@ -109,7 +109,7 @@ export default function CharacterFlashCards() {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center space-y-4 mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-3xl md:text-4xl font-semibold font-display" style={{ letterSpacing: '0.02em' }}>
               The Noble Character
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Discover the beautiful character of the Prophet Muhammad {styledSaw} through authentic narrations. Click on each card and use the arrows to explore multiple narrations.</p>

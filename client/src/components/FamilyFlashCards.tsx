@@ -55,7 +55,7 @@ export default function FamilyFlashCards() {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center space-y-4 mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-3xl md:text-4xl font-semibold font-display" style={{ letterSpacing: '0.02em' }}>
               The Close Family
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

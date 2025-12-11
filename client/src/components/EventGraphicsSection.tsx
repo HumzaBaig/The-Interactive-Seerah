@@ -139,7 +139,7 @@ export default function EventGraphicsSection() {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-display">Notable Events</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold font-display" style={{ letterSpacing: '0.02em' }}>Notable Events</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-2">
               Explore interactive visual journeys through major events in the Prophet's <span className="text-amber-600 dark:text-amber-400" style={{ textShadow: '0 0 6px rgba(217, 119, 6, 0.3)' }}>&#xFDFA;</span> life.
             </p>

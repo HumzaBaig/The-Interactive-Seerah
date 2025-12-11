@@ -13,7 +13,7 @@ export default function AboutSection() {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-4 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold">About This Project</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold font-display" style={{ letterSpacing: '0.02em' }}>About This Project</h2>
           </div>
           
           <Card>
