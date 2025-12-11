@@ -67,7 +67,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <header 
-        className={`sticky top-0 z-50 bg-background border-b transition-transform duration-500 ease-out ${
+        className={`sticky top-0 z-50 bg-card border-b transition-transform duration-500 ease-out ${
           headerVisible ? 'translate-y-0' : '-translate-y-full md:translate-y-0'
         }`}
       >
