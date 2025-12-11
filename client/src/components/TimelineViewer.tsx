@@ -246,6 +246,27 @@ export default function TimelineViewer({
             }}
           />
 
+          {/* Age Markers - positioned at top */}
+          {axisMarkers.map((marker) => {
+            const age = marker.year - 570;
+            if (age < 0) return null;
+            return (
+              <div
+                key={`age-${marker.year}`}
+                className="absolute flex flex-col items-center"
+                style={{
+                  left: `${marker.positionPx}px`,
+                  top: '16px',
+                  transform: 'translateX(-50%)'
+                }}
+              >
+                <div className="text-xs text-muted-foreground whitespace-nowrap">
+                  Age {age}
+                </div>
+              </div>
+            );
+          })}
+
           {/* Axis Markers - positioned at bottom */}
           {axisMarkers.map((marker) => (
             <div
