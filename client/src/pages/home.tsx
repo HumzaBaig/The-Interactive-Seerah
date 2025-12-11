@@ -18,7 +18,7 @@ import AboutSection from "@/components/AboutSection";
 import EmailPopup from "@/components/EmailPopup";
 import { seerahEvents, timelinePeriods } from "@/data/seerah-events";
 import { SeerahEvent } from "@shared/schema";
-import sandalPattern from "@assets/generated_images/prophet's_sandal_footprint_pattern.png";
+import sandalPattern from "@assets/generated_images/golden_sandal_pattern_overlay.png";
 
 export default function Home() {
   const [selectedPeriod, setSelectedPeriod] = useState<string | null>(null);
@@ -107,7 +107,7 @@ export default function Home() {
               className="absolute inset-0 pointer-events-none"
               style={{
                 backgroundImage: `url(${sandalPattern})`,
-                backgroundSize: '200px',
+                backgroundSize: '220px',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 opacity: 0.2
