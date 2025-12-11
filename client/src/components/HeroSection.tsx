@@ -41,7 +41,7 @@ export default function HeroSection() {
         <div className="space-y-8">
           <div className="space-y-4">
             <h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold font-display golden-pulse-text"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold font-display"
               style={{
                 letterSpacing: '0.02em',
                 textShadow: '0 2px 20px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1)'
