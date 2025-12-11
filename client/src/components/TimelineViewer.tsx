@@ -324,9 +324,29 @@ export default function TimelineViewer({
     );
   }
 
+  // Get overlay color based on selected period
+  const getOverlayStyle = () => {
+    if (!selectedPeriod) return {};
+    const period = periods.find(p => p.id === selectedPeriod);
+    if (!period) return {};
+    return {
+      backgroundColor: period.color,
+      opacity: 0.3
+    };
+  };
+
   return (
     <div className="relative bg-card border-y">
-      {timelineContent}
+      {/* Period color overlay */}
+      {selectedPeriod && (
+        <div 
+          className="absolute inset-0 pointer-events-none transition-opacity duration-300"
+          style={getOverlayStyle()}
+        />
+      )}
+      <div className="relative">
+        {timelineContent}
+      </div>
     </div>
   );
 }
