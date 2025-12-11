@@ -53,10 +53,9 @@ export default function HeroSection() {
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground/75 max-w-2xl mx-auto leading-relaxed">
             An interactive journey through the life of Prophet Muhammad{' '}
             <span 
-              className="inline-block"
+              className="inline-block text-amber-600 dark:text-amber-400"
               style={{
-                textShadow: '0 0 8px rgba(251, 191, 36, 0.6), 0 0 16px rgba(251, 191, 36, 0.4)',
-                color: '#fbbf24'
+                textShadow: '0 0 8px rgba(217, 119, 6, 0.4), 0 0 12px rgba(217, 119, 6, 0.2)'
               }}
             >
               ﷺ
