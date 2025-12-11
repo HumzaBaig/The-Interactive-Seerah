@@ -37,7 +37,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+      <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl flex flex-col items-center justify-center md:block">
         <div className="space-y-8">
           <div className="space-y-4">
             <h1 
