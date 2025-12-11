@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, AlertCircle, Sun, Map, Users, ScrollText, Trophy, ChevronUp } from "lucide-react";
+import { StyledText } from "@/components/StyledText";
 
 interface KeyFigure {
   name: string;
@@ -176,7 +177,7 @@ export default function ExpeditionOfTabuk() {
             </div>
 
             <p className="text-white/80 text-lg leading-relaxed mb-6">
-              {stage.description}
+              <StyledText>{stage.description}</StyledText>
             </p>
 
             {currentStage === 2 && (
@@ -213,10 +214,10 @@ export default function ExpeditionOfTabuk() {
                             figure.status === "heroic" ? "text-emerald-200" : 
                             figure.status === "sinful" ? "text-amber-200" : "text-red-200"
                           }`}>
-                            {figure.name}
+                            <StyledText>{figure.name}</StyledText>
                           </h4>
                           {selectedFigure === figure.name && (
-                            <p className="text-white/70 text-sm mt-2">{figure.role}</p>
+                            <p className="text-white/70 text-sm mt-2"><StyledText>{figure.role}</StyledText></p>
                           )}
                         </div>
                       </button>

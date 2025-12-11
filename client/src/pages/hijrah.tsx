@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Moon, Mountain, Navigation, Home, Landmark, Users, ChevronUp } from "lucide-react";
+import { StyledText } from "@/components/StyledText";
 
 interface Companion {
   name: string;
@@ -174,7 +175,7 @@ export default function Hijrah() {
             </div>
 
             <p className="text-white/80 text-lg leading-relaxed mb-6">
-              {stage.description}
+              <StyledText>{stage.description}</StyledText>
             </p>
 
             {currentStage === 3 && (
@@ -205,9 +206,9 @@ export default function Hijrah() {
                       >
                         <div className="flex items-start gap-3">
                           <div className="flex-1">
-                            <h4 className="font-semibold text-white">{companion.name}</h4>
+                            <h4 className="font-semibold text-white"><StyledText>{companion.name}</StyledText></h4>
                             {selectedCompanion === index && (
-                              <p className="text-white/70 text-sm mt-2">{companion.role}</p>
+                              <p className="text-white/70 text-sm mt-2"><StyledText>{companion.role}</StyledText></p>
                             )}
                           </div>
                         </div>

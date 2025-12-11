@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Mountain, AlertTriangle, Shield, Swords, Castle, Gift, ChevronUp } from "lucide-react";
+import { StyledText } from "@/components/StyledText";
 
 interface KeyFigure {
   name: string;
@@ -176,7 +177,7 @@ export default function BattleOfHunayn() {
             </div>
 
             <p className="text-white/80 text-lg leading-relaxed mb-6">
-              {stage.description}
+              <StyledText>{stage.description}</StyledText>
             </p>
 
             {currentStage === 2 && (
@@ -208,10 +209,10 @@ export default function BattleOfHunayn() {
                       >
                         <div className="flex-1">
                           <h4 className={`font-semibold ${figure.side === "muslim" ? "text-emerald-200" : "text-red-200"}`}>
-                            {figure.name}
+                            <StyledText>{figure.name}</StyledText>
                           </h4>
                           {selectedFigure === figure.name && (
-                            <p className="text-white/70 text-sm mt-2">{figure.role}</p>
+                            <p className="text-white/70 text-sm mt-2"><StyledText>{figure.role}</StyledText></p>
                           )}
                         </div>
                       </button>

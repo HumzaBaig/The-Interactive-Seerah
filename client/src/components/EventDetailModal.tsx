@@ -9,6 +9,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { MapPin, Calendar } from "lucide-react";
+import { StyledText } from "@/components/StyledText";
 
 interface EventDetailModalProps {
   event: SeerahEvent | null;
@@ -67,7 +68,7 @@ export default function EventDetailModal({ event, onClose }: EventDetailModalPro
 
         <DialogDescription asChild>
           <div className="text-base md:text-lg leading-loose text-foreground font-serif">
-            {event.description}
+            <StyledText>{event.description}</StyledText>
           </div>
         </DialogDescription>
       </DialogContent>

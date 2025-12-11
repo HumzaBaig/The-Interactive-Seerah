@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Star, Moon, ChevronUp } from "lucide-react";
+import { StyledText } from "@/components/StyledText";
 
 interface HeavenLevel {
   level: number;
@@ -176,7 +177,7 @@ export default function IsraMiraj() {
             </div>
 
             <p className="text-white/80 text-lg leading-relaxed mb-6">
-              {stage.description}
+              <StyledText>{stage.description}</StyledText>
             </p>
 
             {currentStage === 3 && (
@@ -215,7 +216,7 @@ export default function IsraMiraj() {
                           <div className="flex-1">
                             <h4 className="font-semibold text-white">{heaven.prophet}</h4>
                             {selectedHeaven === heaven.level && (
-                              <p className="text-white/70 text-sm mt-2">{heaven.description}</p>
+                              <p className="text-white/70 text-sm mt-2"><StyledText>{heaven.description}</StyledText></p>
                             )}
                           </div>
                         </div>

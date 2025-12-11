@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Navigation, Users, Mountain, Scroll, Star, Heart, ChevronUp } from "lucide-react";
+import { StyledText } from "@/components/StyledText";
 
 interface SermonPoint {
   title: string;
@@ -174,7 +175,7 @@ export default function FarewellPilgrimage() {
             </div>
 
             <p className="text-white/80 text-lg leading-relaxed mb-6">
-              {stage.description}
+              <StyledText>{stage.description}</StyledText>
             </p>
 
             {currentStage === 3 && (
