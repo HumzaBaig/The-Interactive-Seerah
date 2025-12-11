@@ -206,25 +206,32 @@ export default function TimelineViewer({
             minWidth: '100%'
           }}
         >
-          {/* Period background overlays */}
-          <div 
-            className="absolute inset-y-0 pointer-events-none"
-            style={{
-              left: '0px',
-              width: `${yearToPixels(622)}px`,
-              backgroundColor: 'hsl(25, 100%, 50%)',
-              opacity: 0.2
-            }}
-          />
-          <div 
-            className="absolute inset-y-0 pointer-events-none"
-            style={{
-              left: `${yearToPixels(622)}px`,
-              right: '0px',
-              backgroundColor: 'hsl(140, 70%, 40%)',
-              opacity: 0.2
-            }}
-          />
+          {/* Period background overlays - transition at hijrah event position */}
+          {(() => {
+            const hijrahPosition = eventLayoutMap['hijrah']?.positionPx || yearToPixels(622);
+            return (
+              <>
+                <div 
+                  className="absolute inset-y-0 pointer-events-none"
+                  style={{
+                    left: '0px',
+                    width: `${hijrahPosition}px`,
+                    backgroundColor: 'hsl(25, 100%, 50%)',
+                    opacity: 0.2
+                  }}
+                />
+                <div 
+                  className="absolute inset-y-0 pointer-events-none"
+                  style={{
+                    left: `${hijrahPosition}px`,
+                    right: '0px',
+                    backgroundColor: 'hsl(140, 70%, 40%)',
+                    opacity: 0.2
+                  }}
+                />
+              </>
+            );
+          })()}
           
           {/* Timeline Axis Line - extends to the last event (Death of Prophet ﷺ) */}
           <div 
