@@ -1,24 +1,24 @@
 export default function HeroSection() {
   return (
     <section className="relative py-24 md:py-32 flex items-center justify-center overflow-hidden border-b">
-      {/* Rising Full Moon Gradient */}
+      {/* Sunrise Gradient - concentrated at bottom horizon */}
       <div 
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse 80% 60% at 50% 120%, rgba(251, 191, 36, 0.25) 0%, rgba(251, 191, 36, 0.15) 20%, rgba(245, 158, 11, 0.08) 40%, transparent 70%),
-            radial-gradient(ellipse 100% 80% at 50% 130%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-            radial-gradient(ellipse at center, hsl(var(--accent) / 0.1) 0%, hsl(var(--background)) 70%)
+            radial-gradient(ellipse 100% 40% at 50% 140%, rgba(251, 191, 36, 0.2) 0%, rgba(251, 191, 36, 0.1) 30%, transparent 60%),
+            radial-gradient(ellipse 120% 30% at 50% 150%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+            radial-gradient(ellipse at center, hsl(var(--accent) / 0.03) 0%, hsl(var(--background)) 60%)
           `
         }}
       />
       
-      {/* Moon glow effect */}
+      {/* Sunrise glow at horizon */}
       <div 
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full pointer-events-none"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2/3 w-[600px] h-[300px] md:w-[900px] md:h-[400px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(251, 191, 36, 0.15) 0%, rgba(251, 191, 36, 0.08) 30%, rgba(245, 158, 11, 0.03) 50%, transparent 70%)',
-          filter: 'blur(40px)'
+          background: 'radial-gradient(ellipse 100% 80% at 50% 50%, rgba(251, 191, 36, 0.12) 0%, rgba(251, 191, 36, 0.05) 40%, transparent 70%)',
+          filter: 'blur(50px)'
         }}
       />
 
