@@ -18,6 +18,7 @@ import AboutSection from "@/components/AboutSection";
 import EmailPopup from "@/components/EmailPopup";
 import { seerahEvents, timelinePeriods } from "@/data/seerah-events";
 import { SeerahEvent } from "@shared/schema";
+import sandalPattern from "@assets/generated_images/prophet's_sandal_footprint_pattern.png";
 
 export default function Home() {
   const [selectedPeriod, setSelectedPeriod] = useState<string | null>(null);
@@ -100,8 +101,19 @@ export default function Home() {
         </div>
 
         <div className="flex-1 overflow-hidden">
-          <div className="container mx-auto px-6 py-12">
-            <div className="max-w-4xl mx-auto space-y-8">
+          <div className="relative container mx-auto px-6 py-12">
+            {/* Sandal footprint background overlay */}
+            <div 
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                backgroundImage: `url(${sandalPattern})`,
+                backgroundSize: '200px',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                opacity: 0.2
+              }}
+            />
+            <div className="relative max-w-4xl mx-auto space-y-8">
               <div className="text-center space-y-4">
                 <h2 className="text-3xl md:text-4xl font-semibold" style={{ letterSpacing: '0.02em' }}>
                   Explore the Seerah
