@@ -40,11 +40,11 @@ export default function HeroSection() {
               <div className="relative">
                 {/* Blur glow behind */}
                 <div 
-                  className="absolute inset-0 -inset-y-2"
+                  className="absolute inset-0 -inset-y-1"
                   style={{
-                    background: 'linear-gradient(90deg, transparent 5%, #fbbf24 30%, #fbbf24 70%, transparent 95%)',
-                    filter: 'blur(12px)',
-                    opacity: 0.5
+                    background: 'linear-gradient(90deg, transparent 10%, #fbbf24 35%, #fbbf24 65%, transparent 90%)',
+                    filter: 'blur(8px)',
+                    opacity: 0.25
                   }}
                 />
                 {/* Main gradient bar - natural fade at ends */}
