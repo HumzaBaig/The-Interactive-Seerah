@@ -1,6 +1,21 @@
+import { ChevronDown } from "lucide-react";
+
 export default function HeroSection() {
+  const scrollToTimeline = () => {
+    const element = document.getElementById('timeline-section');
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <section className="relative py-24 md:py-32 flex items-center justify-center overflow-hidden border-b">
+    <section className="relative min-h-[calc(100vh-56px)] md:min-h-0 md:py-32 py-24 flex items-center justify-center overflow-hidden border-b">
       {/* Sunrise Gradient - concentrated at bottom horizon */}
       <div 
         className="absolute inset-0"
@@ -78,6 +93,20 @@ export default function HeroSection() {
         </div>
       </div>
       
+      {/* Mobile-only explore button */}
+      <button
+        onClick={scrollToTimeline}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 md:hidden"
+        data-testid="button-explore-timeline"
+      >
+        <span 
+          className="text-sm font-medium text-amber-600 dark:text-amber-400"
+          style={{ letterSpacing: '0.05em' }}
+        >
+          Explore the Timeline & More
+        </span>
+        <ChevronDown className="w-5 h-5 text-amber-600 dark:text-amber-400 animate-bounce" />
+      </button>
     </section>
   );
 }
