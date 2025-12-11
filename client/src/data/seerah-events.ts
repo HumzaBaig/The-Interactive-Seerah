@@ -100,7 +100,7 @@ export const seerahEvents: SeerahEvent[] = [
     title: "Journey to Syria",
     titleArabic: "الرحلة إلى الشام",
     date: "Age 12 or later",
-    year: 590,
+    year: 582,
     period: "makkan",
     category: "spiritual",
     location: "Makkah → Syria",
