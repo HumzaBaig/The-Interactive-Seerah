@@ -103,7 +103,7 @@ export default function Home() {
           <div className="container mx-auto px-6 py-12">
             <div className="max-w-4xl mx-auto space-y-8">
               <div className="text-center space-y-4">
-                <h2 className="text-3xl md:text-4xl font-semibold" style={{ letterSpacing: '0.02em' }}>
+                <h2 className="text-3xl md:text-4xl font-semibold font-display" style={{ letterSpacing: '0.02em' }}>
                   Explore the Seerah
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">Use the interactive timeline below to explore major events in the life of Prophet Muhammad <span className="text-amber-600 dark:text-amber-400" style={{ textShadow: '0 0 6px rgba(217, 119, 6, 0.3)' }}>ﷺ</span>. Click any event node for details, or filter by time period and event category.</p>
