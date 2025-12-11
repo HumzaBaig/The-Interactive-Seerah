@@ -209,24 +209,26 @@ export default function TimelineViewer({
           {/* Period background overlays - transition at hijrah event position */}
           {(() => {
             const hijrahPosition = eventLayoutMap['hijrah']?.positionPx || yearToPixels(622);
+            const showMakkan = !selectedPeriod || selectedPeriod === 'makkan';
+            const showMadinan = !selectedPeriod || selectedPeriod === 'madinan';
             return (
               <>
                 <div 
-                  className="absolute inset-y-0 pointer-events-none"
+                  className="absolute inset-y-0 pointer-events-none transition-opacity duration-300"
                   style={{
                     left: '0px',
                     width: `${hijrahPosition}px`,
                     backgroundColor: 'hsl(25, 100%, 50%)',
-                    opacity: 0.2
+                    opacity: showMakkan ? 0.2 : 0
                   }}
                 />
                 <div 
-                  className="absolute inset-y-0 pointer-events-none"
+                  className="absolute inset-y-0 pointer-events-none transition-opacity duration-300"
                   style={{
                     left: `${hijrahPosition}px`,
                     right: '0px',
                     backgroundColor: 'hsl(140, 70%, 40%)',
-                    opacity: 0.2
+                    opacity: showMadinan ? 0.2 : 0
                   }}
                 />
               </>
