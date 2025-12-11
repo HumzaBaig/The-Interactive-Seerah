@@ -56,9 +56,30 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 py-3 flex items-center gap-3">
           <SectionNav />
           
-          <h1 className="text-lg md:text-xl font-bold font-display whitespace-nowrap">
-            The Interactive Seerah
-          </h1>
+          <div className="flex flex-col items-start">
+            <h1 className="text-lg md:text-xl font-semibold font-display whitespace-nowrap" style={{ letterSpacing: '0.02em' }}>
+              The Interactive Seerah
+            </h1>
+            {/* Gold light streak underline */}
+            <div className="relative mt-1">
+              <div 
+                className="absolute inset-0 -inset-y-1"
+                style={{
+                  background: 'linear-gradient(90deg, transparent 10%, #fbbf24 35%, #fbbf24 65%, transparent 90%)',
+                  filter: 'blur(6px)',
+                  opacity: 0.2
+                }}
+              />
+              <div 
+                className="relative w-24 md:w-28 h-[3px] rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, transparent 0%, #d97706 20%, #f59e0b 35%, #fbbf24 50%, #f59e0b 65%, #d97706 80%, transparent 100%)',
+                  maskImage: 'linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%)'
+                }}
+              />
+            </div>
+          </div>
           
           <div className="flex-1 flex justify-end">
             <SearchBar 
