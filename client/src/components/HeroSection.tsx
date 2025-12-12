@@ -16,24 +16,24 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[calc(100vh-56px)] md:min-h-0 md:py-32 py-24 flex items-center justify-center overflow-hidden border-b">
-      {/* Sunrise Gradient - concentrated at bottom horizon */}
+      {/* Sunrise Gradient - concentrated at bottom, reaching up to title */}
       <div 
         className="absolute inset-0"
         style={{
           background: `
-            radial-gradient(ellipse 100% 40% at 50% 140%, rgba(251, 191, 36, 0.2) 0%, rgba(251, 191, 36, 0.1) 30%, transparent 60%),
-            radial-gradient(ellipse 120% 30% at 50% 150%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-            radial-gradient(ellipse at center, hsl(var(--accent) / 0.03) 0%, hsl(var(--background)) 60%)
+            radial-gradient(ellipse 100% 70% at 50% 120%, rgba(180, 130, 20, 0.15) 0%, rgba(160, 110, 15, 0.08) 40%, transparent 70%),
+            radial-gradient(ellipse 120% 50% at 50% 130%, rgba(140, 100, 10, 0.06) 0%, transparent 60%),
+            radial-gradient(ellipse at center, hsl(var(--accent) / 0.02) 0%, hsl(var(--background)) 60%)
           `
         }}
       />
       
-      {/* Sunrise glow at horizon */}
+      {/* Dark amber glow radiating from bottom to title */}
       <div 
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2/3 w-[600px] h-[300px] md:w-[900px] md:h-[400px] rounded-full pointer-events-none"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 w-[800px] h-[500px] md:w-[1200px] md:h-[600px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 100% 80% at 50% 50%, rgba(251, 191, 36, 0.12) 0%, rgba(251, 191, 36, 0.05) 40%, transparent 70%)',
-          filter: 'blur(50px)'
+          background: 'radial-gradient(ellipse 100% 90% at 50% 70%, rgba(160, 110, 20, 0.08) 0%, rgba(140, 90, 15, 0.04) 50%, transparent 80%)',
+          filter: 'blur(60px)'
         }}
       />
 
