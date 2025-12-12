@@ -19,7 +19,7 @@ export default function HeroSection() {
     <section className="relative min-h-[calc(100vh-56px)] md:min-h-0 md:py-32 py-24 flex items-center justify-center overflow-hidden border-b">
       {/* Islamic geometric pattern overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.15] dark:opacity-[0.4]"
+        className="absolute inset-0 opacity-[0.3] dark:opacity-[0.8]"
         style={{
           backgroundImage: `url(${islamicPattern})`,
           backgroundSize: 'cover',
@@ -29,7 +29,7 @@ export default function HeroSection() {
       />
       {/* Light mode: invert the pattern */}
       <div 
-        className="absolute inset-0 opacity-[0.08] dark:opacity-0"
+        className="absolute inset-0 opacity-[0.16] dark:opacity-0"
         style={{
           backgroundImage: `url(${islamicPattern})`,
           backgroundSize: 'cover',
