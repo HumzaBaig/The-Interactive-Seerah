@@ -45,7 +45,7 @@ function App() {
         <div className="relative min-h-screen">
           {/* Islamic geometric pattern background - dark mode */}
           <div 
-            className="fixed inset-0 opacity-[0.3] dark:opacity-[0.8] pointer-events-none z-0"
+            className="fixed inset-0 opacity-100 dark:opacity-100 pointer-events-none z-0"
             style={{
               backgroundImage: `url(${islamicPattern})`,
               backgroundSize: 'cover',
@@ -55,7 +55,7 @@ function App() {
           />
           {/* Islamic geometric pattern background - light mode (inverted) */}
           <div 
-            className="fixed inset-0 opacity-[0.16] dark:opacity-0 pointer-events-none z-0"
+            className="fixed inset-0 opacity-60 dark:opacity-0 pointer-events-none z-0"
             style={{
               backgroundImage: `url(${islamicPattern})`,
               backgroundSize: 'cover',
