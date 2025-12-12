@@ -1,5 +1,4 @@
 import { ChevronDown } from "lucide-react";
-import islamicPattern from "@assets/image_1765500336350.png";
 
 export default function HeroSection() {
   const scrollToTimeline = () => {
@@ -17,28 +16,6 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-[calc(100vh-56px)] md:min-h-0 md:py-32 py-24 flex items-center justify-center overflow-hidden border-b">
-      {/* Islamic geometric pattern overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.3] dark:opacity-[0.8]"
-        style={{
-          backgroundImage: `url(${islamicPattern})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      />
-      {/* Light mode: invert the pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.16] dark:opacity-0"
-        style={{
-          backgroundImage: `url(${islamicPattern})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'invert(1)'
-        }}
-      />
-      
       {/* Sunrise Gradient - concentrated at bottom, reaching up to title */}
       <div 
         className="absolute inset-0"
